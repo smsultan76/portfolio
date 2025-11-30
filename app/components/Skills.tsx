@@ -28,7 +28,7 @@ export default function Skills() {
   const [activeCategory, setActiveCategory] = useState<'languages' | 'frontend' | 'backend'>('languages');
 
   return (
-    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+    <section id="skills" className="min-h-screen py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 slide-up">
           <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">Skills & Technologies</h2>
