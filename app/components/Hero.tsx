@@ -84,7 +84,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-indigo-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br md:px-12 from-blue-50 via-white to-indigo-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
       <div className="container mx-auto px-6">
         <motion.div
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
@@ -174,7 +174,7 @@ export default function Hero() {
             >
               {/* Main Profile Container */}
               <motion.div
-                className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden"
+                className="relative w-96 h-96 lg:w-[500] lg:h-[550] rounded-2xl overflow-hidden"
                 animate={{
                   y: [0, -10, 0],
                 }}
@@ -192,14 +192,14 @@ export default function Hero() {
                   {/* Profile Image Placeholder */}
                   <div className="w-full h-full flex items-center justify-center">
                     <div className="text-center">
-                      <div className="w-48 h-48 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-6xl font-bold shadow-2xl border-4 border-white dark:border-gray-800">
-                        <div className="relative w-48 h-48 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl">
+                      {/* <div className=" bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-6xl font-bold shadow-2xl border-4 border-white dark:border-gray-800"> */}
+                        <div className="relative h-72 w-72 md:w-96 md:h-96 bg-gradient-to-tr from-black to-purple-400 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl">
                           <img
                             src="/profile.png"
                             alt="SM"
                           // className="w-full h-full object-cover"
                           />
-                        </div>
+                        {/* </div> */}
                       </div>
                       <motion.div
                         initial={{ opacity: 0 }}
