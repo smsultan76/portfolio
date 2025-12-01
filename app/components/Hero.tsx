@@ -86,7 +86,7 @@ export default function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-indigo-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
       <div className="container mx-auto px-6">
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
           initial="hidden"
           animate="visible"
@@ -100,7 +100,7 @@ export default function Hero() {
               </p>
             </motion.div>
 
-            <motion.h1 
+            <motion.h1
               className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight"
               variants={itemVariants as any}
             >
@@ -110,7 +110,7 @@ export default function Hero() {
               </span>
             </motion.h1>
 
-            <motion.p 
+            <motion.p
               className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed"
               variants={itemVariants as any}
             >
@@ -120,18 +120,18 @@ export default function Hero() {
               </span>. I love turning complex problems into simple, beautiful designs.
             </motion.p>
 
-            <motion.div 
+            <motion.div
               className="flex flex-col sm:flex-row gap-4 mb-8"
               variants={itemVariants as any}
             >
-              <motion.button 
+              <motion.button
                 className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 🚀 View My Projects
               </motion.button>
-              <motion.button 
+              <motion.button
                 className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-blue-600 dark:hover:border-blue-400 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -141,7 +141,7 @@ export default function Hero() {
             </motion.div>
 
             {/* Tech Stack Preview */}
-            <motion.div 
+            <motion.div
               className="flex items-center gap-4 text-gray-500 dark:text-gray-400"
               variants={itemVariants as any}
             >
@@ -186,14 +186,20 @@ export default function Hero() {
               >
                 {/* Gradient Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-2xl"></div>
-                
+
                 {/* 3D Container Effect */}
                 <div className="absolute inset-2 bg-white dark:bg-gray-800 rounded-xl shadow-2xl">
                   {/* Profile Image Placeholder */}
                   <div className="w-full h-full flex items-center justify-center">
                     <div className="text-center">
                       <div className="w-48 h-48 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-6xl font-bold shadow-2xl border-4 border-white dark:border-gray-800">
-                        SM
+                        <div className="relative w-48 h-48 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl">
+                          <img
+                            src="/profile.png"
+                            alt="SM"
+                          // className="w-full h-full object-cover"
+                          />
+                        </div>
                       </div>
                       <motion.div
                         initial={{ opacity: 0 }}
