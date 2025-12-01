@@ -1,6 +1,7 @@
 // app/components/Footer.tsx
 'use client';
 import { motion } from 'framer-motion';
+import { JSX } from 'react';
 
 // Proper SVG icons for social media
 const SocialIcon = ({ icon }: { icon: string }) => {
@@ -50,7 +51,7 @@ const socialLinks = [
     name: 'GitHub', 
     url: 'https://github.com/smsultan76', 
     icon: 'github',
-    color: 'hover:text-gray-400'
+    color: 'hover:text-gray-200'
   },
   { 
     name: 'LinkedIn', 
@@ -155,7 +156,7 @@ export default function Footer() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-3 bg-gray-800 rounded-lg transition-all duration-300 ${social.color} hover:bg-gray-700 group`}
+                    className={`p-3 rounded-lg transition-all duration-300 ${social.color} hover:bg-gray-700 group`}
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     initial={{ opacity: 0, y: 10 }}
