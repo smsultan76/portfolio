@@ -74,7 +74,7 @@ const socialLinks = [
     name: 'Facebook', 
     url: 'https://facebook.com/smsultan76', 
     icon: 'facebook',
-    color: 'hover:text-red-400'
+    color: 'hover:text-blue-400'
   },
   // { 
   //   name: 'Instagram', 
