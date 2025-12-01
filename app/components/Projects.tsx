@@ -7,6 +7,7 @@ const projects = [
     technologies: ['PHP', 'HTML', 'CSS', 'JS'],
     category: 'Full Stack',
     live: 'https://boi-bazar.free.nf/',
+    source: 'https://github.com/smsultan76',
   },
   {
     title: 'Task Management App',
@@ -14,12 +15,14 @@ const projects = [
     technologies: ['Next.js', 'TypeScript', 'MongoDB', 'Socket.io'],
     category: 'Frontend',
     live: 'https://sunriseschool.free.nf/',
+    source: 'https://github.com/smsultan76',
   },
   {
     title: 'REST API Service',
     description: 'Scalable REST API built with NestJS and PostgreSQL',
     technologies: ['NestJS', 'PostgreSQL', 'Docker', 'Swagger'],
     category: 'Backend',
+    source: 'https://github.com/smsultan76',
   },
 ];
 
@@ -95,7 +98,7 @@ export default function Projects() {
 
                   {/* Source Code Button */}
                   <motion.a
-                    href="https://github.com/yourusername/project"
+                    href={project.source ?? 'https://github.com/smsultan76'}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 group"
