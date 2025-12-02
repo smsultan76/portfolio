@@ -12,7 +12,7 @@ export default function Header() {
           <div className="text-2xl font-bold text-gray-800 dark:text-white transition-colors">
             <a href="/">Sultanum Mobin</a>
           </div>
-          
+
           <div className="flex items-center space-x-6">
             <a href="#skills" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
               Skills
@@ -23,11 +23,11 @@ export default function Header() {
             <a href="contact" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
               Contact
             </a>
-            
+
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300 transform hover:scale-105"
+              className="p-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300 transform hover:scale-105"
               aria-label="Toggle theme"
             >
               {isDark ? (
@@ -36,6 +36,10 @@ export default function Header() {
                 <span className="text-gray-600">🌙</span>
               )}
             </button>
+            <div className='text-gray-200 text-xl'>|</div>
+            <a href="login" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+              Log in
+            </a>
           </div>
         </div>
       </nav>
