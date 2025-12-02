@@ -276,7 +276,7 @@ export default function Footer() {
               viewport={{ once: true }}
             >
               <motion.a
-                href="#contact"
+                href="contact"
                 className="inline-flex items-center space-x-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}

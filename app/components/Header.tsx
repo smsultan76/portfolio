@@ -10,7 +10,7 @@ export default function Header() {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <div className="text-2xl font-bold text-gray-800 dark:text-white transition-colors">
-            <a href="">Sultanum Mobin</a>
+            <a href="/">Sultanum Mobin</a>
           </div>
           
           <div className="flex items-center space-x-6">
@@ -20,7 +20,7 @@ export default function Header() {
             <a href="#projects" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
               Projects
             </a>
-            <a href="#contact" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+            <a href="contact" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
               Contact
             </a>
             
