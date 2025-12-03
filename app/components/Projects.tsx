@@ -10,19 +10,19 @@ const projects = [
     source: 'https://github.com/smsultan76',
   },
   {
-    title: 'Task Management App',
-    description: 'Real-time task management application with Next.js',
-    technologies: ['Next.js', 'TypeScript', 'MongoDB', 'Socket.io'],
-    category: 'Frontend',
+    title: 'School Management App',
+    description: 'App with Students, Results, Teachers, Notice etc. Fully Dynamic',
+    technologies: ['Laravel', 'Blade', 'JS', 'TailwindCSS', 'MySql'],
+    category: 'Full Stack',
     live: 'https://sunriseschool.free.nf/',
     source: 'https://github.com/smsultan76',
   },
   {
-    title: 'REST API Service',
-    description: 'Scalable REST API built with NestJS and PostgreSQL',
-    technologies: ['NestJS', 'PostgreSQL', 'Docker', 'Swagger'],
+    title: 'CMS - REST API ',
+    description: 'Role Based Authentication REST API built with NestJS and PostgreSQL',
+    technologies: ['NestJS', 'PostgreSQL', 'Swagger'],
     category: 'Backend',
-    source: 'https://github.com/smsultan76',
+    source: 'https://github.com/smsultan76/CMS-Backend',
   },
 ];
 
