@@ -101,20 +101,20 @@ const quickLinks = [
 
 const contactInfo = [
   {
-    icon: '📍',
+    icon: '🏠',
     title: 'Location',
-    content: 'Dhaka, Bangladesh',
+    content: 'Faridpur, Dhaka, Bangladesh',
   },
   {
     icon: '📧',
     title: 'Email',
-    content: 'sultanum@example.com',
-    link: 'mailto:sultanum@example.com'
+    content: 'sultan.1021@fec.edu.bd',
+    link: 'mailto:sultan.1021@fec.edu.bd'
   },
   {
     icon: '📱',
     title: 'Phone',
-    content: '+880 1XXX-XXXXXX',
+    content: '+880 1723-332972',
   },
 ];
 
