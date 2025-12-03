@@ -1,6 +1,7 @@
 // app/components/Hero.tsx
 'use client';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { useRef } from 'react';
 
 // Define proper TypeScript types for animations
@@ -129,14 +130,14 @@ export default function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                🚀 View My Projects
+              <a href="#projects">View My Projects</a>
               </motion.button>
               <motion.button
                 className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-blue-600 dark:hover:border-blue-400 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                📄 Download CV
+                <Link href="/documents/02112025.pdf" download="Sultan-CV.pdf"> 📄 Download CV </Link>
               </motion.button>
             </motion.div>
 
@@ -147,7 +148,7 @@ export default function Hero() {
             >
               <span>Tech Stack:</span>
               <div className="flex gap-2">
-                {['PHP', 'Laravel', 'NextJS', 'Python'].map((tech, index) => (
+                {['PHP', 'Laravel', 'NestJS', 'Python', 'NextJS'].map((tech, index) => (
                   <motion.span
                     key={tech}
                     className="bg-white dark:bg-gray-700 px-3 py-1 rounded-full text-sm border border-gray-200 dark:border-gray-600"
