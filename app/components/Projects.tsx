@@ -1,15 +1,18 @@
 'use client';
 import { motion } from "framer-motion";
+import Image from "next/image";
 const projects = [
   {
+    img: '/project/ecom.png',
     title: 'E-Commerce Platform',
     description: 'A Online Book Selling Website build with raw PHP and sslcommerz',
     technologies: ['PHP', 'HTML', 'CSS', 'JS'],
     category: 'Full Stack',
     live: 'https://boi-bazar.free.nf/',
-    source: 'https://github.com/smsultan76',
+    source: 'https://github.com/smsultan76/BookShop',
   },
   {
+    img: '/project/school.png',
     title: 'School Management App',
     description: 'App with Students, Results, Teachers, Notice etc. Fully Dynamic',
     technologies: ['Laravel', 'Blade', 'JS', 'TailwindCSS', 'MySql'],
@@ -18,6 +21,7 @@ const projects = [
     source: 'https://github.com/smsultan76',
   },
   {
+    img: '/project/cms-backend.png',
     title: 'CMS - REST API ',
     description: 'Role Based Authentication REST API built with NestJS and PostgreSQL',
     technologies: ['NestJS', 'PostgreSQL', 'Swagger'],
@@ -43,8 +47,17 @@ export default function Projects() {
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Project Image Placeholder */}
-              <div className="h-48 bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center">
-                <span className="text-white text-2xl font-bold">{project.category}</span>
+              <div className="relative h-48 overflow-hidden group">
+                <img
+                  src={project.img}
+                  alt={project.title}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.src = 'https://via.placeholder.com/400x200/4F46E5/7C3AED?text=Project+Image';
+                    e.currentTarget.className = 'absolute inset-0 w-full h-full object-cover bg-gradient-to-r from-blue-400 to-purple-500';
+                  }}
+                />
               </div>
 
               <div className="p-6">
@@ -83,7 +96,7 @@ export default function Projects() {
                     whileTap={{ scale: 0.98 }}
                   >
                     <button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-blue-500/30">
-                      <span>🌐</span>
+                      <span className="md:hidden">🌐</span>
                       <span>Live Demo</span>
                       <svg
                         className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
@@ -107,7 +120,7 @@ export default function Projects() {
                   >
                     <button className="w-full bg-transparent border-2 border-gray-300 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-400 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-semibold py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 hover:shadow-lg">
                       <svg
-                        className="w-5 h-5"
+                        className="w-5 h-5 md:hidden"
                         fill="currentColor"
                         viewBox="0 0 24 24"
                       >
