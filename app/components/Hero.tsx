@@ -137,7 +137,7 @@ export default function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link href="/documents/02112025.pdf" download="Sultan-CV.pdf"> 📄 Download CV </Link>
+                <Link href="/documents/Sultan-CV.pdf" download="Sultan-CV.pdf"> 📄 Download CV </Link>
               </motion.button>
             </motion.div>
 
