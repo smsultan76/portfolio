@@ -1,4 +1,3 @@
-// app/nfc-redirect/components/PhotoFrame.tsx
 "use client";
 
 import { motion } from 'framer-motion';

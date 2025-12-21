@@ -1,4 +1,3 @@
-// app/nfc-redirect/config/defaultConfig.ts
 "use client";
 import { NFCRedirectConfig } from '../config';
 import { 
@@ -40,13 +39,13 @@ export const defaultConfig: NFCRedirectConfig = {
     { id: 'resume', icon: <FiDownload />, label: 'Download Resume', action: '/resume.pdf', color: 'hover:text-red-400' },
   ],
   settings: {
-    redirectDelay: 8, // seconds before auto-redirect
+    redirectDelay: 12,
     enableBackgroundAnimation: true,
-    backgroundType: 'gradient', // 'gradient' | 'particles' | 'none'
+    backgroundType: 'gradient',
     theme: {
-      primary: '#8B5CF6', // purple
-      secondary: '#EC4899', // pink
-      accent: '#3B82F6', // blue
+      primary: '#8B5CF6',
+      secondary: '#EC4899',
+      accent: '#3B82F6',
     },
   },
 };

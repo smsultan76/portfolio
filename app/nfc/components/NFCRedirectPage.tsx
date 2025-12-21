@@ -9,7 +9,6 @@ import ContactInfo from './ContactInfo';
 import Header from './Header';
 import Footer from './Footer';
 import Background from './Background';
-import RedirectOverlay from './RedirectOverlay';
 
 interface NFCRedirectPageProps {
   config: NFCRedirectConfig;
@@ -20,32 +19,6 @@ export default function NFCRedirectPage({ config }: NFCRedirectPageProps) {
   const [isRedirecting, setIsRedirecting] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    // Auto-redirect timer
-    const timer = setInterval(() => {
-      setRedirectTimer((prev) => {
-        if (prev <= 1) {
-          setIsRedirecting(true);
-          setTimeout(() => {
-            window.location.href = config.user.portfolioUrl;
-          }, 500);
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      clearInterval(timer);
-    };
-  }, [config.user.portfolioUrl]);
 
   const handleManualRedirect = () => {
     setIsRedirecting(true);
@@ -64,14 +37,12 @@ export default function NFCRedirectPage({ config }: NFCRedirectPageProps) {
       />
 
       {/* Redirect Overlay */}
-      {isRedirecting && <RedirectOverlay />}
 
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-4 py-8 min-h-screen flex flex-col">
         {/* Header */}
         <Header 
           name={config.user.name}
-          redirectTimer={redirectTimer}
           onManualRedirect={handleManualRedirect}
         />
 
