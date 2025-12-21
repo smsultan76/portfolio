@@ -125,20 +125,24 @@ export default function Hero() {
               className="flex flex-col sm:flex-row gap-4 mb-8"
               variants={itemVariants as any}
             >
+              <a href="#projects">
               <motion.button
                 className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-              <a href="#projects">View My Projects</a>
+                View My Projects
               </motion.button>
-              <motion.button
-                className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-blue-600 dark:hover:border-blue-400 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link href="/documents/Sultan-CV.pdf" download="Sultan-CV.pdf"> 📄 Download CV </Link>
-              </motion.button>
+              </a>
+              <Link href="/documents/Sultan-CV.pdf" download="Sultan-CV.pdf">
+                <motion.button
+                  className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-blue-600 dark:hover:border-blue-400 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  📄 Download CV
+                </motion.button>
+              </Link>
             </motion.div>
 
             {/* Tech Stack Preview */}
@@ -194,12 +198,12 @@ export default function Hero() {
                   <div className="w-full h-full flex items-center justify-center">
                     <div className="text-center">
                       {/* <div className=" bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-6xl font-bold shadow-2xl border-4 border-white dark:border-gray-800"> */}
-                        <div className="relative h-72 w-72 md:w-96 md:h-96 bg-gradient-to-tr from-black to-purple-400 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl">
-                          <img
-                            src="/profile.png"
-                            alt="SM"
-                          // className="w-full h-full object-cover"
-                          />
+                      <div className="relative h-72 w-72 md:w-96 md:h-96 bg-gradient-to-tr from-black to-purple-400 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl">
+                        <img
+                          src="/profile.png"
+                          alt="SM"
+                        // className="w-full h-full object-cover"
+                        />
                         {/* </div> */}
                       </div>
                       <motion.div
