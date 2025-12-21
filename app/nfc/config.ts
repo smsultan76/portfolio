@@ -18,10 +18,6 @@ export interface NFCRedirectConfig {
   user: {
     name: string;
     title: string;
-    email: string;
-    phone: string;
-    website: string;
-    resumeUrl: string;
     photoUrl: string;
     portfolioUrl: string;
   };

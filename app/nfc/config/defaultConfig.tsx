@@ -15,13 +15,9 @@ import {
 
 export const defaultConfig: NFCRedirectConfig = {
   user: {
-    name: "John Doe",
+    name: "Sultanum Mobin",
     title: "Full Stack Developer",
-    email: "hello@johndoe.com",
-    phone: "+1 (234) 567-8900",
-    website: "https://johndoe.com",
-    resumeUrl: "/resume.pdf",
-    photoUrl: "/images/portrait.jpg", // Replace with your image path
+    photoUrl: "/profile.png",
     portfolioUrl: "/", // Your portfolio homepage
   },
   socialLinks: [
@@ -36,7 +32,7 @@ export const defaultConfig: NFCRedirectConfig = {
     { id: 'email', icon: <FiMail />, label: 'hello@johndoe.com', action: 'mailto:hello@johndoe.com', color: 'hover:text-yellow-400' },
     { id: 'phone', icon: <FiPhone />, label: '+1 (234) 567-8900', action: 'tel:+12345678900', color: 'hover:text-green-400' },
     { id: 'website', icon: <FiGlobe />, label: 'johndoe.com', action: 'https://johndoe.com', color: 'hover:text-indigo-400' },
-    { id: 'resume', icon: <FiDownload />, label: 'Download Resume', action: '/resume.pdf', color: 'hover:text-red-400' },
+    { id: 'resume', icon: <FiDownload />, label: 'Download Resume', action: '/documents/Sultan-CV.pdf', color: 'hover:text-red-400' },
   ],
   settings: {
     redirectDelay: 12,
