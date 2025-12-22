@@ -17,7 +17,7 @@ export interface ContactLink {
 export interface NFCRedirectConfig {
   user: {
     name: string;
-    title: string;
+    title: string; 
     photoUrl: string;
     portfolioUrl: string;
   };
