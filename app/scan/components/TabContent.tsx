@@ -3,12 +3,19 @@
 import { motion } from 'framer-motion';
 import { SOCIAL_LINKS, CONTACT_LINKS, NAVIGATION_LINKS } from '@/app/config/social-links';
 import { USER_CONFIG } from '@/app/config/user-config';
+import { Icons } from '@/app/config/icons';
+import React from 'react';
 
 interface TabContentProps {
   activeTab: 'social' | 'contact' | 'navigation';
 }
 
 export default function TabContent({ activeTab }: TabContentProps) {
+  const getIconComponent = (iconName: string): React.ReactNode => {
+    const Icon = Icons[iconName as keyof typeof Icons];
+    return Icon ? React.createElement(Icon) : null;
+  };
+
   const renderSocialLinks = () => (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
       {SOCIAL_LINKS.map((link, index) => (
@@ -35,7 +42,7 @@ export default function TabContent({ activeTab }: TabContentProps) {
             whileHover={{ rotate: [0, -10, 10, 0] }}
             transition={{ duration: 0.5 }}
           >
-            {link.icon}
+            {getIconComponent(link.icon)}
           </motion.span>
           <span className="font-medium text-white flex-1">{link.label}</span>
           <span className="text-xs text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -73,7 +80,7 @@ export default function TabContent({ activeTab }: TabContentProps) {
               }}
               transition={{ repeat: link.id === 'phone' ? Infinity : 0, duration: 2 }}
             >
-              {link.icon}
+              {getIconComponent(link.icon)}
             </motion.span>
             <span className="font-medium text-white flex-1">{link.label}</span>
             <span className="text-xs text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -124,7 +131,7 @@ export default function TabContent({ activeTab }: TabContentProps) {
             }}
             transition={{ repeat: Infinity, duration: 2 }}
           >
-            {link.icon}
+            {getIconComponent(link.icon)}
           </motion.span>
           <span className="font-medium text-white text-sm text-center">{link.name}</span>
           <span className="text-xs text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">
