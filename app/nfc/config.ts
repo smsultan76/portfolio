@@ -13,11 +13,21 @@ export interface ContactLink {
   action: string;
   color: string;
 }
-
+export interface NavigationLink {
+  id: string;
+  name: string;
+  href: string;
+  icon: string; // Changed from ReactNode to string
+}
 export interface NFCRedirectConfig {
   user: {
     name: string;
     title: string; 
+    email: string;
+    phone: string;
+    website: string;
+    resumeUrl: string;
+    location: string;
     photoUrl: string;
     portfolioUrl: string;
   };
