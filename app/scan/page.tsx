@@ -1,7 +1,7 @@
-// app/nfc-redirect/page.tsx
+// app/scan/page.tsx
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { 
@@ -18,21 +18,18 @@ import {
   FiCode,
   FiMessageCircle,
   FiFacebook,
-  FiArrowRight,
-  FiLoader
 } from 'react-icons/fi';
 
-// Your configuration - EDIT THIS SECTION
 const USER_CONFIG = {
   name: "Sultanum Mobin",
   title: "Full Stack Developer",
   email: "sultanum.mobin@gmail.com",
   alternateEmail: "sultan.1021@fec.edu.bd",
   phone: "+880 1723-332972",
-  website: "https://yourportfolio.com",
+  website: "http://sultanum-mobin.vercel.app/",
   resumeUrl: "/resume.pdf",
-  photoUrl: "/images/portrait.jpg", // Add your photo here
-  portfolioUrl: "/", // Your portfolio homepage
+  photoUrl: "/profile.png",
+  portfolioUrl: "/",
   location: "Faridpur, Dhaka, Bangladesh"
 };
 
@@ -114,48 +111,8 @@ const NAVIGATION_LINKS = [
 ];
 
 export default function NFCRedirectPage() {
-  const [redirectTimer, setRedirectTimer] = useState(10); // 10 seconds
-  const [isRedirecting, setIsRedirecting] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [activeTab, setActiveTab] = useState<'social' | 'contact' | 'navigation'>('social');
-
-  // Handle mouse movement for background effects
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
-  // Auto-redirect timer
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setRedirectTimer((prev) => {
-        if (prev <= 1) {
-          setIsRedirecting(true);
-          setTimeout(() => {
-            window.location.href = USER_CONFIG.portfolioUrl;
-          }, 500);
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  const handleManualRedirect = () => {
-    setIsRedirecting(true);
-    setTimeout(() => {
-      window.location.href = USER_CONFIG.portfolioUrl;
-    }, 500);
-  };
 
   // Calculate parallax effect for background
   const parallaxStyle = {
@@ -195,32 +152,6 @@ export default function NFCRedirectPage() {
         </div>
       </div>
 
-      {/* Redirect Overlay */}
-      {isRedirecting && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center"
-        >
-          <div className="text-center">
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-              className="text-white text-6xl mb-8"
-            >
-              <FiLoader />
-            </motion.div>
-            <motion.h2
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="text-3xl font-bold text-white mb-4"
-            >
-              Redirecting to Portfolio...
-            </motion.h2>
-          </div>
-        </motion.div>
-      )}
 
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-4 py-8 min-h-screen flex flex-col">
@@ -237,25 +168,7 @@ export default function NFCRedirectPage() {
           <p className="text-xl text-gray-300 mb-6 max-w-2xl mx-auto">
             Thanks for scanning my NFC card! Let's connect.
           </p>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <div className="flex items-center gap-3 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full">
-              <span className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></span>
-              <span className="text-gray-200">
-                Auto-redirect in <span className="font-bold text-white">{redirectTimer}s</span>
-              </span>
-            </div>
-            
-            <motion.button
-              onClick={handleManualRedirect}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-semibold text-white shadow-lg hover:shadow-xl transition-shadow"
-            >
-              <span>Go to Portfolio</span>
-              <FiArrowRight className="text-xl" />
-            </motion.button>
-          </div>
+
         </motion.header>
 
         {/* Main Content Area */}
