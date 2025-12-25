@@ -119,7 +119,7 @@ export default function NFCPage() {
               
               {/* 2-column grid for mobile, 1 column for desktop */}
               <div className="grid grid-cols-2 md:grid-cols-1 gap-3 md:gap-4">
-                {CONTACT_LINKS.slice(0, 4).map((link) => (
+                {CONTACT_LINKS.slice(0, 5).map((link) => (
                   <motion.a
                     key={link.id}
                     href={link.url}
@@ -167,7 +167,7 @@ export default function NFCPage() {
               </div>
             </motion.div>
 
-            
+
             {/* Social Links Card */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}

@@ -11,6 +11,13 @@ export interface SocialLink {
 
 export const SOCIAL_LINKS: SocialLink[] = [
   { 
+    id: 'facebook',
+    icon: 'facebook',
+    label: 'Facebook', 
+    url: 'https://facebook.com/smsultan76', 
+    color: 'hover:text-blue-400'
+  },
+  { 
     id: 'github',
     icon: 'github',
     label: 'GitHub', 
@@ -31,16 +38,23 @@ export const SOCIAL_LINKS: SocialLink[] = [
     url: 'https://twitter.com/yourusername', 
     color: 'hover:text-blue-400'
   },
-  { 
-    id: 'facebook',
-    icon: 'facebook',
-    label: 'Facebook', 
-    url: 'https://facebook.com/smsultan76', 
-    color: 'hover:text-blue-400'
-  },
 ];
 
 export const CONTACT_LINKS: SocialLink[] = [
+    { 
+    id: 'phone',
+    icon: 'phone',
+    label: USER_CONFIG.phone, 
+    url: `tel:${USER_CONFIG.phone.replace(/\s+/g, '')}`, 
+    color: 'hover:text-green-400' 
+  },
+  { 
+    id: 'phone',
+    icon: 'phone',
+    label: USER_CONFIG.phone2, 
+    url: `tel:${USER_CONFIG.phone2.replace(/\s+/g, '')}`, 
+    color: 'hover:text-green-400' 
+  },
   { 
     id: 'email-primary',
     icon: 'mail',
@@ -51,21 +65,14 @@ export const CONTACT_LINKS: SocialLink[] = [
   { 
     id: 'email-secondary',
     icon: 'mail',
-    label: USER_CONFIG.alternateEmail, 
-    url: `mailto:${USER_CONFIG.alternateEmail}`, 
+    label: USER_CONFIG.email2, 
+    url: `mailto:${USER_CONFIG.email2}`, 
     color: 'hover:text-yellow-400' 
-  },
-  { 
-    id: 'phone',
-    icon: 'phone',
-    label: USER_CONFIG.phone, 
-    url: `tel:${USER_CONFIG.phone.replace(/\s+/g, '')}`, 
-    color: 'hover:text-green-400' 
   },
   { 
     id: 'website',
     icon: 'globe',
-    label: 'yourportfolio.com', 
+    label: 'Portfolio', 
     url: USER_CONFIG.website, 
     color: 'hover:text-indigo-400' 
   },
