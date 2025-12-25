@@ -37,7 +37,7 @@ export default function NFCPage() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="relative flex-shrink-0"
               >
-                <div className="relative w-48 h-48 rounded-[70] bg-gradient-to-br from-gray-800 to-gray-900 border-4 border-gray-700 overflow-hidden shadow-2xl">
+                <div className="relative w-48 h-48 rounded-[70] bg-gradient-to-br from-gray-800 to-gray-900 border-4 border-green-900 overflow-hidden shadow-2xl">
                   {USER_CONFIG.photoUrl ? (
                     <Image
                       src={USER_CONFIG.photoUrl}
@@ -97,53 +97,6 @@ export default function NFCPage() {
 
           {/* Main Dashboard - 3 Columns on Desktop */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Social Links Card */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className={`backdrop-blur-sm bg-white/5 rounded-2xl border p-6 transition-all duration-300 ${
-                activeSection === 'social' 
-                  ? 'border-purple-500/50 shadow-2xl shadow-purple-500/20' 
-                  : 'border-white/10 hover:border-purple-500/30'
-              }`}
-              onMouseEnter={() => setActiveSection('social')}
-              onMouseLeave={() => setActiveSection(null)}
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 rounded-lg bg-gradient-to-br from-purple-500/30 to-pink-500/30">
-                  <Icon name="messageCircle" className="text-xl text-purple-300" />
-                </div>
-                <h2 className="text-xl font-bold text-white">Social Links</h2>
-              </div>
-              
-              {/* 2-column grid for mobile, 1 column for desktop */}
-              <div className="grid grid-cols-2 md:grid-cols-1 gap-3">
-                {SOCIAL_LINKS.map((link) => (
-                  <motion.a
-                    key={link.id}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 transition-all duration-300 group"
-                    whileHover={{ x: 5 }}
-                  >
-                    <div className={`p-2 rounded-lg ${
-                      link.id === 'github' ? 'bg-gray-800/30' :
-                      link.id === 'linkedin' ? 'bg-blue-500/30' :
-                      link.id === 'twitter' ? 'bg-blue-400/30' :
-                      link.id === 'facebook' ? 'bg-blue-600/30' : 'bg-gray-800/30'
-                    }`}>
-                      <Icon name={link.icon} className="text-lg text-white" />
-                    </div>
-                    <span className="text-white flex-1 text-sm md:text-base">{link.label}</span>
-                    <span className="text-gray-300 group-hover:text-white transition-colors hidden md:inline">→</span>
-                    <span className="text-gray-300 group-hover:text-white transition-colors md:hidden">↗</span>
-                  </motion.a>
-                ))}
-              </div>
-            </motion.div>
-
             {/* Contact Info Card */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -211,6 +164,54 @@ export default function NFCPage() {
                     <div className="text-gray-400 text-xs">Location</div>
                   </div>
                 </div>
+              </div>
+            </motion.div>
+
+            
+            {/* Social Links Card */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className={`backdrop-blur-sm bg-white/5 rounded-2xl border p-6 transition-all duration-300 ${
+                activeSection === 'social' 
+                  ? 'border-purple-500/50 shadow-2xl shadow-purple-500/20' 
+                  : 'border-white/10 hover:border-purple-500/30'
+              }`}
+              onMouseEnter={() => setActiveSection('social')}
+              onMouseLeave={() => setActiveSection(null)}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-2 rounded-lg bg-gradient-to-br from-purple-500/30 to-pink-500/30">
+                  <Icon name="messageCircle" className="text-xl text-purple-300" />
+                </div>
+                <h2 className="text-xl font-bold text-white">Social Links</h2>
+              </div>
+              
+              {/* 2-column grid for mobile, 1 column for desktop */}
+              <div className="grid grid-cols-2 md:grid-cols-1 gap-3">
+                {SOCIAL_LINKS.map((link) => (
+                  <motion.a
+                    key={link.id}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 transition-all duration-300 group"
+                    whileHover={{ x: 5 }}
+                  >
+                    <div className={`p-2 rounded-lg ${
+                      link.id === 'github' ? 'bg-gray-800/30' :
+                      link.id === 'linkedin' ? 'bg-blue-500/30' :
+                      link.id === 'twitter' ? 'bg-blue-400/30' :
+                      link.id === 'facebook' ? 'bg-blue-600/30' : 'bg-gray-800/30'
+                    }`}>
+                      <Icon name={link.icon} className="text-lg text-white" />
+                    </div>
+                    <span className="text-white flex-1 text-sm md:text-base">{link.label}</span>
+                    <span className="text-gray-300 group-hover:text-white transition-colors hidden md:inline">→</span>
+                    <span className="text-gray-300 group-hover:text-white transition-colors md:hidden">↗</span>
+                  </motion.a>
+                ))}
               </div>
             </motion.div>
 
