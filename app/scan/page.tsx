@@ -8,7 +8,7 @@ import { USER_CONFIG } from '@/app/config/user-config';
 import { SOCIAL_LINKS, CONTACT_LINKS, NAVIGATION_LINKS } from '@/app/config/social-links';
 import Image from 'next/image';
 
-export default function NFCRedirectPage() {
+export default function NFCPage() {
   const [activeSection, setActiveSection] = useState<'social' | 'contact' | 'work' | null>(null);
 
   return (
@@ -16,7 +16,6 @@ export default function NFCRedirectPage() {
     <title>{USER_CONFIG.name}</title>
       <StarBackground starCount={200} mouseFollowStrength={0.3} />
 
-      {/* Gradient Orbs */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse delay-1000" />
@@ -38,15 +37,13 @@ export default function NFCRedirectPage() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="relative flex-shrink-0"
               >
-                <div className="absolute -inset-3 md:-inset-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full blur-xl opacity-20" />
-                <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 border-4 border-gray-700 overflow-hidden shadow-2xl">
+                <div className="relative w-48 h-48 rounded-[70] bg-gradient-to-br from-gray-800 to-gray-900 border-4 border-gray-700 overflow-hidden shadow-2xl">
                   {USER_CONFIG.photoUrl ? (
                     <Image
                       src={USER_CONFIG.photoUrl}
                       alt={USER_CONFIG.name}
                       fill
                       className="object-cover"
-                      sizes="(max-width: 768px) 128px, 160px"
                       priority
                     />
                   ) : (
@@ -56,7 +53,6 @@ export default function NFCRedirectPage() {
                   )}
                 </div>
                 
-                {/* Online Status Badge */}
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ repeat: Infinity, duration: 2 }}
@@ -78,10 +74,10 @@ export default function NFCRedirectPage() {
                     transition={{ duration: 1, delay: 0.3 }}
                     className="h-1 bg-gradient-to-r from-purple-500 to-pink-500 mb-4 mx-auto lg:mx-0"
                   />
-                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent mb-2">
+                  <h1 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent mb-2">
                     {USER_CONFIG.name}
                   </h1>
-                  <p className="text-lg md:text-xl text-purple-300 font-medium mb-4">
+                  <p className="text-xl md:text-2xl text-purple-300 font-medium mb-4">
                     {USER_CONFIG.title}
                   </p>
                   <motion.div
