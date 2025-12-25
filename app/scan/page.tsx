@@ -13,7 +13,8 @@ export default function NFCRedirectPage() {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-gray-900 via-black to-purple-900">
-      <StarBackground starCount={120} mouseFollowStrength={0.3} />
+    <title>{USER_CONFIG.name}</title>
+      <StarBackground starCount={200} mouseFollowStrength={0.3} />
 
       {/* Gradient Orbs */}
       <div className="absolute inset-0">
