@@ -200,7 +200,7 @@ export default function Hero() {
                       {/* <div className=" bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-6xl font-bold shadow-2xl border-4 border-white dark:border-gray-800"> */}
                       <div className="relative h-72 w-72 md:w-96 md:h-96 bg-gradient-to-tr from-black to-purple-400 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl">
                         <img
-                          src="/profile.png"
+                          src="/profile2.png"
                           alt="SM"
                         // className="w-full h-full object-cover"
                         />
