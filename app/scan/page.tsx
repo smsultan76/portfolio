@@ -8,14 +8,14 @@ import { USER_CONFIG } from '@/app/config/user-config';
 import { SOCIAL_LINKS, CONTACT_LINKS, NAVIGATION_LINKS } from '@/app/config/social-links';
 import Image from 'next/image';
 
-export default function NFCRedirectPage() {
+export default function NFCPage() {
   const [activeSection, setActiveSection] = useState<'social' | 'contact' | 'work' | null>(null);
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-gray-900 via-black to-purple-900">
-      <StarBackground starCount={120} mouseFollowStrength={0.3} />
+    <title>{USER_CONFIG.name}</title>
+      <StarBackground starCount={200} mouseFollowStrength={0.3} />
 
-      {/* Gradient Orbs */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse delay-1000" />
@@ -37,15 +37,13 @@ export default function NFCRedirectPage() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="relative flex-shrink-0"
               >
-                <div className="absolute -inset-3 md:-inset-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full blur-xl opacity-20" />
-                <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 border-4 border-gray-700 overflow-hidden shadow-2xl">
+                <div className="relative w-48 h-48 rounded-[70] bg-gradient-to-br from-gray-800 to-gray-900 border-4 border-green-900 overflow-hidden shadow-2xl">
                   {USER_CONFIG.photoUrl ? (
                     <Image
                       src={USER_CONFIG.photoUrl}
                       alt={USER_CONFIG.name}
                       fill
                       className="object-cover"
-                      sizes="(max-width: 768px) 128px, 160px"
                       priority
                     />
                   ) : (
@@ -55,7 +53,6 @@ export default function NFCRedirectPage() {
                   )}
                 </div>
                 
-                {/* Online Status Badge */}
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ repeat: Infinity, duration: 2 }}
@@ -77,10 +74,10 @@ export default function NFCRedirectPage() {
                     transition={{ duration: 1, delay: 0.3 }}
                     className="h-1 bg-gradient-to-r from-purple-500 to-pink-500 mb-4 mx-auto lg:mx-0"
                   />
-                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent mb-2">
+                  <h1 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent mb-2">
                     {USER_CONFIG.name}
                   </h1>
-                  <p className="text-lg md:text-xl text-purple-300 font-medium mb-4">
+                  <p className="text-xl md:text-2xl text-purple-300 font-medium mb-4">
                     {USER_CONFIG.title}
                   </p>
                   <motion.div
@@ -100,53 +97,6 @@ export default function NFCRedirectPage() {
 
           {/* Main Dashboard - 3 Columns on Desktop */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Social Links Card */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className={`backdrop-blur-sm bg-white/5 rounded-2xl border p-6 transition-all duration-300 ${
-                activeSection === 'social' 
-                  ? 'border-purple-500/50 shadow-2xl shadow-purple-500/20' 
-                  : 'border-white/10 hover:border-purple-500/30'
-              }`}
-              onMouseEnter={() => setActiveSection('social')}
-              onMouseLeave={() => setActiveSection(null)}
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 rounded-lg bg-gradient-to-br from-purple-500/30 to-pink-500/30">
-                  <Icon name="messageCircle" className="text-xl text-purple-300" />
-                </div>
-                <h2 className="text-xl font-bold text-white">Social Links</h2>
-              </div>
-              
-              {/* 2-column grid for mobile, 1 column for desktop */}
-              <div className="grid grid-cols-2 md:grid-cols-1 gap-3">
-                {SOCIAL_LINKS.map((link) => (
-                  <motion.a
-                    key={link.id}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 transition-all duration-300 group"
-                    whileHover={{ x: 5 }}
-                  >
-                    <div className={`p-2 rounded-lg ${
-                      link.id === 'github' ? 'bg-gray-800/30' :
-                      link.id === 'linkedin' ? 'bg-blue-500/30' :
-                      link.id === 'twitter' ? 'bg-blue-400/30' :
-                      link.id === 'facebook' ? 'bg-blue-600/30' : 'bg-gray-800/30'
-                    }`}>
-                      <Icon name={link.icon} className="text-lg text-white" />
-                    </div>
-                    <span className="text-white flex-1 text-sm md:text-base">{link.label}</span>
-                    <span className="text-gray-300 group-hover:text-white transition-colors hidden md:inline">→</span>
-                    <span className="text-gray-300 group-hover:text-white transition-colors md:hidden">↗</span>
-                  </motion.a>
-                ))}
-              </div>
-            </motion.div>
-
             {/* Contact Info Card */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -169,7 +119,7 @@ export default function NFCRedirectPage() {
               
               {/* 2-column grid for mobile, 1 column for desktop */}
               <div className="grid grid-cols-2 md:grid-cols-1 gap-3 md:gap-4">
-                {CONTACT_LINKS.slice(0, 4).map((link) => (
+                {CONTACT_LINKS.slice(0, 5).map((link) => (
                   <motion.a
                     key={link.id}
                     href={link.url}
@@ -214,6 +164,54 @@ export default function NFCRedirectPage() {
                     <div className="text-gray-400 text-xs">Location</div>
                   </div>
                 </div>
+              </div>
+            </motion.div>
+
+
+            {/* Social Links Card */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className={`backdrop-blur-sm bg-white/5 rounded-2xl border p-6 transition-all duration-300 ${
+                activeSection === 'social' 
+                  ? 'border-purple-500/50 shadow-2xl shadow-purple-500/20' 
+                  : 'border-white/10 hover:border-purple-500/30'
+              }`}
+              onMouseEnter={() => setActiveSection('social')}
+              onMouseLeave={() => setActiveSection(null)}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-2 rounded-lg bg-gradient-to-br from-purple-500/30 to-pink-500/30">
+                  <Icon name="messageCircle" className="text-xl text-purple-300" />
+                </div>
+                <h2 className="text-xl font-bold text-white">Social Links</h2>
+              </div>
+              
+              {/* 2-column grid for mobile, 1 column for desktop */}
+              <div className="grid grid-cols-2 md:grid-cols-1 gap-3">
+                {SOCIAL_LINKS.map((link) => (
+                  <motion.a
+                    key={link.id}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 transition-all duration-300 group"
+                    whileHover={{ x: 5 }}
+                  >
+                    <div className={`p-2 rounded-lg ${
+                      link.id === 'github' ? 'bg-gray-800/30' :
+                      link.id === 'linkedin' ? 'bg-blue-500/30' :
+                      link.id === 'twitter' ? 'bg-blue-400/30' :
+                      link.id === 'facebook' ? 'bg-blue-600/30' : 'bg-gray-800/30'
+                    }`}>
+                      <Icon name={link.icon} className="text-lg text-white" />
+                    </div>
+                    <span className="text-white flex-1 text-sm md:text-base">{link.label}</span>
+                    <span className="text-gray-300 group-hover:text-white transition-colors hidden md:inline">→</span>
+                    <span className="text-gray-300 group-hover:text-white transition-colors md:hidden">↗</span>
+                  </motion.a>
+                ))}
               </div>
             </motion.div>
 
