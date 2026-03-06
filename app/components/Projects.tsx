@@ -30,6 +30,15 @@ const projects = [
     category: 'Backend',
     source: 'https://github.com/smsultan76/CMS-Backend',
   },
+  {
+    img: '/project/localAssociation.png',
+    title: 'local Association website',
+    description: 'A local association dedicated to connect people and contribute in social welfare activities and community development.',
+    technologies: ['Laravel', 'Blade', 'JS', 'TailwindCSS', 'MySql'],
+    category: 'Full Stack',
+    live: 'https://sotota.free.nf/',
+    source: 'https://github.com/smsultan76',
+  },
 ];
 
 export default function Projects() {
