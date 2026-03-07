@@ -26,7 +26,7 @@ const projects = [
     img: '/project/cms-backend.png',
     title: 'CMS - REST API',
     description: 'Role Based Authentication REST API built with NestJS and PostgreSQL',
-    technologies: ['NestJS', 'PostgreSQL', 'Swagger'],
+    technologies: ['NestJS', 'PostgreSQL','Prisma', 'Swagger'],
     category: 'Backend',
     source: 'https://github.com/smsultan76/CMS-Backend',
   },
