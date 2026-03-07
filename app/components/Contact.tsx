@@ -6,6 +6,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    subject: '',
     message: '',
   });
 
@@ -14,7 +15,7 @@ export default function Contact() {
     // Handle form submission
     console.log('Form submitted:', formData);
     alert('Thank you for your message! I will get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -70,7 +71,13 @@ export default function Contact() {
                 </div>
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Subject</label>
+                  <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-600 text-gray-900 dark:text-white transition-all duration-300" 
+                    placeholder="Enter subject of your message"/>
+                </div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 my-2">
                   Your Message
                 </label>
                 <textarea
