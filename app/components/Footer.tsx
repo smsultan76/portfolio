@@ -115,6 +115,7 @@ const contactInfo = [
     icon: '📱',
     title: 'Phone',
     content: '+880 1723-332972',
+    link: 'tel:+8801723332972'
   },
 ];
 
