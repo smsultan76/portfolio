@@ -112,9 +112,10 @@ const contactInfo = [
     link: 'mailto:sultan.1021@fec.edu.bd'
   },
   {
-    icon: '📱',
+    icon: '📞',
     title: 'Phone',
     content: '+880 1723-332972',
+    link: 'tel:+8801723332972'
   },
 ];
 
@@ -235,36 +236,41 @@ export default function Footer() {
           >
             <h4 className="text-lg font-semibold text-white">Get In Touch</h4>
             <div className="space-y-4">
-              {contactInfo.map((contact, index) => (
-                <motion.div
-                  key={contact.title}
-                  className="flex items-start space-x-3 group cursor-pointer p-3 rounded-lg hover:bg-gray-800 transition-colors duration-300"
-                  initial={{ opacity: 0, x: 10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.5 + index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ x: 5 }}
-                >
-                  <span className="text-xl mt-1 group-hover:scale-110 transition-transform duration-300">
-                    {contact.icon}
-                  </span>
-                  <div className="flex-1">
-                    <h5 className="font-medium text-white group-hover:text-blue-400 transition-colors duration-300">
-                      {contact.title}
-                    </h5>
-                    {contact.link ? (
-                      <a 
-                        href={contact.link}
-                        className="text-gray-300 hover:text-blue-400 transition-colors duration-300"
-                      >
+              {contactInfo.map((contact, index) => {
+                const Content = (
+                  <motion.div
+                    key={contact.title}
+                    className="flex items-start space-x-3 group cursor-pointer p-3 rounded-lg hover:bg-gray-800 transition-colors duration-300"
+                    initial={{ opacity: 0, x: 10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.5 + index * 0.1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ x: 5 }}
+                  >
+                    <span className="text-xl mt-1 group-hover:scale-110 transition-transform duration-300">
+                      {contact.icon}
+                    </span>
+
+                    <div className="flex-1">
+                      <h5 className="font-medium text-white group-hover:text-blue-400 transition-colors duration-300">
+                        {contact.title}
+                      </h5>
+
+                      <p className="text-gray-300 group-hover:text-blue-400 transition-colors duration-300">
                         {contact.content}
-                      </a>
-                    ) : (
-                      <p className="text-gray-300">{contact.content}</p>
-                    )}
-                  </div>
-                </motion.div>
-              ))}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+
+                return contact.link ? (
+                  <a key={contact.title} href={contact.link} className="block">
+                    {Content}
+                  </a>
+                ) : (
+                  Content
+                );
+              })}
             </div>
 
             {/* Call to Action */}

@@ -26,9 +26,18 @@ const projects = [
     img: '/project/cms-backend.png',
     title: 'CMS - REST API',
     description: 'Role Based Authentication REST API built with NestJS and PostgreSQL',
-    technologies: ['NestJS', 'PostgreSQL', 'Swagger'],
+    technologies: ['NestJS', 'PostgreSQL','Prisma', 'Swagger'],
     category: 'Backend',
     source: 'https://github.com/smsultan76/CMS-Backend',
+  },
+  {
+    img: '/project/localAssociation.png',
+    title: 'local Association website',
+    description: 'A local association dedicated to connect people and contribute in social welfare activities and community development.',
+    technologies: ['Laravel', 'Blade', 'JS', 'TailwindCSS', 'MySql'],
+    category: 'Full Stack',
+    live: 'https://sotota.free.nf/',
+    source: 'https://github.com/smsultan76',
   },
 ];
 
