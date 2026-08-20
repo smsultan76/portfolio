@@ -43,7 +43,7 @@ const projects = [
     img: '/project/ecom.png',
     title: 'Book Selling Platform',
     description: 'A Online Book Selling Website build with raw PHP and sslcommerz',
-    technologies: ['PHP', 'HTML', 'CSS', 'JS'],
+    technologies: ['PHP', 'HTML', 'CSS', 'JavaScript'],
     category: 'Full Stack',
     live: 'https://boi-bazar.free.nf/',
     source: 'https://github.com/smsultan76/BookShop',

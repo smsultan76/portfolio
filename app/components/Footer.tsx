@@ -126,7 +126,7 @@ export default function Footer() {
     <footer className="bg-gray-900 dark:bg-gray-950 text-white py-10 px-2 transition-colors duration-300">
       <div className="container mx-auto px-6">
         {/* Main Footer Content - 3 Columns */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-20 lg:ml-16">
           
           {/* Section 1: Brand & Social Links */}
           <motion.div 
