@@ -123,10 +123,10 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 dark:bg-gray-950 text-white pt-16 pb-8 transition-colors duration-300">
+    <footer className="bg-gray-900 dark:bg-gray-950 text-white py-10 px-2 transition-colors duration-300">
       <div className="container mx-auto px-6">
         {/* Main Footer Content - 3 Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-20 mb-12 lg:ml-24">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-20">
           
           {/* Section 1: Brand & Social Links */}
           <motion.div 
@@ -176,7 +176,7 @@ export default function Footer() {
 
           {/* Section 2: Quick Links */}
           <motion.div 
-            className="space-y-6"
+            className="space-y-2"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -188,7 +188,7 @@ export default function Footer() {
                 <motion.a
                   key={link.name}
                   href={link.href}
-                  className="text-gray-300 hover:text-blue-400 transition-colors duration-300 py-2 px-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-800 flex items-center space-x-2"
+                  className="text-gray-300 hover:text-blue-400 transition-colors duration-300 py-1 px-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-800 flex items-center space-x-2"
                   whileHover={{ x: 5 }}
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
