@@ -89,7 +89,7 @@ export default function NFCPage() {
                 </div>
                 
                 <p className="text-gray-300 mt-4 md:mt-6 text-base md:text-lg max-w-xl mx-auto lg:mx-0">
-                  Welcome! Thanks for scanning my NFC card. Here's everything you need to connect with me.
+                  Welcome! Thanks for contact with me. Here's everything you need to connect with me.
                 </p>
               </motion.div>
             </div>
@@ -119,9 +119,9 @@ export default function NFCPage() {
               
               {/* 2-column grid for mobile, 1 column for desktop */}
               <div className="grid grid-cols-2 md:grid-cols-1 gap-3 md:gap-4">
-                {CONTACT_LINKS.slice(0, 5).map((link) => (
+                {CONTACT_LINKS.slice(0, 5).map((link, index) => (
                   <motion.a
-                    key={link.id}
+                    key={link.id + '-' + index}
                     href={link.url}
                     className="flex flex-col md:flex-row md:items-center gap-2 md:gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 transition-all duration-300 group"
                     whileHover={{ x: 5 }}
@@ -134,11 +134,6 @@ export default function NFCPage() {
                       }`}>
                         <Icon name={link.icon} className="text-lg text-white" />
                       </div>
-                      <span className="text-white text-sm font-medium md:hidden">
-                        {link.id.includes('email') ? 'Email' : 
-                         link.id === 'phone' ? 'Phone' :
-                         link.id === 'resume' ? 'Resume' : 'Website'}
-                      </span>
                     </div>
                     <div className="flex-1 text-center md:text-left">
                       <div className="text-white text-sm font-medium hidden md:block">{link.label}</div>
