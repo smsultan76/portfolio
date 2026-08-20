@@ -14,12 +14,12 @@ const projects = [
     source: 'https://github.com/smsultan76',
   },
   {
-    img: '/project/school.png',
-    title: 'School Management App',
-    description: 'App with Students, Results, Teachers, Notice etc. Fully Dynamic',
-    technologies: ['Laravel', 'Blade', 'JS', 'TailwindCSS', 'MySql'],
+    img: '/project/fd-ecom.png',
+    title: 'E-commerce Platform',
+    description: 'A Complete Application for Display and Sell Goods.',
+    technologies: ['Laravel', 'Vite', 'TailwindCSS', 'MySql', 'Language'],
     category: 'Full Stack',
-    live: 'https://sunriseschool.free.nf/',
+    live: 'https://frienddream.com/',
     source: 'https://github.com/smsultan76',
   },
   {
@@ -190,7 +190,7 @@ export default function Projects() {
                     {project.technologies.map((tech, techIndex) => (
                       <motion.span
                         key={tech}
-                        className="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm px-3 py-1 rounded-full"
+                        className="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm px-2 py-1 rounded-full"
                         initial={{ opacity: 0, scale: 0 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ delay: techIndex * 0.05 }}
