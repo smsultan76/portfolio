@@ -5,6 +5,24 @@ import { X, ChevronLeft, ChevronRight, Maximize2, ExternalLink, Github, Globe } 
 
 const projects = [
   {
+    img: '/project/FEC-clearance.png',
+    title: 'College Clearance App',
+    description: 'Faridpur Engineering College Students Clearance Application.',
+    technologies: ['PHP','Laravel','JS', 'TailwindCSS', 'MySql'],
+    category: 'Full Stack',
+    live: 'https://clearance.fec.edu.bd/',
+    source: 'https://github.com/smsultan76',
+  },
+  {
+    img: '/project/school.png',
+    title: 'School Management App',
+    description: 'App with Students, Results, Teachers, Notice etc. Fully Dynamic',
+    technologies: ['Laravel', 'Blade', 'JS', 'TailwindCSS', 'MySql'],
+    category: 'Full Stack',
+    live: 'https://sunriseschool.free.nf/',
+    source: 'https://github.com/smsultan76',
+  },
+  {
     img: '/project/school.png',
     title: 'School Management App',
     description: 'App with Students, Results, Teachers, Notice etc. Fully Dynamic',
