@@ -202,9 +202,9 @@ export default function Footer() {
             </div>
 
             {/* Additional Info */}
-            <div className="space-y-3 pt-4">
+            <div className="space-y-3">
               <motion.div 
-                className="flex items-center space-x-3 text-gray-300 p-3 rounded-lg bg-gray-800/50"
+                className="flex items-center space-x-3 text-gray-300 p-2 rounded-lg bg-gray-800/50"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
@@ -214,7 +214,7 @@ export default function Footer() {
                 <span>Available for freelance work</span>
               </motion.div>
               <motion.div 
-                className="flex items-center space-x-3 text-gray-300 p-3 rounded-lg bg-gray-800/50"
+                className="flex items-center space-x-3 text-gray-300 p-2 rounded-lg bg-gray-800/50"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.7 }}
@@ -228,19 +228,19 @@ export default function Footer() {
 
           {/* Section 3: Contact & Address */}
           <motion.div 
-            className="space-y-6"
+            className="space-y-2"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
             <h4 className="text-lg font-semibold text-white">Get In Touch</h4>
-            <div className="space-y-4">
+            <div className="space-y-2">
               {contactInfo.map((contact, index) => {
                 const Content = (
                   <motion.div
                     key={contact.title}
-                    className="flex items-start space-x-3 group cursor-pointer p-3 rounded-lg hover:bg-gray-800 transition-colors duration-300"
+                    className="flex items-start space-x-3 group cursor-pointer rounded-lg hover:bg-gray-800 transition-colors duration-300"
                     initial={{ opacity: 0, x: 10 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.5 + index * 0.1 }}
@@ -275,14 +275,14 @@ export default function Footer() {
 
             {/* Call to Action */}
             <motion.div
-              className="pt-4"
+              className="pt-1"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
               viewport={{ once: true }}
             >
               <motion.a
-                href="contact"
+                href="scan"
                 className="inline-flex items-center space-x-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
