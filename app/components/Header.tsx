@@ -9,9 +9,10 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
+    { name: 'Contact', href: '/scan'},
     { name: 'Skills', href: '/#skills' },
     { name: 'Projects', href: '/#projects' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Message', href: '/contact' },
   ];
 
   return (
@@ -38,8 +39,7 @@ export default function Header() {
             ))}
 
             {/* Theme Toggle Button */}
-            <button
-              onClick={toggleTheme}
+            <button onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300"
               aria-label="Toggle theme"
             >
