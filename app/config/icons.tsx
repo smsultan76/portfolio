@@ -1,3 +1,4 @@
+// app/config/icons.tsx
 import { 
   FiGithub, 
   FiLinkedin, 
@@ -13,7 +14,7 @@ import {
   FiMessageCircle,
   FiFacebook,
 } from 'react-icons/fi';
-import { IconType } from 'react-icons';
+import { TfiEmail } from 'react-icons/tfi';
 
 export const Icons = {
   github: FiGithub,
@@ -29,6 +30,7 @@ export const Icons = {
   code: FiCode,
   messageCircle: FiMessageCircle,
   facebook: FiFacebook,
+  email: TfiEmail,
 } as const;
 
 export type IconName = keyof typeof Icons;
