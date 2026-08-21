@@ -2,6 +2,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import { JSX } from 'react';
+import { SOCIAL_LINKS } from '../config/social-links';
 
 // Proper SVG icons for social media
 const SocialIcon = ({ icon }: { icon: string }) => {
@@ -151,9 +152,9 @@ export default function Footer() {
             <div className="space-y-4">
               <h4 className="text-lg font-semibold text-white">Connect With Me</h4>
               <div className="flex flex-wrap gap-3">
-                {socialLinks.map((social, index) => (
+                {SOCIAL_LINKS.map((social, index) => (
                   <motion.a
-                    key={social.name}
+                    key={social.id}
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"

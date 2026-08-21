@@ -38,6 +38,13 @@ export const SOCIAL_LINKS: SocialLink[] = [
     url: 'https://twitter.com/yourusername', 
     color: 'hover:text-blue-400'
   },
+  { 
+    id: 'email',
+    icon: 'email',
+    label: 'Email', 
+    url: 'mailto:sultanum.mobin@gmail.com', 
+    color: 'hover:text-blue-400'
+  },
 ];
 
 export const CONTACT_LINKS: SocialLink[] = [
