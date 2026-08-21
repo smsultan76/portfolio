@@ -2,7 +2,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import { SOCIAL_LINKS } from '../config/social-links';
-import { Icons } from '@/app/config/icons';
+import Icon from '@/app/config/icons';
 
 const quickLinks = [
   { name: 'Home', href: '/' },
@@ -64,28 +64,25 @@ export default function Footer() {
             <div className="space-y-4">
               <h4 className="text-lg font-semibold text-white">Connect With Me</h4>
               <div className="flex flex-wrap gap-3">
-                {SOCIAL_LINKS.map((social, index) => {
-                  const Icon = Icons[social.icon];
-                  return (
-                    <motion.a
-                      key={social.id}
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`p-3 rounded-lg transition-all duration-300 ${social.color} hover:bg-gray-700 group`}
-                      whileHover={{ scale: 1.1, y: -2 }}
-                      whileTap={{ scale: 0.95 }}
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      title={social.label}
-                    >
-                      <Icon className="h-5 w-5" />
-                      <span className="sr-only">{social.label}</span>
-                    </motion.a>
-                  );
-                })}
+                {SOCIAL_LINKS.map((social, index) => (
+                  <motion.a
+                    key={social.id}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`p-3 rounded-lg transition-all duration-300 ${social.color} hover:bg-gray-700 group`}
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    title={social.label}
+                  >
+                    <Icon name={social.icon}/>
+                    <span className="sr-only">{social.id}</span>
+                  </motion.a>
+                ))}
               </div>
             </div>
           </motion.div>
