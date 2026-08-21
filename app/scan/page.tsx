@@ -2,8 +2,9 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import Icon from '@/app/config/icons';
 import StarBackground from './components/StarBackground';
-import Icon from './components/Icon';
+
 import { USER_CONFIG } from '@/app/config/user-config';
 import { SOCIAL_LINKS, CONTACT_LINKS, NAVIGATION_LINKS } from '@/app/config/social-links';
 import Image from 'next/image';
