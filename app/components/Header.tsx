@@ -39,6 +39,8 @@ export default function Header() {
             ))}
 
             {/* Theme Toggle Button */}
+            <div className="text-gray-300 dark:text-gray-600 text-xl">|</div>
+
             <button onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300"
               aria-label="Toggle theme"
@@ -49,18 +51,12 @@ export default function Header() {
                 <Moon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
               )}
             </button>
+            {/* <div className="text-gray-300 dark:text-gray-600 text-xl">|</div>
 
-            {/* Divider */}
-            <div className="text-gray-300 dark:text-gray-600 text-xl">|</div>
-
-            {/* Login Button */}
-            <a
-              href="/login"
-              className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
-            >
+            <a href="/login" className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
               <LogIn className="w-4 h-4" />
               <span>Log in</span>
-            </a>
+            </a> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -79,13 +75,12 @@ export default function Header() {
             </button>
 
             {/* Login - Mobile */}
-            <a
-              href="/login"
+            {/* <a href="/login"
               className="p-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               aria-label="Login"
             >
               <LogIn className="w-5 h-5" />
-            </a>
+            </a> */}
 
             {/* Hamburger Menu Button */}
             <button
