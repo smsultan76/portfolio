@@ -14,7 +14,6 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -25,12 +24,14 @@ export default function Contact() {
       });
       const result = await response.json();
       if (!response.ok) {
-        throw new Error(result.Error || 'Failed to sent message');
+        toast.error(result.error || 'Something went wrong.');
+        return;
       }
-      toast.success('Thank you for your message! I will get back to you soon.');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      toast.success(result.message || 'Message sent successfully.');
+      setFormData({name: '', email: '', subject: '', message: '',});
     } catch (error) {
-      toast.error('Sorry, something went wrong. Please try again.');
+      console.error('Contact form error:', error);
+      toast.error('Unable to send message. Please try again.');
     }
   };
 

@@ -31,7 +31,7 @@ export async function POST(request: Request) {
 
         return Response.json({
             success: true,
-            message: 'Email sent successfully.',
+            message: 'Message sent successfully.',
         });
     } catch (error) {
         console.error('Contact form error: ', error);
