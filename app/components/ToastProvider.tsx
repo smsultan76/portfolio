@@ -130,18 +130,21 @@ function ToastItem({
         success: {
             border: 'border-green-500',
             icon: '✓',
+            font: 'text-green-600',
             iconBg: 'bg-green-500',
             title: 'Success',
         },
         error: {
             border: 'border-red-500',
             icon: '×',
+            font: 'text-red-600',
             iconBg: 'bg-red-500',
             title: 'Error',
         },
         warning: {
             border: 'border-yellow-500',
             icon: '!',
+            font: 'text-yellow-600',
             iconBg: 'bg-yellow-500',
             title: 'Warning',
         },
@@ -174,7 +177,10 @@ function ToastItem({
 
                 {/* Message */}
                 <div className="min-w-0 flex-1">
-                    <p className="font-semibold">{style.title}</p>
+                    <div className={`flex font-semibold ${style.font}`}>
+                        <div className={`w-5 h-5 rounded-full ${style.iconBg} text-md font-bold text-white`}>
+                            {style.icon+' '}
+                        </div> {style.title}</div>
 
                     <p className="mt-1 text-sm text-gray-600 dark:text-gray-300 break-words">
                         {toast.message}
@@ -182,11 +188,8 @@ function ToastItem({
                 </div>
 
                 {/* Close */}
-                <button
-                    onClick={onClose}
-                    className="text-xl leading-none text-gray-400 transition hover:text-gray-700 dark:hover:text-white"
-                    aria-label="Close notification"
-                >
+                <button onClick={onClose}
+                    className="absolute top-1 right-2 text-3xl leading-none text-gray-300 transition hover:text-gray-700 dark:hover:text-white" aria-label="Close notification">
                     ×
                 </button>
             </div>
