@@ -1,5 +1,6 @@
 // app/layout.tsx
 'use client';
+import { ToastProvider } from './components/ToastProvider';
 import { ThemeProvider } from './context/ThemeContext';
 import './globals.css';
 
@@ -12,7 +13,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ThemeProvider>
-          {children}
+          <ToastProvider>
+            {children}
+          </ToastProvider>
         </ThemeProvider>
       </body>
     </html>
