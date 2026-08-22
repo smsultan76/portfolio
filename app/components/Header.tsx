@@ -5,11 +5,11 @@ import { useTheme } from '../context/ThemeContext';
 import { Menu, X, Sun, Moon, LogIn } from 'lucide-react';
 
 export default function Header() {
-  const { isDark, toggleTheme } = useTheme();
+  const { isDark, mounted, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Contact', href: '/scan'},
+    { name: 'Contact', href: '/scan' },
     { name: 'Skills', href: '/#skills' },
     { name: 'Projects', href: '/#projects' },
     { name: 'Message', href: '/contact' },
@@ -40,15 +40,17 @@ export default function Header() {
 
             {/* Theme Toggle Button */}
             <div className="text-gray-300 dark:text-gray-600 text-xl">|</div>
-
             <button onClick={toggleTheme}
-              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300"
-              aria-label="Toggle theme"
-            >
-              {isDark ? (
-                <Sun className="w-5 h-5 text-yellow-400" />
+              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              aria-label="Toggle theme">
+              {mounted ? (
+                isDark ? (
+                  <Sun className="w-5 h-5 text-yellow-400" />
+                ) : (
+                  <Moon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                )
               ) : (
-                <Moon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                <div className="w-5 h-5" />
               )}
             </button>
             {/* <div className="text-gray-300 dark:text-gray-600 text-xl">|</div>
