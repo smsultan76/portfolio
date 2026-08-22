@@ -1,8 +1,10 @@
 // app/components/Contact.tsx
 'use client';
 import { useState } from 'react';
+import { useToast } from './ToastProvider';
 
 export default function Contact() {
+  const toast = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,13 +27,11 @@ export default function Contact() {
       if (!response.ok) {
         throw new Error(result.Error || 'Failed to sent message');
       }
+      toast.success('Thank you for your message! I will get back to you soon.');
+      setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
-      console.log(error);
-      alert('Sorry, something went wrong. Please try again.');
+      toast.error('Sorry, something went wrong. Please try again.');
     }
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I will get back to you soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
