@@ -9,6 +9,7 @@ import {
     useState,
     ReactNode,
 } from 'react';
+import Icon from '../config/icons';
 
 type ToastType = 'success' | 'error' | 'warning';
 
@@ -129,21 +130,21 @@ function ToastItem({
     const styles = {
         success: {
             border: 'border-green-500',
-            icon: '✓',
+            icon: 'success',
             font: 'text-green-600',
             iconBg: 'bg-green-500',
             title: 'Success',
         },
         error: {
             border: 'border-red-500',
-            icon: '×',
+            icon: 'error',
             font: 'text-red-600',
             iconBg: 'bg-red-500',
             title: 'Error',
         },
         warning: {
             border: 'border-yellow-500',
-            icon: '!',
+            icon: 'warning',
             font: 'text-yellow-600',
             iconBg: 'bg-yellow-500',
             title: 'Warning',
@@ -167,21 +168,12 @@ function ToastItem({
         transition-all duration-300`}
         >
             <div className="flex items-start gap-3 p-4">
-                {/* Icon */}
-                <div
-                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full
-            ${style.iconBg} text-lg font-bold text-white`}
-                >
-                    {style.icon}
-                </div>
-
                 {/* Message */}
                 <div className="min-w-0 flex-1">
                     <div className={`flex font-semibold ${style.font}`}>
-                        <div className={`w-5 h-5 rounded-full ${style.iconBg} text-md font-bold text-white`}>
-                            {style.icon+' '}
-                        </div> {style.title}</div>
-
+                        <Icon name={style.icon} className={`${style.font} mr-2`} />
+                        {style.title}
+                    </div>
                     <p className="mt-1 text-sm text-gray-600 dark:text-gray-300 break-words">
                         {toast.message}
                     </p>

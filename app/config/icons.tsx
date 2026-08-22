@@ -1,4 +1,5 @@
 // app/config/icons.tsx
+import { FaCheckCircle } from 'react-icons/fa';
 import { 
   FiGithub, 
   FiLinkedin, 
@@ -14,7 +15,9 @@ import {
   FiMessageCircle,
   FiFacebook,
 } from 'react-icons/fi';
+import { MdError } from 'react-icons/md';
 import { TfiEmail } from 'react-icons/tfi';
+import { TiWarning } from 'react-icons/ti';
 
 export const Icons = {
   github: FiGithub,
@@ -31,6 +34,9 @@ export const Icons = {
   messageCircle: FiMessageCircle,
   facebook: FiFacebook,
   email: TfiEmail,
+  success: FaCheckCircle,
+  error: MdError,
+  warning: TiWarning
 } as const;
 
 export type IconName = keyof typeof Icons;
