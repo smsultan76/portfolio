@@ -3,17 +3,12 @@ import { ToastProvider } from './components/ToastProvider';
 import { ThemeProvider } from './context/ThemeContext';
 import './globals.css';
 
-const themeScript = `
-  (function () {
-    try {
+const themeScript = `(function () { try {
       const theme = localStorage.getItem('theme');
-
       if (theme === 'dark') {
         document.documentElement.classList.add('dark');
-      }
-    } catch (e) {}
-  })();
-`;
+      }} catch (e) {}
+  })();`;
 export default function RootLayout({
   children,
 }: {
@@ -22,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript}}/>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
         <ThemeProvider>
