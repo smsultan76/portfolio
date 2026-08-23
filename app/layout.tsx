@@ -1,5 +1,4 @@
 // app/layout.tsx
-'use client';
 import { ToastProvider } from './components/ToastProvider';
 import { ThemeProvider } from './context/ThemeContext';
 import './globals.css';
