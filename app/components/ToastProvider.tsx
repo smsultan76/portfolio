@@ -149,7 +149,7 @@ function ToastItem({
             iconBg: 'bg-yellow-500',
             title: 'Warning',
         },
-    };
+    } as const;
 
     const style = styles[toast.type];
 
