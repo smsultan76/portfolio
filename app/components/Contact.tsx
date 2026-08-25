@@ -1,8 +1,10 @@
 // app/components/Contact.tsx
 'use client';
 import { useState } from 'react';
+import { useToast } from './ToastProvider';
 
 export default function Contact() {
+  const toast = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -10,12 +12,27 @@ export default function Contact() {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I will get back to you soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      const result = await response.json();
+      if (!response.ok) {
+        toast.error(result.error || 'Something went wrong.');
+        return;
+      }
+      toast.success(result.message || 'Message sent successfully.');
+      setFormData({name: '', email: '', subject: '', message: '',});
+    } catch (error) {
+      console.error('Contact form error:', error);
+      toast.error('Unable to send message. Please try again.');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -49,9 +66,9 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    required
                     className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-600 text-gray-900 dark:text-white transition-all duration-300"
                     placeholder="Enter your name"
+                    required
                   />
                 </div>
                 <div>
@@ -74,8 +91,8 @@ export default function Contact() {
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Subject</label>
                   <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-600 text-gray-900 dark:text-white transition-all duration-300" 
-                    placeholder="Enter subject of your message"/>
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-600 text-gray-900 dark:text-white transition-all duration-300"
+                    placeholder="Enter subject of your message" />
                 </div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 my-2">
                   Your Message
@@ -85,8 +102,8 @@ export default function Contact() {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  required
                   rows={6}
+                  required
                   className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-600 text-gray-900 dark:text-white transition-all duration-300 resize-none"
                   placeholder="Tell me about your project or just say hello..."
                 />

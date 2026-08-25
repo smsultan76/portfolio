@@ -1,3 +1,5 @@
+// app/config/icons.tsx
+import { FaCheckCircle } from 'react-icons/fa';
 import { 
   FiGithub, 
   FiLinkedin, 
@@ -13,7 +15,9 @@ import {
   FiMessageCircle,
   FiFacebook,
 } from 'react-icons/fi';
-import { IconType } from 'react-icons';
+import { MdError } from 'react-icons/md';
+import { TfiEmail } from 'react-icons/tfi';
+import { TiWarning } from 'react-icons/ti';
 
 export const Icons = {
   github: FiGithub,
@@ -29,6 +33,29 @@ export const Icons = {
   code: FiCode,
   messageCircle: FiMessageCircle,
   facebook: FiFacebook,
+  email: TfiEmail,
+  success: FaCheckCircle,
+  error: MdError,
+  warning: TiWarning
 } as const;
 
 export type IconName = keyof typeof Icons;
+
+interface IconProps {
+  name: IconName;
+  className?: string;
+  size?: number;
+}
+
+const Icon = ({ name, className = '', size = 24 }: IconProps) => {
+  const IconComponent = Icons[name];
+  
+  if (!IconComponent) {
+    console.warn(`Icon "${name}" not found`);
+    return null;
+  }
+
+  return <IconComponent className={className} size={size} />;
+};
+
+export default Icon;

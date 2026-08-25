@@ -5,13 +5,22 @@ import { X, ChevronLeft, ChevronRight, Maximize2, ExternalLink, Github, Globe } 
 
 const projects = [
   {
-    img: '/project/ecom.png',
-    title: 'E-Commerce Platform',
-    description: 'A Online Book Selling Website build with raw PHP and sslcommerz',
-    technologies: ['PHP', 'HTML', 'CSS', 'JS'],
+    img: '/project/FEC-clearance.png',
+    title: 'College Clearance App',
+    description: 'Faridpur Engineering College Students Clearance Application.',
+    technologies: ['PHP','Laravel','JS', 'TailwindCSS', 'MySql'],
     category: 'Full Stack',
-    live: 'https://boi-bazar.free.nf/',
-    source: 'https://github.com/smsultan76/BookShop',
+    live: 'https://clearance.fec.edu.bd/',
+    source: 'https://github.com/smsultan76',
+  },
+  {
+    img: '/project/fd-ecom.png',
+    title: 'E-commerce Platform',
+    description: 'A Complete Application for Display and Sell Goods.',
+    technologies: ['Laravel', 'Vite', 'TailwindCSS', 'MySql', 'Language'],
+    category: 'Full Stack',
+    live: 'https://frienddream.com/',
+    source: 'https://github.com/smsultan76',
   },
   {
     img: '/project/school.png',
@@ -26,9 +35,18 @@ const projects = [
     img: '/project/cms-backend.png',
     title: 'CMS - REST API',
     description: 'Role Based Authentication REST API built with NestJS and PostgreSQL',
-    technologies: ['NestJS', 'PostgreSQL','Prisma', 'Swagger'],
+    technologies: ['NestJS', 'PostgreSQL', 'Prisma', 'Swagger'],
     category: 'Backend',
     source: 'https://github.com/smsultan76/CMS-Backend',
+  },
+  {
+    img: '/project/ecom.png',
+    title: 'Book Selling Platform',
+    description: 'A Online Book Selling Website build with raw PHP and sslcommerz',
+    technologies: ['PHP', 'HTML', 'CSS', 'JavaScript'],
+    category: 'Full Stack',
+    live: 'https://boi-bazar.free.nf/',
+    source: 'https://github.com/smsultan76/BookShop',
   },
   {
     img: '/project/localAssociation.png',
@@ -70,7 +88,7 @@ export default function Projects() {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!selectedImage) return;
-      
+
       switch (e.key) {
         case 'Escape':
           handleCloseModal();
@@ -93,7 +111,7 @@ export default function Projects() {
       <section id="projects" className="min-h-screen py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <motion.h2 
+            <motion.h2
               className="text-4xl font-bold text-gray-800 dark:text-white mb-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -102,7 +120,7 @@ export default function Projects() {
             >
               Featured Projects
             </motion.h2>
-            <motion.p 
+            <motion.p
               className="text-xl text-gray-600 dark:text-gray-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -125,7 +143,7 @@ export default function Projects() {
                 whileHover={{ scale: 1.02 }}
               >
                 {/* Project Image with Click to Preview */}
-                <div 
+                <div
                   className="relative h-48 overflow-hidden group cursor-pointer"
                   onClick={() => handleImageClick(project.img, index)}
                 >
@@ -139,7 +157,7 @@ export default function Projects() {
                       e.currentTarget.className = 'absolute inset-0 w-full h-full object-cover bg-gradient-to-r from-blue-400 to-purple-500';
                     }}
                   />
-                  
+
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <div className="text-center p-4">
@@ -147,7 +165,7 @@ export default function Projects() {
                       <span className="text-white text-sm font-medium">Click to Preview</span>
                     </div>
                   </div>
-                  
+
                   {/* Quick View Badge */}
                   <div className="absolute top-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     Preview
@@ -172,7 +190,7 @@ export default function Projects() {
                     {project.technologies.map((tech, techIndex) => (
                       <motion.span
                         key={tech}
-                        className="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm px-3 py-1 rounded-full"
+                        className="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm px-2 py-1 rounded-full"
                         initial={{ opacity: 0, scale: 0 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ delay: techIndex * 0.05 }}
@@ -270,7 +288,7 @@ export default function Projects() {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
                 />
-                
+
                 {/* Image Info Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
                   <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
@@ -338,11 +356,10 @@ export default function Projects() {
                       setSelectedImage(project.img);
                       setCurrentImageIndex(index);
                     }}
-                    className={`flex-shrink-0 w-20 h-16 rounded-lg overflow-hidden border-2 transition-all ${
-                      currentImageIndex === index
+                    className={`flex-shrink-0 w-20 h-16 rounded-lg overflow-hidden border-2 transition-all ${currentImageIndex === index
                         ? 'border-blue-500 ring-2 ring-blue-500/30 scale-105'
                         : 'border-transparent hover:border-white/50'
-                    }`}
+                      }`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
