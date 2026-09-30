@@ -96,12 +96,12 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <h4 className="text-lg font-semibold text-white">Quick Links</h4>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 gap-x-10 gap-y-2">
               {quickLinks.map((link, index) => (
                 <motion.a
                   key={link.name}
                   href={link.href}
-                  className="text-gray-300 hover:text-blue-400 transition-colors duration-300 py-1 px-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-800 flex items-center space-x-2"
+                  className="text-gray-300 hover:text-blue-400 transition-colors duration-300 py-1 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-800 flex items-center space-x-2"
                   whileHover={{ x: 5 }}
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
