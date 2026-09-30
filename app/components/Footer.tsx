@@ -40,9 +40,9 @@ export default function Footer() {
       <div className="container mx-auto px-6">
         {/* Main Footer Content - 3 Columns */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-20 lg:ml-16">
-          
+
           {/* Section 1: Brand & Social Links */}
-          <motion.div 
+          <motion.div
             className="space-y-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -55,7 +55,7 @@ export default function Footer() {
                 Sultanum Mobin
               </h3>
               <p className="text-gray-300 leading-relaxed max-w-md">
-                Full Stack Developer passionate about creating efficient, scalable web applications. 
+                Full Stack Developer passionate about creating efficient, scalable web applications.
                 Let's build something amazing together!
               </p>
             </div>
@@ -79,7 +79,7 @@ export default function Footer() {
                     viewport={{ once: true }}
                     title={social.label}
                   >
-                    <Icon name={social.icon}/>
+                    <Icon name={social.icon} />
                     <span className="sr-only">{social.id}</span>
                   </motion.a>
                 ))}
@@ -88,7 +88,7 @@ export default function Footer() {
           </motion.div>
 
           {/* Section 2: Quick Links */}
-          <motion.div 
+          <motion.div
             className="space-y-2"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -116,7 +116,7 @@ export default function Footer() {
 
             {/* Additional Info */}
             <div className="space-y-3">
-              <motion.div 
+              <motion.div
                 className="flex items-center space-x-3 text-gray-300 p-2 rounded-lg bg-gray-800/50"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -126,7 +126,7 @@ export default function Footer() {
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                 <span>Available for freelance work</span>
               </motion.div>
-              <motion.div 
+              <motion.div
                 className="flex items-center space-x-3 text-gray-300 p-2 rounded-lg bg-gray-800/50"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -140,7 +140,7 @@ export default function Footer() {
           </motion.div>
 
           {/* Section 3: Contact & Address */}
-          <motion.div 
+          <motion.div
             className="space-y-2"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -209,7 +209,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <motion.div 
+        <motion.div
           className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

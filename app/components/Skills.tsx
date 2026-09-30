@@ -41,11 +41,10 @@ export default function Skills() {
             <button
               key={category}
               onClick={() => setActiveCategory(category as any)}
-              className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
-                activeCategory === category
+              className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${activeCategory === category
                   ? 'bg-blue-600 text-white shadow-lg'
                   : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'
-              }`}
+                }`}
             >
               {category.charAt(0).toUpperCase() + category.slice(1)}
             </button>
