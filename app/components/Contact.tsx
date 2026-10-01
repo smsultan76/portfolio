@@ -5,6 +5,7 @@ import { useToast } from './ToastProvider';
 
 export default function Contact() {
   const toast = useToast();
+  const [turnstileToken, setturnstileToken] = useState<string>('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,13 +15,22 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!turnstileToken) {
+      toast.error('Please complete the security check.');
+      return;
+    }
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          formData,
+          turnstileToken
+        }),
       });
       const result = await response.json();
       if (!response.ok) {
@@ -29,6 +39,7 @@ export default function Contact() {
       }
       toast.success(result.message || 'Message sent successfully.');
       setFormData({ name: '', email: '', subject: '', message: '', });
+      setturnstileToken('');
     } catch (error) {
       console.error('Contact form error:', error);
       toast.error('Unable to send message. Please try again.');
