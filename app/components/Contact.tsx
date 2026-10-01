@@ -2,9 +2,15 @@
 'use client';
 import { useState } from 'react';
 import { useToast } from './ToastProvider';
+import { Turnstile } from '@marsidev/react-turnstile';
+import { useTheme } from '../context/ThemeContext';
 
 export default function Contact() {
   const toast = useToast();
+  const { isDark, mounted } = useTheme();
+  if (!mounted) return null;
+
+  const [turnstileToken, setturnstileToken] = useState<string>('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,13 +20,22 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!turnstileToken) {
+      toast.error('Please complete the security check.');
+      return;
+    }
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          formData,
+          turnstileToken
+        }),
       });
       const result = await response.json();
       if (!response.ok) {
@@ -28,7 +43,8 @@ export default function Contact() {
         return;
       }
       toast.success(result.message || 'Message sent successfully.');
-      setFormData({name: '', email: '', subject: '', message: '',});
+      setFormData({ name: '', email: '', subject: '', message: '', });
+      setturnstileToken('');
     } catch (error) {
       console.error('Contact form error:', error);
       toast.error('Unable to send message. Please try again.');
@@ -106,6 +122,16 @@ export default function Contact() {
                   required
                   className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-600 text-gray-900 dark:text-white transition-all duration-300 resize-none"
                   placeholder="Tell me about your project or just say hello..."
+                />
+              </div>
+              <div className='flex justify-left rounded-xl overflow-hidden'>
+                <Turnstile siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!} onSuccess={(token) => setturnstileToken(token)}
+                  onError={() => {
+                    setturnstileToken('');
+                    toast.error('Security check failed. Please try again.')
+                  }}
+                  options={{ theme: isDark ? 'dark' : 'light' }}
+                  onExpire={() => setturnstileToken('')}
                 />
               </div>
               <button

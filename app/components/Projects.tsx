@@ -8,7 +8,7 @@ const projects = [
     img: '/project/FEC-clearance.png',
     title: 'College Clearance App',
     description: 'Faridpur Engineering College Students Clearance Application.',
-    technologies: ['PHP','Laravel','JS', 'TailwindCSS', 'MySql'],
+    technologies: ['PHP', 'Laravel', 'JS', 'TailwindCSS', 'MySql'],
     category: 'Full Stack',
     live: 'https://clearance.fec.edu.bd/',
     source: 'https://github.com/smsultan76',
@@ -357,8 +357,8 @@ export default function Projects() {
                       setCurrentImageIndex(index);
                     }}
                     className={`flex-shrink-0 w-20 h-16 rounded-lg overflow-hidden border-2 transition-all ${currentImageIndex === index
-                        ? 'border-blue-500 ring-2 ring-blue-500/30 scale-105'
-                        : 'border-transparent hover:border-white/50'
+                      ? 'border-blue-500 ring-2 ring-blue-500/30 scale-105'
+                      : 'border-transparent hover:border-white/50'
                       }`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
