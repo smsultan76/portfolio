@@ -16,14 +16,16 @@ export async function POST(request: Request) {
                 { status: 400 }
             );
         }
-        const formData = new FormData();
-        formData.append('secret', process.env.TURNSTILE_SECRET_KEY!);
-        formData.append('response', turnstileToken);
-        formData.append('remoteip', request.headers.get('x-forwarded-for') || '');
-
         const turnstileResponse = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
             method: 'POST',
-            body: formData,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                secret: process.env.TURNSTILE_SECRET_KEY,
+                response: turnstileToken,
+                remoteip: request.headers.get('x-forwarded-for') || '',
+            }),
         });
         const turnstileResult = await turnstileResponse.json();
         if (!turnstileResult.success) {
