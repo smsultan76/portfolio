@@ -79,7 +79,6 @@ export function ToastProvider({ children }: { children: ReactNode }) {
         </ToastContext.Provider>
     );
 }
-
 function ToastItem({
     toast,
     onClose,
@@ -99,7 +98,6 @@ function ToastItem({
         }
 
         let animationFrame: number;
-
         const tick = (time: number) => {
             if (lastTimeRef.current === null) {
                 lastTimeRef.current = time;
@@ -108,17 +106,22 @@ function ToastItem({
             const elapsed = time - lastTimeRef.current;
             lastTimeRef.current = time;
 
+            let shouldClose = false;
+
             setRemaining((prev) => {
                 const newRemaining = prev - elapsed;
 
                 if (newRemaining <= 0) {
-                    onClose();
+                    shouldClose = true;
                     return 0;
                 }
-
                 return newRemaining;
             });
 
+            if (shouldClose) {
+                onClose();
+                return;
+            }
             animationFrame = requestAnimationFrame(tick);
         };
 
@@ -159,16 +162,10 @@ function ToastItem({
     );
 
     return (
-        <div
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-            className={`relative overflow-hidden rounded-xl border-l-4 ${style.border}
-        bg-white dark:bg-gray-800 shadow-xl
-        text-gray-800 dark:text-white
-        transition-all duration-300`}
-        >
+        <div onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}
+            className={`relative overflow-hidden rounded-xl border-l-4 ${style.border} bg-white dark:bg-gray-800 
+                shadow-xl text-gray-800 dark:text-white transition-all duration-300`}>
             <div className="flex items-start gap-3 p-4">
-                {/* Message */}
                 <div className="min-w-0 flex-1">
                     <div className={`flex font-semibold ${style.font}`}>
                         <Icon name={style.icon} className={`${style.font} mr-2`} />
@@ -179,17 +176,14 @@ function ToastItem({
                     </p>
                 </div>
 
-                {/* Close */}
                 <button onClick={onClose}
                     className="absolute top-1 right-2 text-3xl leading-none text-gray-300 transition hover:text-gray-700 dark:hover:text-white" aria-label="Close notification">
                     ×
                 </button>
             </div>
 
-            {/* Progress bar */}
             <div className="h-1 w-full bg-gray-200 dark:bg-gray-700">
-                <div
-                    className={`h-full ${style.iconBg} transition-none`}
+                <div className={`h-full ${style.iconBg} transition-none`}
                     style={{
                         width: `${progress}%`,
                     }}
@@ -199,12 +193,11 @@ function ToastItem({
     );
 }
 
+
 export function useToast() {
     const context = useContext(ToastContext);
-
     if (!context) {
         throw new Error('useToast must be used inside ToastProvider');
     }
-
     return context;
 }
