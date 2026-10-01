@@ -3,9 +3,13 @@
 import { useState } from 'react';
 import { useToast } from './ToastProvider';
 import { Turnstile } from '@marsidev/react-turnstile';
+import { useTheme } from '../context/ThemeContext';
 
 export default function Contact() {
   const toast = useToast();
+  const { isDark, mounted } = useTheme();
+  if (!mounted) return null;
+
   const [turnstileToken, setturnstileToken] = useState<string>('');
   const [formData, setFormData] = useState({
     name: '',
@@ -120,12 +124,13 @@ export default function Contact() {
                   placeholder="Tell me about your project or just say hello..."
                 />
               </div>
-              <div className='flex rounded-xl'>
+              <div className='flex justify-left rounded-xl overflow-hidden'>
                 <Turnstile siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!} onSuccess={(token) => setturnstileToken(token)}
                   onError={() => {
                     setturnstileToken('');
                     toast.error('Security check failed. Please try again.')
                   }}
+                  options={{ theme: isDark ? 'dark' : 'light' }}
                   onExpire={() => setturnstileToken('')}
                 />
               </div>
