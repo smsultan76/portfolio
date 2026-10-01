@@ -2,6 +2,7 @@
 'use client';
 import { useState } from 'react';
 import { useToast } from './ToastProvider';
+import { Turnstile } from '@marsidev/react-turnstile';
 
 export default function Contact() {
   const toast = useToast();
@@ -117,6 +118,15 @@ export default function Contact() {
                   required
                   className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-600 text-gray-900 dark:text-white transition-all duration-300 resize-none"
                   placeholder="Tell me about your project or just say hello..."
+                />
+              </div>
+              <div className='flex rounded-xl'>
+                <Turnstile siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!} onSuccess={(token) => setturnstileToken(token)}
+                  onError={() => {
+                    setturnstileToken('');
+                    toast.error('Security check failed. Please try again.')
+                  }}
+                  onExpire={() => setturnstileToken('')}
                 />
               </div>
               <button
