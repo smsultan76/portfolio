@@ -8,7 +8,6 @@ import { useTheme } from '../context/ThemeContext';
 export default function Contact() {
   const toast = useToast();
   const { isDark, mounted } = useTheme();
-  if (!mounted) return null;
 
   const [turnstileToken, setturnstileToken] = useState<string>('');
   const [formData, setFormData] = useState({
@@ -33,7 +32,7 @@ export default function Contact() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          formData,
+          ...formData,
           turnstileToken
         }),
       });
