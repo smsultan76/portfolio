@@ -204,18 +204,6 @@ export default function Hero() {
                 LEFT CONTENT
             ====================================================== */}
             <div className="order-1 min-w-0 text-left">
-              {/* Availability */}
-              <motion.div variants={itemVariants as any}>
-                <div className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-blue-200 bg-white/80 px-3.5 py-2 text-xs font-bold text-blue-600 shadow-sm backdrop-blur-md sm:px-4 sm:text-sm dark:border-blue-900/60 dark:bg-gray-900/60 dark:text-blue-400">
-                  <span className="relative flex h-2.5 w-2.5 shrink-0">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                    <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
-                  </span>
-
-                  Available for opportunities
-                </div>
-              </motion.div>
-
               {/* Greeting */}
               <motion.div
                 className="mb-4 flex items-center gap-3 sm:mb-5"
