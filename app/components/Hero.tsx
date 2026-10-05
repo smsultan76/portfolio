@@ -145,14 +145,14 @@ export default function Hero() {
               </motion.div>
 
               <div className="mb-5 flex items-center justify-center gap-3 lg:justify-start">
-  <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-200 bg-blue-50 text-blue-600 shadow-sm dark:border-blue-900/50 dark:bg-blue-950/50 dark:text-blue-400">
-    <HiOutlineSparkles className="text-xl" />
-  </span>
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-200 bg-blue-50 text-blue-600 shadow-sm dark:border-blue-900/50 dark:bg-blue-950/50 dark:text-blue-400">
+                  <HiOutlineSparkles className="text-xl" />
+                </span>
 
-  <span className="text-sm font-bold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
-    Hello, I&apos;m
-  </span>
-</div>
+                <span className="text-sm font-bold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+                  Hello, I&apos;m
+                </span>
+              </div>
 
 
               <motion.h1
@@ -166,41 +166,41 @@ export default function Hero() {
               </motion.h1>
 
               <motion.div
-  className="mb-8 max-w-2xl"
-  variants={itemVariants as any}
->
-  <p className="text-xl font-medium leading-relaxed text-slate-600 dark:text-slate-300 sm:text-2xl">
-    I build{' '}
-    <span className="font-bold text-slate-900 dark:text-white">
-      digital products
-    </span>{' '}
-    that solve real problems.
-  </p>
+                className="mb-8 max-w-2xl"
+                variants={itemVariants as any}
+              >
+                <p className="text-xl font-medium leading-relaxed text-slate-600 dark:text-slate-300 sm:text-2xl">
+                  I build{' '}
+                  <span className="font-bold text-slate-900 dark:text-white">
+                    digital products
+                  </span>{' '}
+                  that solve real problems.
+                </p>
 
-  <p className="mt-4 text-base leading-7 text-slate-500 dark:text-slate-400 sm:text-lg">
-    From modern web platforms and mobile apps to scalable APIs and custom
-    software solutions, I turn ideas into{' '}
-    <span className="font-semibold text-blue-600 dark:text-blue-400">
-      fast, reliable, and user-friendly experiences.
-    </span>
-  </p>
+                <p className="mt-4 text-base leading-7 text-slate-500 dark:text-slate-400 sm:text-lg">
+                  From modern web platforms and mobile apps to scalable APIs and custom
+                  software solutions, I turn ideas into{' '}
+                  <span className="font-semibold text-blue-600 dark:text-blue-400">
+                    fast, reliable, and user-friendly experiences.
+                  </span>
+                </p>
 
-  <div className="mt-6 flex flex-wrap justify-center gap-2 lg:justify-start">
-    {[
-      { icon: FiCode, label: 'Web Apps' },
-      { icon: FiArrowUpRight, label: 'Mobile Apps' },
-      { icon: HiOutlineSparkles, label: 'Custom Solutions' },
-    ].map(({ icon: Icon, label }) => (
-      <span
-        key={label}
-        className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3.5 py-2 text-sm font-medium text-slate-600 shadow-sm backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-300"
-      >
-        <Icon className="text-blue-500" />
-        {label}
-      </span>
-    ))}
-  </div>
-</motion.div>
+                <div className="mt-6 flex flex-wrap justify-center gap-2 lg:justify-start">
+                  {[
+                    { icon: FiCode, label: 'Web Apps' },
+                    { icon: FiArrowUpRight, label: 'Mobile Apps' },
+                    { icon: HiOutlineSparkles, label: 'Custom Solutions' },
+                  ].map(({ icon: Icon, label }) => (
+                    <span
+                      key={label}
+                      className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3.5 py-2 text-sm font-medium text-slate-600 shadow-sm backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-300"
+                    >
+                      <Icon className="text-blue-500" />
+                      {label}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
 
 
               {/* CTA */}
