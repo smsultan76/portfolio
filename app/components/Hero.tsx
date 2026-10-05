@@ -288,11 +288,8 @@ export default function Hero() {
                   mb-8
                   flex
                   w-full
-                  flex-col
+                  flex-row
                   gap-3
-                  min-[480px]:flex-row
-                  min-[480px]:flex-wrap
-                  sm:mb-9
                 "
                 variants={itemVariants as any}
               >
