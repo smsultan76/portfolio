@@ -47,7 +47,7 @@ type AnimationVariants = {
 };
 
 export default function Hero() {
-  const profileRef = useRef(null);
+  const profileRef = useRef<HTMLDivElement>(null);
   const [showCvPreview, setShowCvPreview] = useState(false);
 
   // Prevent background scrolling while CV preview is open
@@ -80,7 +80,6 @@ export default function Hero() {
     };
   }, [showCvPreview]);
 
-  // Animation variants
   const containerVariants: AnimationVariants = {
     hidden: {
       opacity: 0,
@@ -88,22 +87,22 @@ export default function Hero() {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.12,
+        delayChildren: 0.15,
+        staggerChildren: 0.1,
       },
     },
   };
 
   const itemVariants: AnimationVariants = {
     hidden: {
-      y: 25,
+      y: 20,
       opacity: 0,
     },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.7,
+        duration: 0.65,
         ease: 'easeOut',
       },
     },
@@ -111,8 +110,8 @@ export default function Hero() {
 
   const profileVariants: AnimationVariants = {
     hidden: {
-      scale: 0.85,
-      rotateY: 25,
+      scale: 0.9,
+      rotateY: 15,
       opacity: 0,
     },
     visible: {
@@ -120,17 +119,17 @@ export default function Hero() {
       rotateY: 0,
       opacity: 1,
       transition: {
-        duration: 1,
+        duration: 0.9,
         ease: 'easeOut',
         type: 'spring',
         stiffness: 100,
       },
     },
     hover: {
-      scale: 1.015,
+      scale: 1.01,
       rotateY: 2,
       transition: {
-        duration: 0.35,
+        duration: 0.3,
       },
     },
   };
@@ -140,21 +139,19 @@ export default function Hero() {
   return (
     <>
       {/* =========================================================
-          HERO SECTION
+          HERO
       ========================================================== */}
-      <section className="relative min-h-screen overflow-hidden bg-slate-50 dark:bg-gray-950">
-        {/* Background Effects */}
+      <section className="relative overflow-hidden bg-slate-50 dark:bg-gray-950">
+        {/* =======================================================
+            BACKGROUND
+        ======================================================== */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          {/* Blue Glow */}
-          <div className="absolute -left-40 -top-40 h-[450px] w-[450px] rounded-full bg-blue-400/20 blur-3xl dark:bg-blue-600/10" />
+          <div className="absolute -left-40 -top-40 h-[350px] w-[350px] rounded-full bg-blue-400/20 blur-3xl sm:h-[450px] sm:w-[450px] dark:bg-blue-600/10" />
 
-          {/* Purple Glow */}
-          <div className="absolute -right-40 top-1/3 h-[500px] w-[500px] rounded-full bg-purple-400/20 blur-3xl dark:bg-purple-600/10" />
+          <div className="absolute -right-40 top-1/3 h-[400px] w-[400px] rounded-full bg-purple-400/20 blur-3xl sm:h-[500px] sm:w-[500px] dark:bg-purple-600/10" />
 
-          {/* Cyan Glow */}
-          <div className="absolute -bottom-40 left-1/3 h-[400px] w-[400px] rounded-full bg-cyan-300/20 blur-3xl dark:bg-cyan-600/10" />
+          <div className="absolute -bottom-40 left-1/3 h-[350px] w-[350px] rounded-full bg-cyan-300/20 blur-3xl sm:h-[400px] sm:w-[400px] dark:bg-cyan-600/10" />
 
-          {/* Grid */}
           <div
             className="absolute inset-0 opacity-[0.035] dark:opacity-[0.04]"
             style={{
@@ -165,22 +162,52 @@ export default function Hero() {
           />
         </div>
 
-        {/* Main Container */}
-        <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-7xl items-center px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-16">
+        {/* =======================================================
+            MAIN CONTAINER
+        ======================================================== */}
+        <div
+          className="
+            relative
+            z-10
+            mx-auto
+            w-full
+            max-w-[1500px]
+            px-5
+            py-16
+            sm:px-8
+            sm:py-20
+            md:px-10
+            lg:px-12
+            lg:py-24
+            xl:px-16
+            2xl:px-20
+          "
+        >
           <motion.div
-            className="grid w-full grid-cols-1 items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 xl:gap-24"
+            className="
+              grid
+              w-full
+              grid-cols-1
+              items-center
+              gap-14
+              lg:grid-cols-[minmax(0,1.05fr)_minmax(380px,0.95fr)]
+              lg:gap-12
+              xl:grid-cols-[minmax(0,1fr)_minmax(460px,0.9fr)]
+              xl:gap-20
+              2xl:gap-28
+            "
             initial="hidden"
             animate="visible"
             variants={containerVariants as any}
           >
             {/* =====================================================
-                LEFT SIDE - CONTENT
+                LEFT CONTENT
             ====================================================== */}
-            <div className="order-1 text-left">
-              {/* Availability Badge */}
+            <div className="order-1 min-w-0 text-left">
+              {/* Availability */}
               <motion.div variants={itemVariants as any}>
-                <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/80 px-4 py-2 text-xs font-bold text-blue-600 shadow-sm backdrop-blur-md dark:border-blue-900/60 dark:bg-gray-900/60 dark:text-blue-400 sm:text-sm">
-                  <span className="relative flex h-2.5 w-2.5">
+                <div className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-blue-200 bg-white/80 px-3.5 py-2 text-xs font-bold text-blue-600 shadow-sm backdrop-blur-md sm:px-4 sm:text-sm dark:border-blue-900/60 dark:bg-gray-900/60 dark:text-blue-400">
+                  <span className="relative flex h-2.5 w-2.5 shrink-0">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                     <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
                   </span>
@@ -191,21 +218,30 @@ export default function Hero() {
 
               {/* Greeting */}
               <motion.div
-                className="mb-5 flex items-center justify-start gap-3"
+                className="mb-4 flex items-center gap-3 sm:mb-5"
                 variants={itemVariants as any}
               >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-blue-200 bg-blue-50 text-blue-600 shadow-sm dark:border-blue-900/50 dark:bg-blue-950/50 dark:text-blue-400">
-                  <HiOutlineSparkles className="text-xl" />
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-blue-200 bg-blue-50 text-blue-600 shadow-sm sm:h-10 sm:w-10 dark:border-blue-900/50 dark:bg-blue-950/50 dark:text-blue-400">
+                  <HiOutlineSparkles className="text-lg sm:text-xl" />
                 </span>
 
-                <span className="text-sm font-bold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+                <span className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500 sm:text-sm sm:tracking-[0.2em] dark:text-slate-400">
                   Hello, I&apos;m
                 </span>
               </motion.div>
 
               {/* Name */}
               <motion.h1
-                className="mb-6 text-5xl font-black leading-[0.95] tracking-tight text-slate-900 dark:text-white sm:text-6xl md:text-7xl lg:text-[4.5rem] xl:text-[5.2rem]"
+                className="
+                  mb-5
+                  text-[clamp(3rem,9vw,6.5rem)]
+                  font-black
+                  leading-[0.9]
+                  tracking-[-0.04em]
+                  text-slate-900
+                  sm:mb-6
+                  dark:text-white
+                "
                 variants={itemVariants as any}
               >
                 Sultanum
@@ -215,12 +251,12 @@ export default function Hero() {
                 </span>
               </motion.h1>
 
-              {/* Main Description */}
+              {/* Description */}
               <motion.div
-                className="mb-8 max-w-2xl"
+                className="mb-7 max-w-[760px] sm:mb-8"
                 variants={itemVariants as any}
               >
-                <p className="text-xl font-medium leading-relaxed text-slate-600 dark:text-slate-300 sm:text-2xl">
+                <p className="text-[clamp(1.15rem,2.3vw,1.65rem)] font-medium leading-[1.5] text-slate-600 dark:text-slate-300">
                   I build{' '}
                   <span className="font-bold text-slate-900 dark:text-white">
                     digital products
@@ -228,7 +264,7 @@ export default function Hero() {
                   that solve real problems.
                 </p>
 
-                <p className="mt-4 text-base leading-7 text-slate-500 dark:text-slate-400 sm:text-lg">
+                <p className="mt-3 max-w-[700px] text-[clamp(0.95rem,1.5vw,1.15rem)] leading-7 text-slate-500 sm:mt-4 sm:leading-8 dark:text-slate-400">
                   From modern web platforms and mobile apps to scalable APIs
                   and custom software solutions, I turn ideas into{' '}
                   <span className="font-semibold text-blue-600 dark:text-blue-400">
@@ -239,40 +275,75 @@ export default function Hero() {
 
               {/* Service Tags */}
               <motion.div
-                className="mb-9 flex flex-wrap justify-start gap-2"
+                className="mb-7 flex flex-wrap gap-2 sm:mb-9"
                 variants={itemVariants as any}
               >
-                {/* Web Apps */}
-                <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3.5 py-2 text-sm font-medium text-slate-600 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-300 hover:text-blue-600 dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-300 dark:hover:border-blue-600 dark:hover:text-blue-400">
-                  <FiCode className="text-blue-500" />
+                <div className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/70 px-3 py-1.5 text-xs font-medium text-slate-600 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-300 hover:text-blue-600 sm:gap-2 sm:px-3.5 sm:py-2 sm:text-sm dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-300 dark:hover:border-blue-600 dark:hover:text-blue-400">
+                  <FiCode className="shrink-0 text-blue-500" />
                   Web Apps
                 </div>
 
-                {/* Mobile Apps */}
-                <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3.5 py-2 text-sm font-medium text-slate-600 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-purple-300 hover:text-purple-600 dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-300 dark:hover:border-purple-600 dark:hover:text-purple-400">
-                  <FiSmartphone className="text-purple-500" />
+                <div className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/70 px-3 py-1.5 text-xs font-medium text-slate-600 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-purple-300 hover:text-purple-600 sm:gap-2 sm:px-3.5 sm:py-2 sm:text-sm dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-300 dark:hover:border-purple-600 dark:hover:text-purple-400">
+                  <FiSmartphone className="shrink-0 text-purple-500" />
                   Mobile Apps
                 </div>
 
-                {/* Custom Solutions */}
-                <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3.5 py-2 text-sm font-medium text-slate-600 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-300 hover:text-emerald-600 dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-300 dark:hover:border-emerald-600 dark:hover:text-emerald-400">
-                  <FiLayers className="text-emerald-500" />
+                <div className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/70 px-3 py-1.5 text-xs font-medium text-slate-600 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-300 hover:text-emerald-600 sm:gap-2 sm:px-3.5 sm:py-2 sm:text-sm dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-300 dark:hover:border-emerald-600 dark:hover:text-emerald-400">
+                  <FiLayers className="shrink-0 text-emerald-500" />
                   Custom Solutions
                 </div>
               </motion.div>
 
-              {/* CTA Buttons */}
+              {/* CTA */}
               <motion.div
-                className="mb-9 flex flex-col justify-start gap-3 sm:flex-row"
+                className="
+                  mb-8
+                  flex
+                  w-full
+                  flex-col
+                  gap-3
+                  min-[480px]:flex-row
+                  min-[480px]:flex-wrap
+                  sm:mb-9
+                "
                 variants={itemVariants as any}
               >
-                {/* Projects */}
-                <Link href="#projects" className="w-full sm:w-auto">
+                {/* Projects Button */}
+                <Link
+                  href="#projects"
+                  className="w-full min-[480px]:w-auto"
+                >
                   <motion.button
                     type="button"
-                    className="group flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-7 py-4 text-base font-bold text-white shadow-xl shadow-blue-600/20 transition-all duration-300 hover:shadow-blue-600/40 sm:px-8 sm:text-lg"
+                    className="
+                      group
+                      flex
+                      w-full
+                      items-center
+                      justify-center
+                      gap-2
+                      rounded-xl
+                      bg-gradient-to-r
+                      from-blue-600
+                      to-indigo-600
+                      px-6
+                      py-3.5
+                      text-sm
+                      font-bold
+                      text-white
+                      shadow-xl
+                      shadow-blue-600/20
+                      transition-all
+                      duration-300
+                      hover:shadow-blue-600/40
+                      sm:px-7
+                      sm:py-4
+                      sm:text-base
+                      lg:px-8
+                      lg:text-lg
+                    "
                     whileHover={{
-                      scale: 1.03,
+                      scale: 1.025,
                       y: -2,
                     }}
                     whileTap={{
@@ -285,20 +356,54 @@ export default function Hero() {
                   </motion.button>
                 </Link>
 
-                {/* CV */}
+                {/* CV Button */}
                 <motion.button
                   type="button"
                   onClick={() => setShowCvPreview(true)}
-                  className="group flex w-full items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white/80 px-7 py-4 text-base font-bold text-slate-700 shadow-lg shadow-slate-900/5 backdrop-blur-sm transition-all duration-300 hover:border-blue-500 hover:text-blue-600 dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-200 dark:hover:border-blue-400 dark:hover:text-blue-400 sm:w-auto sm:px-8 sm:text-lg"
+                  className="
+                    group
+                    flex
+                    w-full
+                    items-center
+                    justify-center
+                    gap-2
+                    rounded-xl
+                    border
+                    border-slate-300
+                    bg-white/80
+                    px-6
+                    py-3.5
+                    text-sm
+                    font-bold
+                    text-slate-700
+                    shadow-lg
+                    shadow-slate-900/5
+                    backdrop-blur-sm
+                    transition-all
+                    duration-300
+                    hover:border-blue-500
+                    hover:text-blue-600
+                    min-[480px]:w-auto
+                    sm:px-7
+                    sm:py-4
+                    sm:text-base
+                    dark:border-slate-700
+                    dark:bg-slate-900/70
+                    dark:text-slate-200
+                    dark:hover:border-blue-400
+                    dark:hover:text-blue-400
+                    lg:px-8
+                    lg:text-lg
+                  "
                   whileHover={{
-                    scale: 1.03,
+                    scale: 1.025,
                     y: -2,
                   }}
                   whileTap={{
                     scale: 0.97,
                   }}
                 >
-                  <span className="text-xl">📄</span>
+                  <span className="text-lg sm:text-xl">📄</span>
 
                   View CV
 
@@ -308,18 +413,18 @@ export default function Hero() {
 
               {/* Tech Stack */}
               <motion.div
-                className="flex flex-col items-start gap-4 sm:flex-row sm:items-center"
+                className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4"
                 variants={itemVariants as any}
               >
-                <span className="whitespace-nowrap text-sm font-medium text-slate-400 dark:text-slate-500">
+                <span className="whitespace-nowrap text-xs font-medium text-slate-400 sm:text-sm dark:text-slate-500">
                   Built with
                 </span>
 
-                <div className="flex flex-wrap justify-start gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {techStack.map((tech, index) => (
                     <motion.span
                       key={tech}
-                      className="rounded-full border border-slate-200 bg-white/80 px-3.5 py-1.5 text-xs font-semibold text-slate-600 shadow-sm backdrop-blur-sm transition-colors hover:border-blue-300 hover:text-blue-600 dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-300 dark:hover:border-blue-600 dark:hover:text-blue-400 sm:text-sm"
+                      className="rounded-full border border-slate-200 bg-white/80 px-2.5 py-1 text-[11px] font-semibold text-slate-600 shadow-sm backdrop-blur-sm transition-colors hover:border-blue-300 hover:text-blue-600 sm:px-3.5 sm:py-1.5 sm:text-sm dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-300 dark:hover:border-blue-600 dark:hover:text-blue-400"
                       initial={{
                         opacity: 0,
                         scale: 0.8,
@@ -344,18 +449,20 @@ export default function Hero() {
             </div>
 
             {/* =====================================================
-                RIGHT SIDE - PROFILE
-
-                MOBILE:
-                Content first -> Profile below
-
-                DESKTOP:
-                Content left -> Profile right
+                PROFILE
             ====================================================== */}
-            <div className="order-2 flex justify-start lg:justify-end">
+            <div className="order-2 flex w-full justify-center lg:justify-end">
               <motion.div
                 ref={profileRef}
-                className="relative w-full max-w-[390px] sm:max-w-[460px]"
+                className="
+                  relative
+                  w-full
+                  max-w-[340px]
+                  sm:max-w-[410px]
+                  md:max-w-[450px]
+                  lg:max-w-[500px]
+                  xl:max-w-[540px]
+                "
                 initial="hidden"
                 animate="visible"
                 whileHover="hover"
@@ -363,7 +470,7 @@ export default function Hero() {
               >
                 {/* Outer Glow */}
                 <motion.div
-                  className="absolute -inset-4 rounded-[2rem] bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 blur-2xl"
+                  className="absolute -inset-3 rounded-[2rem] bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 blur-2xl sm:-inset-5"
                   animate={{
                     opacity: [0.5, 0.8, 0.5],
                     scale: [0.98, 1.02, 0.98],
@@ -375,32 +482,32 @@ export default function Hero() {
                   }}
                 />
 
-                {/* Main Profile Card */}
-                <div className="relative rounded-[2rem] border border-white/70 bg-white/70 p-2 shadow-2xl shadow-blue-900/10 backdrop-blur-xl dark:border-slate-700/70 dark:bg-slate-900/70">
-                  <div className="relative overflow-hidden rounded-[1.6rem] bg-gradient-to-br from-slate-950 via-indigo-950 to-purple-950">
+                {/* Main Card */}
+                <div className="relative rounded-[1.5rem] border border-white/70 bg-white/70 p-1.5 shadow-2xl shadow-blue-900/10 backdrop-blur-xl sm:rounded-[2rem] sm:p-2 dark:border-slate-700/70 dark:bg-slate-900/70">
+                  <div className="relative overflow-hidden rounded-[1.2rem] bg-gradient-to-br from-slate-950 via-indigo-950 to-purple-950 sm:rounded-[1.6rem]">
                     {/* Card Glow */}
-                    <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-blue-500/30 blur-3xl" />
+                    <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-blue-500/30 blur-3xl sm:-right-20 sm:-top-20 sm:h-60 sm:w-60" />
 
-                    <div className="absolute -bottom-24 -left-20 h-64 w-64 rounded-full bg-purple-500/25 blur-3xl" />
+                    <div className="absolute -bottom-20 -left-16 h-52 w-52 rounded-full bg-purple-500/25 blur-3xl sm:-bottom-24 sm:-left-20 sm:h-64 sm:w-64" />
 
                     {/* Card Header */}
-                    <div className="relative z-10 flex items-center justify-between px-5 pt-5 sm:px-8 sm:pt-8">
-                      <div className="rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-[10px] font-semibold tracking-wider text-white/80 backdrop-blur-md sm:text-xs">
+                    <div className="relative z-10 flex items-center justify-between gap-3 px-4 pt-4 sm:px-7 sm:pt-7 md:px-8 md:pt-8">
+                      <div className="min-w-0 rounded-full border border-white/10 bg-white/10 px-2.5 py-1.5 text-[8px] font-semibold tracking-[0.12em] text-white/80 backdrop-blur-md sm:px-3 sm:text-[10px] sm:tracking-wider md:text-xs">
                         FULL STACK DEVELOPER
                       </div>
 
-                      <div className="flex items-center gap-2 text-[10px] text-white/60 sm:text-xs">
-                        <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-lg shadow-emerald-400/50" />
+                      <div className="flex shrink-0 items-center gap-1.5 text-[9px] text-white/60 sm:gap-2 sm:text-xs">
+                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-lg shadow-emerald-400/50 sm:h-2 sm:w-2" />
                         Online
                       </div>
                     </div>
 
                     {/* Profile Image */}
-                    <div className="relative z-10 flex justify-center px-5 pb-3 pt-8 sm:px-10 sm:pt-10">
+                    <div className="relative z-10 flex justify-center px-4 pb-2 pt-7 sm:px-8 sm:pt-9 md:px-10 md:pt-10">
                       <div className="relative">
                         {/* Rotating Ring */}
                         <motion.div
-                          className="absolute -inset-3 rounded-full border border-dashed border-blue-300/40"
+                          className="absolute -inset-2 rounded-full border border-dashed border-blue-300/40 sm:-inset-3"
                           animate={{
                             rotate: 360,
                           }}
@@ -412,7 +519,23 @@ export default function Hero() {
                         />
 
                         {/* Image */}
-                        <div className="relative h-56 w-56 overflow-hidden rounded-full border-[5px] border-white/90 bg-gradient-to-tr from-blue-600 to-purple-600 shadow-2xl shadow-blue-500/30 sm:h-72 sm:w-72 md:h-80 md:w-80">
+                        <div
+                          className="
+                            relative
+                            h-[clamp(175px,35vw,310px)]
+                            w-[clamp(175px,35vw,310px)]
+                            overflow-hidden
+                            rounded-full
+                            border-[4px]
+                            border-white/90
+                            bg-gradient-to-tr
+                            from-blue-600
+                            to-purple-600
+                            shadow-2xl
+                            shadow-blue-500/30
+                            sm:border-[5px]
+                          "
+                        >
                           <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/20 via-transparent to-white/10" />
 
                           <img
@@ -424,7 +547,7 @@ export default function Hero() {
 
                         {/* Floating Status */}
                         <motion.div
-                          className="absolute bottom-2 right-0 flex items-center gap-2 rounded-full border border-white/20 bg-slate-900/90 px-3 py-2 text-[10px] font-semibold text-white shadow-xl backdrop-blur-md sm:bottom-3 sm:right-1 sm:text-xs"
+                          className="absolute bottom-1 right-0 flex items-center gap-1.5 rounded-full border border-white/20 bg-slate-900/90 px-2.5 py-1.5 text-[9px] font-semibold text-white shadow-xl backdrop-blur-md sm:bottom-2 sm:right-1 sm:gap-2 sm:px-3 sm:py-2 sm:text-xs"
                           animate={{
                             y: [0, -5, 0],
                           }}
@@ -434,19 +557,19 @@ export default function Hero() {
                             ease: 'easeInOut',
                           }}
                         >
-                          <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 sm:h-2 sm:w-2" />
                           Open to work
                         </motion.div>
                       </div>
                     </div>
 
                     {/* Name */}
-                    <div className="relative z-10 px-6 pb-7 text-center sm:px-8 sm:pb-8">
-                      <h2 className="text-2xl font-bold text-white sm:text-3xl">
+                    <div className="relative z-10 px-4 pb-6 text-center sm:px-6 sm:pb-7 md:px-8 md:pb-8">
+                      <h2 className="text-xl font-bold text-white sm:text-2xl md:text-3xl">
                         Sultanum Mobin
                       </h2>
 
-                      <p className="mt-1 text-sm text-blue-200 sm:text-base">
+                      <p className="mt-1 text-xs text-blue-200 sm:text-sm md:text-base">
                         Full Stack Developer
                       </p>
                     </div>
@@ -458,7 +581,7 @@ export default function Hero() {
 
                 {/* Floating Code Icon */}
                 <motion.div
-                  className="absolute -left-4 top-16 hidden h-12 w-12 items-center justify-center rounded-2xl border border-white/60 bg-white/80 text-blue-600 shadow-xl backdrop-blur-md dark:border-slate-700 dark:bg-slate-800/80 dark:text-blue-400 sm:flex"
+                  className="absolute -left-4 top-16 hidden h-11 w-11 items-center justify-center rounded-2xl border border-white/60 bg-white/80 text-blue-600 shadow-xl backdrop-blur-md sm:flex lg:-left-5 lg:h-12 lg:w-12 dark:border-slate-700 dark:bg-slate-800/80 dark:text-blue-400"
                   animate={{
                     y: [0, -10, 0],
                     rotate: [0, 8, 0],
@@ -469,12 +592,12 @@ export default function Hero() {
                     ease: 'easeInOut',
                   }}
                 >
-                  <FiCode className="text-xl" />
+                  <FiCode className="text-lg lg:text-xl" />
                 </motion.div>
 
                 {/* Floating Mobile Icon */}
                 <motion.div
-                  className="absolute -right-4 bottom-20 hidden h-12 w-12 items-center justify-center rounded-2xl border border-white/60 bg-white/80 text-purple-600 shadow-xl backdrop-blur-md dark:border-slate-700 dark:bg-slate-800/80 dark:text-purple-400 sm:flex"
+                  className="absolute -right-4 bottom-16 hidden h-11 w-11 items-center justify-center rounded-2xl border border-white/60 bg-white/80 text-purple-600 shadow-xl backdrop-blur-md sm:flex lg:-right-5 lg:h-12 lg:w-12 dark:border-slate-700 dark:bg-slate-800/80 dark:text-purple-400"
                   animate={{
                     y: [0, 10, 0],
                     rotate: [0, -8, 0],
@@ -486,18 +609,16 @@ export default function Hero() {
                     delay: 1,
                   }}
                 >
-                  <FiSmartphone className="text-xl" />
+                  <FiSmartphone className="text-lg lg:text-xl" />
                 </motion.div>
               </motion.div>
             </div>
           </motion.div>
         </div>
 
-        {/* =========================================================
-            SCROLL INDICATOR
-        ========================================================== */}
+        {/* Scroll Indicator */}
         <motion.div
-          className="absolute bottom-5 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-slate-400 md:flex"
+          className="absolute bottom-5 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-slate-400 lg:flex"
           initial={{
             opacity: 0,
           }}
@@ -561,8 +682,8 @@ export default function Hero() {
           >
             {/* Modal Header */}
             <div className="flex shrink-0 items-center justify-between border-b border-slate-200 bg-white px-4 py-3 dark:border-slate-700 dark:bg-slate-900 sm:px-6 sm:py-4">
-              <div>
-                <h2 className="text-sm font-bold text-slate-900 dark:text-white sm:text-lg">
+              <div className="min-w-0">
+                <h2 className="truncate text-sm font-bold text-slate-900 dark:text-white sm:text-lg">
                   Sultanum Mobin — CV
                 </h2>
 
@@ -574,7 +695,7 @@ export default function Hero() {
               <button
                 type="button"
                 onClick={() => setShowCvPreview(false)}
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-all hover:bg-red-50 hover:text-red-500 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-red-500/10 dark:hover:text-red-400 sm:h-10 sm:w-10"
+                className="ml-3 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-all hover:bg-red-50 hover:text-red-500 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-red-500/10 dark:hover:text-red-400 sm:h-10 sm:w-10"
                 aria-label="Close CV preview"
               >
                 <FiX className="text-xl" />
