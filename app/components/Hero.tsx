@@ -2,7 +2,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 // Define proper TypeScript types for animations
 type AnimationVariants = {
@@ -38,6 +38,7 @@ type AnimationVariants = {
 
 export default function Hero() {
   const profileRef = useRef(null);
+  const [showCvPreview, setShowCvPreview] = useState(false);
 
   // Animation variants with proper typing
   const containerVariants: AnimationVariants = {
@@ -134,15 +135,17 @@ export default function Hero() {
                   View My Projects
                 </motion.button>
               </a>
-              <Link href="/documents/Sultan-CV.pdf" download="Sultan-CV.pdf">
-                <motion.button
-                  className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-blue-600 dark:hover:border-blue-400 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  📄 Download CV
-                </motion.button>
-              </Link>
+
+              {/* CV Preview Button */}
+              <motion.button
+                type="button"
+                onClick={() => setShowCvPreview(true)}
+                className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-blue-600 dark:hover:border-blue-400 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                📄 View CV
+              </motion.button>
             </motion.div>
 
             {/* Tech Stack Preview */}
@@ -197,14 +200,11 @@ export default function Hero() {
                   {/* Profile Image Placeholder */}
                   <div className="w-full h-full flex items-center justify-center">
                     <div className="text-center">
-                      {/* <div className=" bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-6xl font-bold shadow-2xl border-4 border-white dark:border-gray-800"> */}
                       <div className="relative h-72 w-72 md:w-96 md:h-96 bg-gradient-to-tr from-black to-purple-400 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl">
                         <img
                           src="/profile2.png"
                           alt="SM"
-                        // className="w-full h-full object-cover"
                         />
-                        {/* </div> */}
                       </div>
                       <motion.div
                         initial={{ opacity: 0 }}
@@ -273,6 +273,45 @@ export default function Hero() {
         >
         </motion.div>
       </div>
+
+      {/* CV Preview Modal */}
+      {showCvPreview && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+          onClick={() => setShowCvPreview(false)}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.25 }}
+            className="relative w-full max-w-5xl h-[90vh] bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="flex items-center justify-between px-5 py-4 border-b border-gray-200 dark:border-gray-700">
+              <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+                Sultanum Mobin — CV
+              </h2>
+
+              <button
+                type="button"
+                onClick={() => setShowCvPreview(false)}
+                className="w-10 h-10 flex items-center justify-center rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 transition-colors"
+                aria-label="Close CV preview"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* PDF Preview */}
+            <iframe
+              src="/documents/Sultan-CV.pdf#toolbar=0&navpanes=0&scrollbar=1"
+              title="Sultanum Mobin CV Preview"
+              className="w-full h-[calc(90vh-73px)]"
+            />
+          </motion.div>
+        </div>
+      )}
     </section>
   );
 }
