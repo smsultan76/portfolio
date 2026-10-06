@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import {
-  FiArrowRight,
+  FiArrowDown,
   FiArrowUpRight,
   FiCode,
   FiLayers,
@@ -337,49 +337,15 @@ export default function Hero() {
                   >
                     View My Projects
 
-                    <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+                    <FiArrowDown className="transition-transform duration-300 group-hover:translate-x-1" />
                   </motion.button>
                 </Link>
 
                 {/* CV Button */}
-                <motion.button
-                  type="button"
-                  onClick={() => setShowCvPreview(true)}
-                  className="
-                    group
-                    flex
-                    w-full
-                    items-center
-                    justify-center
-                    gap-2
-                    rounded-xl
-                    border
-                    border-slate-300
-                    bg-white/80
-                    px-6
-                    py-3.5
-                    text-sm
-                    font-bold
-                    text-slate-700
-                    shadow-lg
-                    shadow-slate-900/5
-                    backdrop-blur-sm
-                    transition-all
-                    duration-300
-                    hover:border-blue-500
-                    hover:text-blue-600
-                    min-[480px]:w-auto
-                    sm:px-7
-                    sm:py-4
-                    sm:text-base
-                    dark:border-slate-700
-                    dark:bg-slate-900/70
-                    dark:text-slate-200
-                    dark:hover:border-blue-400
-                    dark:hover:text-blue-400
-                    lg:px-8
-                    lg:text-lg
-                  "
+                <motion.button type="button" onClick={() => setShowCvPreview(true)}
+                  className="group flex w-full items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white/80 px-6 py-3.5 text-sm font-bold text-slate-700 shadow-lg
+                    shadow-slate-900/5 backdrop-blur-sm transition-all duration-300 hover:border-blue-500 hover:text-blue-600 min-[480px]:w-auto sm:px-7 sm:py-4 sm:text-base 
+                    dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-200 dark:hover:border-blue-400 dark:hover:text-blue-400 lg:px-8 lg:text-lg"
                   whileHover={{
                     scale: 1.025,
                     y: -2,
@@ -388,10 +354,8 @@ export default function Hero() {
                     scale: 0.97,
                   }}
                 >
-                  <span className="text-lg sm:text-xl">📄</span>
-
+                  {/* <span className="text-lg sm:text-xl">📄</span> */}
                   View CV
-
                   <FiArrowUpRight className="text-sm opacity-50 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </motion.button>
               </motion.div>
@@ -434,8 +398,8 @@ export default function Hero() {
             </div>
 
             {/* =====================================================
-    PROFILE — FUTURISTIC GLASS ID
-====================================================== */}
+                PROFILE — FUTURISTIC GLASS ID
+            ====================================================== */}
             <div className="order-2 flex w-full justify-center lg:justify-end px-4 sm:px-8 lg:px-15">
               <motion.div
                 ref={profileRef}
@@ -474,17 +438,12 @@ export default function Hero() {
 
                 {/* Main Card */}
                 <div className="relative overflow-hidden rounded-[2.5rem] border border-white/60 bg-white/65 p-2 shadow-[0_35px_100px_-30px_rgba(79,70,229,0.4)] backdrop-blur-2xl dark:border-white/10 dark:bg-slate-900/65">
-
                   <div className="relative min-h-[620px] overflow-hidden rounded-[2rem] bg-[#080b18]">
-
                     {/* Grid */}
                     <div
                       className="absolute inset-0 opacity-[0.08]"
                       style={{
-                        backgroundImage: `
-              linear-gradient(rgba(255,255,255,.15) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,.15) 1px, transparent 1px)
-            `,
+                        backgroundImage: `linear-gradient(rgba(255,255,255,.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.15) 1px, transparent 1px)`,
                         backgroundSize: "30px 30px",
                       }}
                     />
