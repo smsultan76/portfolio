@@ -434,168 +434,215 @@ export default function Hero() {
             </div>
 
             {/* =====================================================
-                PROFILE
+                PROFILE — DEVELOPER ID CARD
             ====================================================== */}
-            <div className="order-2 flex w-full justify-center lg:justify-end">
+            <div className="order-2 flex w-full justify-center lg:justify-end px-4 sm:px-8 lg:px-15">
               <motion.div
                 ref={profileRef}
-                className="
-                  relative
-                  w-full
-                  max-w-[340px]
-                  sm:max-w-[410px]
-                  md:max-w-[450px]
-                  lg:max-w-[500px]
-                  xl:max-w-[540px]
-                "
+                className="relative w-full max-w-[480px]"
                 initial="hidden"
                 animate="visible"
                 whileHover="hover"
                 variants={profileVariants as any}
               >
-                {/* Outer Glow */}
+                {/* Soft Ambient Glow */}
                 <motion.div
-                  className="absolute -inset-3 rounded-[2rem] bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 blur-2xl sm:-inset-5"
+                  className="absolute -inset-6 rounded-[3rem] bg-gradient-to-br from-cyan-500/20 via-blue-500/10 to-violet-500/20 blur-3xl"
                   animate={{
-                    opacity: [0.5, 0.8, 0.5],
-                    scale: [0.98, 1.02, 0.98],
+                    opacity: [0.35, 0.6, 0.35],
+                    scale: [0.97, 1.02, 0.97],
                   }}
                   transition={{
-                    duration: 4,
+                    duration: 5,
                     repeat: Infinity,
-                    ease: 'easeInOut',
+                    ease: "easeInOut",
                   }}
                 />
 
                 {/* Main Card */}
-                <div className="relative rounded-[1.5rem] border border-white/70 bg-white/70 p-1.5 shadow-2xl shadow-blue-900/10 backdrop-blur-xl sm:rounded-[2rem] sm:p-2 dark:border-slate-700/70 dark:bg-slate-900/70">
-                  <div className="relative overflow-hidden rounded-[1.2rem] bg-gradient-to-br from-slate-950 via-indigo-950 to-purple-950 sm:rounded-[1.6rem]">
-                    {/* Card Glow */}
-                    <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-blue-500/30 blur-3xl sm:-right-20 sm:-top-20 sm:h-60 sm:w-60" />
+                <div className="relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white/85 p-2 shadow-[0_30px_80px_-25px_rgba(15,23,42,0.35)] backdrop-blur-2xl dark:border-slate-700/70 dark:bg-slate-950/85">
 
-                    <div className="absolute -bottom-20 -left-16 h-52 w-52 rounded-full bg-purple-500/25 blur-3xl sm:-bottom-24 sm:-left-20 sm:h-64 sm:w-64" />
+                  {/* Inner Card */}
+                  <div className="relative overflow-hidden rounded-[1.5rem] border border-slate-200/70 bg-slate-50 dark:border-slate-800 dark:bg-slate-900">
 
-                    {/* Card Header */}
-                    <div className="relative z-10 flex items-center justify-between gap-3 px-4 pt-4 sm:px-7 sm:pt-7 md:px-8 md:pt-8">
-                      <div className="min-w-0 rounded-full border border-white/10 bg-white/10 px-2.5 py-1.5 text-[8px] font-semibold tracking-[0.12em] text-white/80 backdrop-blur-md sm:px-3 sm:text-[10px] sm:tracking-wider md:text-xs">
-                        FULL STACK DEVELOPER
-                      </div>
+                    {/* Decorative Grid */}
+                    <div
+                      className="absolute inset-0 opacity-[0.035] dark:opacity-[0.05]"
+                      style={{
+                        backgroundImage: `linear-gradient(#64748b 1px, transparent 1px), linear-gradient(90deg, #64748b 1px, transparent 1px)`,
+                        backgroundSize: "24px 24px",
+                      }}
+                    />
 
-                      <div className="flex shrink-0 items-center gap-1.5 text-[9px] text-white/60 sm:gap-2 sm:text-xs">
-                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-lg shadow-emerald-400/50 sm:h-2 sm:w-2" />
-                        Online
-                      </div>
-                    </div>
+                    {/* Decorative Gradient */}
+                    <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
+                    <div className="absolute -bottom-28 -left-24 h-72 w-72 rounded-full bg-violet-500/10 blur-3xl" />
 
-                    {/* Profile Image */}
-                    <div className="relative z-10 flex justify-center px-4 pb-2 pt-7 sm:px-8 sm:pt-9 md:px-10 md:pt-10">
-                      <div className="relative">
-                        {/* Rotating Ring */}
-                        <motion.div
-                          className="absolute -inset-2 rounded-full border border-dashed border-blue-300/40 sm:-inset-3"
-                          animate={{
-                            rotate: 360,
-                          }}
-                          transition={{
-                            duration: 18,
-                            repeat: Infinity,
-                            ease: 'linear',
-                          }}
-                        />
-
-                        {/* Image */}
-                        <div
-                          className="
-                            relative
-                            h-[clamp(175px,35vw,310px)]
-                            w-[clamp(175px,35vw,310px)]
-                            overflow-hidden
-                            rounded-full
-                            border-[4px]
-                            border-white/90
-                            bg-gradient-to-tr
-                            from-blue-600
-                            to-purple-600
-                            shadow-2xl
-                            shadow-blue-500/30
-                            sm:border-[5px]
-                          "
-                        >
-                          <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/20 via-transparent to-white/10" />
-
-                          <img
-                            src="/profile2.png"
-                            alt="Sultanum Mobin"
-                            className="h-full w-full object-cover"
-                          />
+                    {/* Top Bar */}
+                    <div className="relative z-10 flex items-center justify-between border-b border-slate-200/70 px-5 py-4 dark:border-slate-800 sm:px-7">
+                      <div className="flex items-center gap-2.5">
+                        <div className="flex gap-1.5">
+                          <span className="h-2 w-2 rounded-full bg-red-400" />
+                          <span className="h-2 w-2 rounded-full bg-yellow-400" />
+                          <span className="h-2 w-2 rounded-full bg-green-400" />
                         </div>
 
-                        {/* Floating Status */}
-                        <motion.div
-                          className="absolute bottom-1 right-0 flex items-center gap-1.5 rounded-full border border-white/20 bg-slate-900/90 px-2.5 py-1.5 text-[9px] font-semibold text-white shadow-xl backdrop-blur-md sm:bottom-2 sm:right-1 sm:gap-2 sm:px-3 sm:py-2 sm:text-xs"
-                          animate={{
-                            y: [0, -5, 0],
-                          }}
-                          transition={{
-                            duration: 3,
-                            repeat: Infinity,
-                            ease: 'easeInOut',
-                          }}
-                        >
-                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 sm:h-2 sm:w-2" />
-                          Open to work
-                        </motion.div>
+                        <span className="ml-1 font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-slate-400 sm:text-xs">
+                          developer.profile
+                        </span>
+                      </div>
+
+                      <div className="flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2.5 py-1.5">
+                        <span className="relative flex h-2 w-2">
+                          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+                          <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+                        </span>
+
+                        <span className="text-[9px] font-semibold text-emerald-600 dark:text-emerald-400 sm:text-[10px]">
+                          AVAILABLE
+                        </span>
                       </div>
                     </div>
 
-                    {/* Name */}
-                    <div className="relative z-10 px-4 pb-6 text-center sm:px-6 sm:pb-7 md:px-8 md:pb-8">
-                      <h2 className="text-xl font-bold text-white sm:text-2xl md:text-3xl">
-                        Sultanum Mobin
-                      </h2>
+                    {/* Main Content */}
+                    <div className="relative z-10 px-5 pb-6 pt-7 sm:px-7 sm:pb-8 sm:pt-9">
 
-                      <p className="mt-1 text-xs text-blue-200 sm:text-sm md:text-base">
-                        Full Stack Developer
-                      </p>
+                      {/* Profile Image Area */}
+                      <div className="flex justify-center">
+                        <div className="relative">
+
+                          {/* Orbit */}
+                          <motion.div
+                            className="absolute -inset-5 rounded-full border border-dashed border-cyan-400/30"
+                            animate={{ rotate: 360 }}
+                            transition={{
+                              duration: 20,
+                              repeat: Infinity,
+                              ease: "linear",
+                            }}
+                          />
+
+                          <motion.div
+                            className="absolute -inset-8 rounded-full border border-violet-400/10"
+                            animate={{ rotate: -360 }}
+                            transition={{
+                              duration: 28,
+                              repeat: Infinity,
+                              ease: "linear",
+                            }}
+                          />
+
+                          {/* Image Container */}
+                          <div className="relative h-[220px] w-[220px] overflow-hidden rounded-full border-[6px] border-white bg-gradient-to-br from-cyan-400 via-blue-500 to-violet-600 p-[3px] shadow-2xl shadow-blue-500/20 dark:border-slate-900 sm:h-[250px] sm:w-[250px]">
+
+                            <div className="h-full w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800">
+                              <img
+                                src="/profile2.png"
+                                alt="Sultanum Mobin"
+                                className="h-full w-full object-cover"
+                              />
+                            </div>
+
+                            {/* Image Overlay */}
+                            <div className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-t from-blue-950/20 via-transparent to-white/20" />
+                          </div>
+
+                          {/* Open To Work Badge */}
+                          <motion.div
+                            className="absolute bottom-1 -right-4 flex items-center gap-2 rounded-xl border border-white/80 bg-white/95 px-3 py-2 shadow-xl backdrop-blur-xl dark:border-slate-700 dark:bg-slate-900/95"
+                            animate={{ y: [0, -5, 0] }}
+                            transition={{
+                              duration: 3,
+                              repeat: Infinity,
+                              ease: "easeInOut",
+                            }}
+                          >
+                            <span className="h-2 w-2 rounded-full bg-emerald-500 shadow-lg shadow-emerald-500/50" />
+
+                            <span className="text-[10px] font-bold text-slate-700 dark:text-slate-200 sm:text-xs">
+                              Open to work
+                            </span>
+                          </motion.div>
+                        </div>
+                      </div>
+
+                      {/* Identity */}
+                      <div className="mt-8 text-center">
+                        <div className="mb-2 inline-flex items-center rounded-full border border-blue-500/10 bg-blue-500/5 px-3 py-1 font-mono text-[9px] font-semibold uppercase tracking-[0.18em] text-blue-600 dark:text-blue-400 sm:text-[10px]">
+                          Full Stack Developer
+                        </div>
+
+                        <h2 className="text-2xl font-black tracking-tight text-slate-900 dark:text-white sm:text-3xl">
+                          Sultanum Mobin
+                        </h2>
+
+                        <p className="mx-auto mt-2 max-w-[300px] text-xs leading-relaxed text-slate-500 dark:text-slate-400 sm:text-sm">
+                          Building modern, scalable and user-focused digital experiences.
+                        </p>
+                      </div>
+                      {/* Bottom Status */}
+                      <div className="mt-5 flex items-center justify-between rounded-xl border border-slate-200 bg-white/60 px-4 py-3 dark:border-slate-800 dark:bg-slate-950/50">
+                        <div className="flex items-center gap-2">
+                          <FiCode className="text-blue-500" />
+
+                          <span className="font-mono text-[9px] text-slate-500 dark:text-slate-400 sm:text-[10px]">
+                            currently_building()
+                          </span>
+                        </div>
+
+                        <span className="font-mono text-[9px] font-semibold text-slate-400 sm:text-[10px]">
+                          01 / 01
+                        </span>
+                      </div>
                     </div>
 
-                    {/* Bottom Gradient */}
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" />
+                    {/* Bottom Accent */}
+                    <div className="h-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
                   </div>
                 </div>
 
-                {/* Floating Code Icon */}
+                {/* Floating Code Badge */}
                 <motion.div
-                  className="absolute -left-4 top-16 hidden h-11 w-11 items-center justify-center rounded-2xl border border-white/60 bg-white/80 text-blue-600 shadow-xl backdrop-blur-md sm:flex lg:-left-5 lg:h-12 lg:w-12 dark:border-slate-700 dark:bg-slate-800/80 dark:text-blue-400"
+                  className="absolute -left-5 top-24 hidden h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-white/90 text-blue-500 shadow-xl backdrop-blur-xl sm:flex dark:border-slate-700 dark:bg-slate-900/90"
                   animate={{
-                    y: [0, -10, 0],
-                    rotate: [0, 8, 0],
+                    y: [0, -9, 0],
+                    rotate: [0, 6, 0],
                   }}
                   transition={{
                     duration: 4,
                     repeat: Infinity,
-                    ease: 'easeInOut',
+                    ease: "easeInOut",
                   }}
                 >
-                  <FiCode className="text-lg lg:text-xl" />
+                  <FiCode className="text-xl" />
                 </motion.div>
 
-                {/* Floating Mobile Icon */}
+                {/* Floating Mobile Badge */}
                 <motion.div
-                  className="absolute -right-4 bottom-16 hidden h-11 w-11 items-center justify-center rounded-2xl border border-white/60 bg-white/80 text-purple-600 shadow-xl backdrop-blur-md sm:flex lg:-right-5 lg:h-12 lg:w-12 dark:border-slate-700 dark:bg-slate-800/80 dark:text-purple-400"
+                  className="absolute -right-5 bottom-28 hidden h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-white/90 text-violet-500 shadow-xl backdrop-blur-xl sm:flex dark:border-slate-700 dark:bg-slate-900/90"
                   animate={{
-                    y: [0, 10, 0],
-                    rotate: [0, -8, 0],
+                    y: [0, 9, 0],
+                    rotate: [0, -6, 0],
                   }}
                   transition={{
                     duration: 4,
                     repeat: Infinity,
-                    ease: 'easeInOut',
+                    ease: "easeInOut",
                     delay: 1,
                   }}
                 >
-                  <FiSmartphone className="text-lg lg:text-xl" />
+                  <FiSmartphone className="text-xl" />
                 </motion.div>
+
+                {/* Tiny Decorative Dots */}
+                <div className="absolute -bottom-3 left-16 hidden gap-1.5 sm:flex">
+                  {[1, 2, 3].map((dot) => (
+                    <span
+                      key={dot}
+                      className="h-1.5 w-1.5 rounded-full bg-blue-400/50"
+                    />
+                  ))}
+                </div>
               </motion.div>
             </div>
           </motion.div>
