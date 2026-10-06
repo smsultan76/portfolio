@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import {
-  FiArrowRight,
+  FiArrowDown,
   FiArrowUpRight,
   FiCode,
   FiLayers,
@@ -337,49 +337,15 @@ export default function Hero() {
                   >
                     View My Projects
 
-                    <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+                    <FiArrowDown className="transition-transform duration-300 group-hover:translate-x-1" />
                   </motion.button>
                 </Link>
 
                 {/* CV Button */}
-                <motion.button
-                  type="button"
-                  onClick={() => setShowCvPreview(true)}
-                  className="
-                    group
-                    flex
-                    w-full
-                    items-center
-                    justify-center
-                    gap-2
-                    rounded-xl
-                    border
-                    border-slate-300
-                    bg-white/80
-                    px-6
-                    py-3.5
-                    text-sm
-                    font-bold
-                    text-slate-700
-                    shadow-lg
-                    shadow-slate-900/5
-                    backdrop-blur-sm
-                    transition-all
-                    duration-300
-                    hover:border-blue-500
-                    hover:text-blue-600
-                    min-[480px]:w-auto
-                    sm:px-7
-                    sm:py-4
-                    sm:text-base
-                    dark:border-slate-700
-                    dark:bg-slate-900/70
-                    dark:text-slate-200
-                    dark:hover:border-blue-400
-                    dark:hover:text-blue-400
-                    lg:px-8
-                    lg:text-lg
-                  "
+                <motion.button type="button" onClick={() => setShowCvPreview(true)}
+                  className="group flex w-full items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white/80 px-6 py-3.5 text-sm font-bold text-slate-700 shadow-lg
+                    shadow-slate-900/5 backdrop-blur-sm transition-all duration-300 hover:border-blue-500 hover:text-blue-600 min-[480px]:w-auto sm:px-7 sm:py-4 sm:text-base 
+                    dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-200 dark:hover:border-blue-400 dark:hover:text-blue-400 lg:px-8 lg:text-lg"
                   whileHover={{
                     scale: 1.025,
                     y: -2,
@@ -388,10 +354,8 @@ export default function Hero() {
                     scale: 0.97,
                   }}
                 >
-                  <span className="text-lg sm:text-xl">📄</span>
-
+                  {/* <span className="text-lg sm:text-xl">📄</span> */}
                   View CV
-
                   <FiArrowUpRight className="text-sm opacity-50 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </motion.button>
               </motion.div>
@@ -434,167 +398,301 @@ export default function Hero() {
             </div>
 
             {/* =====================================================
-                PROFILE
+                PROFILE — FUTURISTIC GLASS ID
             ====================================================== */}
-            <div className="order-2 flex w-full justify-center lg:justify-end">
+            <div className="order-2 flex w-full justify-center lg:justify-end px-4 sm:px-8 lg:px-15">
               <motion.div
                 ref={profileRef}
-                className="
-                  relative
-                  w-full
-                  max-w-[340px]
-                  sm:max-w-[410px]
-                  md:max-w-[450px]
-                  lg:max-w-[500px]
-                  xl:max-w-[540px]
-                "
+                className="relative w-full max-w-[480px]"
                 initial="hidden"
                 animate="visible"
                 whileHover="hover"
                 variants={profileVariants as any}
               >
-                {/* Outer Glow */}
+                {/* Ambient Glow */}
                 <motion.div
-                  className="absolute -inset-3 rounded-[2rem] bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 blur-2xl sm:-inset-5"
+                  className="absolute -inset-8 rounded-[3rem] bg-gradient-to-r from-cyan-500/20 via-violet-500/20 to-fuchsia-500/20 blur-3xl"
                   animate={{
-                    opacity: [0.5, 0.8, 0.5],
-                    scale: [0.98, 1.02, 0.98],
+                    opacity: [0.35, 0.6, 0.35],
+                    scale: [0.97, 1.03, 0.97],
                   }}
                   transition={{
-                    duration: 4,
+                    duration: 5,
                     repeat: Infinity,
-                    ease: 'easeInOut',
+                    ease: "easeInOut",
+                  }}
+                />
+
+                {/* Back Layer */}
+                <motion.div
+                  className="absolute -right-3 top-8 h-[88%] w-full rounded-[2.5rem] border border-violet-300/20 bg-violet-500/5 dark:border-violet-400/10"
+                  animate={{
+                    rotate: [2, 3, 2],
+                  }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
                   }}
                 />
 
                 {/* Main Card */}
-                <div className="relative rounded-[1.5rem] border border-white/70 bg-white/70 p-1.5 shadow-2xl shadow-blue-900/10 backdrop-blur-xl sm:rounded-[2rem] sm:p-2 dark:border-slate-700/70 dark:bg-slate-900/70">
-                  <div className="relative overflow-hidden rounded-[1.2rem] bg-gradient-to-br from-slate-950 via-indigo-950 to-purple-950 sm:rounded-[1.6rem]">
-                    {/* Card Glow */}
-                    <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-blue-500/30 blur-3xl sm:-right-20 sm:-top-20 sm:h-60 sm:w-60" />
+                <div className="relative overflow-hidden rounded-[2.5rem] border border-white/60 bg-white/65 p-2 shadow-[0_35px_100px_-30px_rgba(79,70,229,0.4)] backdrop-blur-2xl dark:border-white/10 dark:bg-slate-900/65">
+                  <div className="relative min-h-[620px] overflow-hidden rounded-[2rem] bg-[#080b18]">
+                    {/* Grid */}
+                    <div
+                      className="absolute inset-0 opacity-[0.08]"
+                      style={{
+                        backgroundImage: `linear-gradient(rgba(255,255,255,.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.15) 1px, transparent 1px)`,
+                        backgroundSize: "30px 30px",
+                      }}
+                    />
 
-                    <div className="absolute -bottom-20 -left-16 h-52 w-52 rounded-full bg-purple-500/25 blur-3xl sm:-bottom-24 sm:-left-20 sm:h-64 sm:w-64" />
+                    {/* Background Orbs */}
+                    <motion.div
+                      className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-cyan-500/20 blur-[90px]"
+                      animate={{
+                        x: [0, 20, 0],
+                        y: [0, 15, 0],
+                      }}
+                      transition={{
+                        duration: 7,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    />
 
-                    {/* Card Header */}
-                    <div className="relative z-10 flex items-center justify-between gap-3 px-4 pt-4 sm:px-7 sm:pt-7 md:px-8 md:pt-8">
-                      <div className="min-w-0 rounded-full border border-white/10 bg-white/10 px-2.5 py-1.5 text-[8px] font-semibold tracking-[0.12em] text-white/80 backdrop-blur-md sm:px-3 sm:text-[10px] sm:tracking-wider md:text-xs">
-                        FULL STACK DEVELOPER
+                    <motion.div
+                      className="absolute -bottom-32 -left-24 h-96 w-96 rounded-full bg-violet-600/20 blur-[100px]"
+                      animate={{
+                        x: [0, -15, 0],
+                        y: [0, -20, 0],
+                      }}
+                      transition={{
+                        duration: 8,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    />
+
+                    {/* Top Navigation */}
+                    <div className="relative z-20 flex items-center justify-between px-5 pt-5 sm:px-7 sm:pt-7">
+
+                      <div className="flex items-center gap-2">
+                        <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5">
+                          <span className="font-mono text-xs font-bold text-cyan-400">
+                            SM
+                          </span>
+                        </div>
+
+                        <div>
+                          <p className="text-[8px] uppercase tracking-[0.25em] text-white/30">
+                            Personal ID
+                          </p>
+
+                          <p className="font-mono text-[10px] text-white/70">
+                            001 / DEV
+                          </p>
+                        </div>
                       </div>
 
-                      <div className="flex shrink-0 items-center gap-1.5 text-[9px] text-white/60 sm:gap-2 sm:text-xs">
-                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-lg shadow-emerald-400/50 sm:h-2 sm:w-2" />
-                        Online
+                      {/* Status */}
+                      <div className="flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/5 px-3 py-1.5">
+                        <span className="relative flex h-2 w-2">
+                          <span className="absolute h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+                          <span className="relative h-2 w-2 rounded-full bg-emerald-400" />
+                        </span>
+
+                        <span className="text-[8px] font-semibold uppercase tracking-wider text-emerald-300">
+                          Online
+                        </span>
                       </div>
                     </div>
 
                     {/* Profile Image */}
-                    <div className="relative z-10 flex justify-center px-4 pb-2 pt-7 sm:px-8 sm:pt-9 md:px-10 md:pt-10">
-                      <div className="relative">
-                        {/* Rotating Ring */}
-                        <motion.div
-                          className="absolute -inset-2 rounded-full border border-dashed border-blue-300/40 sm:-inset-3"
-                          animate={{
-                            rotate: 360,
-                          }}
-                          transition={{
-                            duration: 18,
-                            repeat: Infinity,
-                            ease: 'linear',
-                          }}
-                        />
+                    <div className="relative z-10 mt-9 flex justify-center">
 
-                        {/* Image */}
-                        <div
-                          className="
-                            relative
-                            h-[clamp(175px,35vw,310px)]
-                            w-[clamp(175px,35vw,310px)]
-                            overflow-hidden
-                            rounded-full
-                            border-[4px]
-                            border-white/90
-                            bg-gradient-to-tr
-                            from-blue-600
-                            to-purple-600
-                            shadow-2xl
-                            shadow-blue-500/30
-                            sm:border-[5px]
-                          "
-                        >
-                          <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/20 via-transparent to-white/10" />
+                      {/* Outer Ring */}
+                      <motion.div
+                        className="absolute h-[265px] w-[265px] rounded-full border border-cyan-400/20 sm:h-[295px] sm:w-[295px]"
+                        animate={{ rotate: 360 }}
+                        transition={{
+                          duration: 18,
+                          repeat: Infinity,
+                          ease: "linear",
+                        }}
+                      >
+                        <span className="absolute -top-1 left-1/2 h-2 w-2 rounded-full bg-cyan-400 shadow-lg shadow-cyan-400" />
+                        <span className="absolute bottom-6 right-5 h-1.5 w-1.5 rounded-full bg-violet-400 shadow-lg shadow-violet-400" />
+                      </motion.div>
+
+                      {/* Second Ring */}
+                      <motion.div
+                        className="absolute h-[285px] w-[285px] rounded-full border border-dashed border-violet-400/10 sm:h-[315px] sm:w-[315px]"
+                        animate={{ rotate: -360 }}
+                        transition={{
+                          duration: 25,
+                          repeat: Infinity,
+                          ease: "linear",
+                        }}
+                      />
+
+                      {/* Image Frame */}
+                      <div className="relative h-[225px] w-[225px] overflow-hidden rounded-[2rem] border border-white/20 bg-gradient-to-br from-cyan-400 via-blue-500 to-violet-600 p-[2px] shadow-[0_0_60px_rgba(59,130,246,0.25)] sm:h-[255px] sm:w-[255px]">
+
+                        <div className="relative h-full w-full overflow-hidden rounded-[1.85rem] bg-slate-900">
 
                           <img
                             src="/profile2.png"
                             alt="Sultanum Mobin"
                             className="h-full w-full object-cover"
                           />
-                        </div>
 
-                        {/* Floating Status */}
-                        <motion.div
-                          className="absolute bottom-1 right-0 flex items-center gap-1.5 rounded-full border border-white/20 bg-slate-900/90 px-2.5 py-1.5 text-[9px] font-semibold text-white shadow-xl backdrop-blur-md sm:bottom-2 sm:right-1 sm:gap-2 sm:px-3 sm:py-2 sm:text-xs"
-                          animate={{
-                            y: [0, -5, 0],
-                          }}
-                          transition={{
-                            duration: 3,
-                            repeat: Infinity,
-                            ease: 'easeInOut',
-                          }}
-                        >
-                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 sm:h-2 sm:w-2" />
-                          Open to work
-                        </motion.div>
+                          {/* Scan Overlay */}
+                          <motion.div
+                            className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-300 to-transparent shadow-[0_0_15px_rgba(34,211,238,0.8)]"
+                            animate={{
+                              top: ["0%", "100%", "0%"],
+                            }}
+                            transition={{
+                              duration: 4,
+                              repeat: Infinity,
+                              ease: "linear",
+                            }}
+                          />
+
+                          <div className="absolute inset-0 bg-gradient-to-t from-blue-950/30 via-transparent to-cyan-400/10" />
+                        </div>
                       </div>
+
+                      {/* Floating Badge */}
+                      <motion.div
+                        className="absolute -bottom-2 right-[8%] flex items-center gap-2 rounded-xl border border-white/15 bg-white/10 px-3 py-2 shadow-2xl backdrop-blur-xl"
+                        animate={{
+                          y: [0, -6, 0],
+                        }}
+                        transition={{
+                          duration: 3,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
+                      >
+                        <span className="text-xs">✦</span>
+
+                        <div>
+                          <p className="text-[7px] uppercase tracking-wider text-white/40">
+                            Status
+                          </p>
+                          <p className="text-[9px] font-semibold text-white">
+                            Open to Work
+                          </p>
+                        </div>
+                      </motion.div>
                     </div>
 
-                    {/* Name */}
-                    <div className="relative z-10 px-4 pb-6 text-center sm:px-6 sm:pb-7 md:px-8 md:pb-8">
-                      <h2 className="text-xl font-bold text-white sm:text-2xl md:text-3xl">
+                    {/* Identity */}
+                    <div className="relative z-10 mt-10 px-6 text-center sm:px-8">
+
+                      <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-cyan-400/10 bg-cyan-400/5 px-3 py-1.5">
+                        <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
+
+                        <span className="font-mono text-[8px] uppercase tracking-[0.2em] text-cyan-300">
+                          Full Stack Developer
+                        </span>
+                      </div>
+
+                      <h2 className="text-3xl font-bold tracking-[-0.04em] text-white sm:text-4xl">
                         Sultanum Mobin
                       </h2>
 
-                      <p className="mt-1 text-xs text-blue-200 sm:text-sm md:text-base">
-                        Full Stack Developer
+                      <p className="mx-auto mt-2 max-w-[300px] text-xs leading-5 text-white/40">
+                        Designing & engineering modern digital experiences.
                       </p>
                     </div>
 
-                    {/* Bottom Gradient */}
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" />
+                    {/* Stats */}
+                    <div className="relative z-10 mx-5 mt-7 grid grid-cols-3 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] sm:mx-7">
+
+                      <div className="border-r border-white/10 px-3 py-4 text-center">
+                        <p className="font-mono text-sm font-bold text-white">
+                          04+
+                        </p>
+                        <p className="mt-1 text-[7px] uppercase tracking-wider text-white/30">
+                          Years
+                        </p>
+                      </div>
+
+                      <div className="border-r border-white/10 px-3 py-4 text-center">
+                        <p className="font-mono text-sm font-bold text-white">
+                          30+
+                        </p>
+                        <p className="mt-1 text-[7px] uppercase tracking-wider text-white/30">
+                          Projects
+                        </p>
+                      </div>
+
+                      <div className="px-3 py-4 text-center">
+                        <p className="font-mono text-sm font-bold text-white">
+                          ∞
+                        </p>
+                        <p className="mt-1 text-[7px] uppercase tracking-wider text-white/30">
+                          Ideas
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Bottom Code Line */}
+                    <div className="relative z-10 mt-5 flex items-center justify-between px-6 pb-5 sm:px-7 sm:pb-6">
+
+                      <div className="flex items-center gap-2">
+                        <FiCode className="text-cyan-400" />
+
+                        <span className="font-mono text-[8px] text-white/30">
+                          build / create / innovate
+                        </span>
+                      </div>
+
+                      <span className="font-mono text-[8px] text-white/20">
+                        v2.026
+                      </span>
+                    </div>
+
+                    {/* Bottom Light */}
+                    <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
                   </div>
                 </div>
 
-                {/* Floating Code Icon */}
+                {/* Floating Left Icon */}
                 <motion.div
-                  className="absolute -left-4 top-16 hidden h-11 w-11 items-center justify-center rounded-2xl border border-white/60 bg-white/80 text-blue-600 shadow-xl backdrop-blur-md sm:flex lg:-left-5 lg:h-12 lg:w-12 dark:border-slate-700 dark:bg-slate-800/80 dark:text-blue-400"
+                  className="absolute -left-5 top-32 hidden h-12 w-12 items-center justify-center rounded-2xl border border-white/20 bg-slate-900/90 text-cyan-400 shadow-xl backdrop-blur-xl sm:flex"
                   animate={{
                     y: [0, -10, 0],
-                    rotate: [0, 8, 0],
+                    rotate: [0, 5, 0],
                   }}
                   transition={{
                     duration: 4,
                     repeat: Infinity,
-                    ease: 'easeInOut',
+                    ease: "easeInOut",
                   }}
                 >
-                  <FiCode className="text-lg lg:text-xl" />
+                  <FiCode className="text-lg" />
                 </motion.div>
 
-                {/* Floating Mobile Icon */}
+                {/* Floating Right Icon */}
                 <motion.div
-                  className="absolute -right-4 bottom-16 hidden h-11 w-11 items-center justify-center rounded-2xl border border-white/60 bg-white/80 text-purple-600 shadow-xl backdrop-blur-md sm:flex lg:-right-5 lg:h-12 lg:w-12 dark:border-slate-700 dark:bg-slate-800/80 dark:text-purple-400"
+                  className="absolute -right-5 bottom-28 hidden h-12 w-12 items-center justify-center rounded-2xl border border-white/20 bg-slate-900/90 text-violet-400 shadow-xl backdrop-blur-xl sm:flex"
                   animate={{
                     y: [0, 10, 0],
-                    rotate: [0, -8, 0],
+                    rotate: [0, -5, 0],
                   }}
                   transition={{
                     duration: 4,
                     repeat: Infinity,
-                    ease: 'easeInOut',
+                    ease: "easeInOut",
                     delay: 1,
                   }}
                 >
-                  <FiSmartphone className="text-lg lg:text-xl" />
+                  <FiSmartphone className="text-lg" />
                 </motion.div>
               </motion.div>
             </div>
