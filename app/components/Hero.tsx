@@ -497,16 +497,18 @@ export default function Hero() {
                       </div>
 
                       {/* Status */}
-                      <div className="flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/5 px-3 py-1.5">
-                        <span className="relative flex h-2 w-2">
-                          <span className="absolute h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
-                          <span className="relative h-2 w-2 rounded-full bg-emerald-400" />
-                        </span>
+                      <a href="/contact">
+                        <div className="flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/5 px-3 py-1.5">
+                          <span className="relative flex h-2 w-2">
+                            <span className="absolute h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+                            <span className="relative h-2 w-2 rounded-full bg-emerald-400" />
+                          </span>
 
-                        <span className="text-[8px] font-semibold uppercase tracking-wider text-emerald-300">
-                          Online
-                        </span>
-                      </div>
+                          <span className="text-[8px] font-semibold uppercase tracking-wider text-emerald-300">
+                            Online
+                          </span>
+                        </div>
+                      </a>
                     </div>
 
                     {/* Profile Image */}
@@ -579,14 +581,16 @@ export default function Hero() {
                       >
                         <span className="text-xs">✦</span>
 
-                        <div>
-                          <p className="text-[7px] uppercase tracking-wider text-white/40">
-                            Status
-                          </p>
-                          <p className="text-[9px] font-semibold text-white">
-                            Open to Work
-                          </p>
-                        </div>
+                        <a href="contac">
+                          <div>
+                            <p className="text-[7px] uppercase tracking-wider text-white/40">
+                              Status
+                            </p>
+                            <p className="text-[9px] font-semibold text-white">
+                              Open to Work
+                            </p>
+                          </div>
+                        </a>
                       </motion.div>
                     </div>
 
