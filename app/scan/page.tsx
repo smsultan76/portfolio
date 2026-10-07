@@ -14,7 +14,7 @@ export default function NFCPage() {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-gray-900 via-black to-purple-900">
-    <title>{USER_CONFIG.name}</title>
+      <title>{USER_CONFIG.name}</title>
       <StarBackground starCount={200} mouseFollowStrength={0.3} />
 
       <div className="absolute inset-0">
@@ -53,7 +53,7 @@ export default function NFCPage() {
                     </div>
                   )}
                 </div>
-                
+
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ repeat: Infinity, duration: 2 }}
@@ -75,12 +75,16 @@ export default function NFCPage() {
                     transition={{ duration: 1, delay: 0.3 }}
                     className="h-1 bg-gradient-to-r from-purple-500 to-pink-500 mb-4 mx-auto lg:mx-0"
                   />
-                  <h1 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent mb-2">
-                    {USER_CONFIG.name}
-                  </h1>
-                  <p className="text-xl md:text-2xl text-purple-300 font-medium mb-4">
-                    {USER_CONFIG.title}
-                  </p>
+                  <a href="/">
+                    <h1 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent mb-2">
+                      {USER_CONFIG.name}
+                    </h1>
+                  </a>
+                  <a href="/contact">
+                    <p className="text-xl md:text-2xl text-purple-300 font-medium mb-4">
+                      {USER_CONFIG.title}
+                    </p>
+                  </a>
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: "100%" }}
@@ -88,7 +92,6 @@ export default function NFCPage() {
                     className="h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mt-4 mx-auto lg:mx-0"
                   />
                 </div>
-                
                 <p className="text-gray-300 mt-4 md:mt-6 text-base md:text-lg max-w-xl mx-auto lg:mx-0">
                   Welcome! Thanks for contact with me. Here's everything you need to connect with me.
                 </p>
@@ -103,11 +106,10 @@ export default function NFCPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className={`backdrop-blur-sm bg-white/5 rounded-2xl border p-6 transition-all duration-300 ${
-                activeSection === 'contact' 
-                  ? 'border-blue-500/50 shadow-2xl shadow-blue-500/20' 
-                  : 'border-white/10 hover:border-blue-500/30'
-              }`}
+              className={`backdrop-blur-sm bg-white/5 rounded-2xl border p-6 transition-all duration-300 ${activeSection === 'contact'
+                ? 'border-blue-500/50 shadow-2xl shadow-blue-500/20'
+                : 'border-white/10 hover:border-blue-500/30'
+                }`}
               onMouseEnter={() => setActiveSection('contact')}
               onMouseLeave={() => setActiveSection(null)}
             >
@@ -117,7 +119,7 @@ export default function NFCPage() {
                 </div>
                 <h2 className="text-xl font-bold text-white">Contact Info</h2>
               </div>
-              
+
               {/* 2-column grid for mobile, 1 column for desktop */}
               <div className="grid grid-cols-2 md:grid-cols-1 gap-3 md:gap-4">
                 {CONTACT_LINKS.slice(0, 5).map((link, index) => (
@@ -128,11 +130,10 @@ export default function NFCPage() {
                     whileHover={{ x: 5 }}
                   >
                     <div className="flex items-center gap-2">
-                      <div className={`p-2 rounded-lg ${
-                        link.id.includes('email') ? 'bg-yellow-500/30' :
-                        link.id === 'phone' ? 'bg-green-500/30' : 
-                        link.id === 'resume' ? 'bg-red-500/30' : 'bg-blue-500/30'
-                      }`}>
+                      <div className={`p-2 rounded-lg ${link.id.includes('email') ? 'bg-yellow-500/30' :
+                        link.id === 'phone' ? 'bg-green-500/30' :
+                          link.id === 'resume' ? 'bg-red-500/30' : 'bg-blue-500/30'
+                        }`}>
                         <Icon name={link.icon} className="text-lg text-white" />
                       </div>
                     </div>
@@ -141,14 +142,14 @@ export default function NFCPage() {
                       <div className="text-gray-300 text-xs md:hidden truncate">{link.label}</div>
                     </div>
                     <div className="hidden md:block text-gray-300 group-hover:text-white transition-colors">
-                      {link.id.includes('email') ? '📧' : 
-                       link.id === 'phone' ? '📞' :
-                       link.id === 'resume' ? '📄' : '🌐'}
+                      {link.id.includes('email') ? '📧' :
+                        link.id === 'phone' ? '📞' :
+                          link.id === 'resume' ? '📄' : '🌐'}
                     </div>
                   </motion.a>
                 ))}
               </div>
-              
+
               {/* Location - Full width on mobile */}
               <div className="mt-6 pt-6 border-t border-white/10">
                 <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5">
@@ -169,11 +170,10 @@ export default function NFCPage() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className={`backdrop-blur-sm bg-white/5 rounded-2xl border p-6 transition-all duration-300 ${
-                activeSection === 'social' 
-                  ? 'border-purple-500/50 shadow-2xl shadow-purple-500/20' 
-                  : 'border-white/10 hover:border-purple-500/30'
-              }`}
+              className={`backdrop-blur-sm bg-white/5 rounded-2xl border p-6 transition-all duration-300 ${activeSection === 'social'
+                ? 'border-purple-500/50 shadow-2xl shadow-purple-500/20'
+                : 'border-white/10 hover:border-purple-500/30'
+                }`}
               onMouseEnter={() => setActiveSection('social')}
               onMouseLeave={() => setActiveSection(null)}
             >
@@ -183,7 +183,7 @@ export default function NFCPage() {
                 </div>
                 <h2 className="text-xl font-bold text-white">Social Links</h2>
               </div>
-              
+
               {/* 2-column grid for mobile, 1 column for desktop */}
               <div className="grid grid-cols-2 md:grid-cols-1 gap-3">
                 {SOCIAL_LINKS.map((link) => (
@@ -195,12 +195,11 @@ export default function NFCPage() {
                     className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 transition-all duration-300 group"
                     whileHover={{ x: 5 }}
                   >
-                    <div className={`p-2 rounded-lg ${
-                      link.id === 'github' ? 'bg-gray-800/30' :
+                    <div className={`p-2 rounded-lg ${link.id === 'github' ? 'bg-gray-800/30' :
                       link.id === 'linkedin' ? 'bg-blue-500/30' :
-                      link.id === 'twitter' ? 'bg-blue-400/30' :
-                      link.id === 'facebook' ? 'bg-blue-600/30' : 'bg-gray-800/30'
-                    }`}>
+                        link.id === 'twitter' ? 'bg-blue-400/30' :
+                          link.id === 'facebook' ? 'bg-blue-600/30' : 'bg-gray-800/30'
+                      }`}>
                       <Icon name={link.icon} className="text-lg text-white" />
                     </div>
                     <span className="text-white flex-1 text-sm md:text-base">{link.label}</span>
@@ -216,11 +215,10 @@ export default function NFCPage() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className={`backdrop-blur-sm bg-white/5 rounded-2xl border p-6 transition-all duration-300 ${
-                activeSection === 'work' 
-                  ? 'border-green-500/50 shadow-2xl shadow-green-500/20' 
-                  : 'border-white/10 hover:border-green-500/30'
-              }`}
+              className={`backdrop-blur-sm bg-white/5 rounded-2xl border p-6 transition-all duration-300 ${activeSection === 'work'
+                ? 'border-green-500/50 shadow-2xl shadow-green-500/20'
+                : 'border-white/10 hover:border-green-500/30'
+                }`}
               onMouseEnter={() => setActiveSection('work')}
               onMouseLeave={() => setActiveSection(null)}
             >
@@ -230,7 +228,7 @@ export default function NFCPage() {
                 </div>
                 <h2 className="text-xl font-bold text-white">My Portfolio</h2>
               </div>
-              
+
               {/* 2-column grid for mobile, 1 column for desktop */}
               <div className="grid grid-cols-2 md:grid-cols-1 gap-3 mb-6">
                 {NAVIGATION_LINKS.map((link) => (
@@ -256,7 +254,7 @@ export default function NFCPage() {
                   </motion.button>
                 ))}
               </div>
-              
+
               {/* Resume Download Button - Full width on mobile */}
               <motion.a
                 href={USER_CONFIG.resumeUrl}
