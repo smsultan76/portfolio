@@ -497,16 +497,18 @@ export default function Hero() {
                       </div>
 
                       {/* Status */}
-                      <div className="flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/5 px-3 py-1.5">
-                        <span className="relative flex h-2 w-2">
-                          <span className="absolute h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
-                          <span className="relative h-2 w-2 rounded-full bg-emerald-400" />
-                        </span>
+                      <a href="/contact">
+                        <div className="flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/5 px-3 py-1.5">
+                          <span className="relative flex h-2 w-2">
+                            <span className="absolute h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+                            <span className="relative h-2 w-2 rounded-full bg-emerald-400" />
+                          </span>
 
-                        <span className="text-[8px] font-semibold uppercase tracking-wider text-emerald-300">
-                          Online
-                        </span>
-                      </div>
+                          <span className="text-[8px] font-semibold uppercase tracking-wider text-emerald-300">
+                            Online
+                          </span>
+                        </div>
+                      </a>
                     </div>
 
                     {/* Profile Image */}
@@ -541,7 +543,6 @@ export default function Hero() {
                       <div className="relative h-[225px] w-[225px] overflow-hidden rounded-[2rem] border border-white/20 bg-gradient-to-br from-cyan-400 via-blue-500 to-violet-600 p-[2px] shadow-[0_0_60px_rgba(59,130,246,0.25)] sm:h-[255px] sm:w-[255px]">
 
                         <div className="relative h-full w-full overflow-hidden rounded-[1.85rem] bg-slate-900">
-
                           <img
                             src="/profile2.png"
                             alt="Sultanum Mobin"
@@ -560,7 +561,6 @@ export default function Hero() {
                               ease: "linear",
                             }}
                           />
-
                           <div className="absolute inset-0 bg-gradient-to-t from-blue-950/30 via-transparent to-cyan-400/10" />
                         </div>
                       </div>
@@ -579,14 +579,16 @@ export default function Hero() {
                       >
                         <span className="text-xs">✦</span>
 
-                        <div>
-                          <p className="text-[7px] uppercase tracking-wider text-white/40">
-                            Status
-                          </p>
-                          <p className="text-[9px] font-semibold text-white">
-                            Open to Work
-                          </p>
-                        </div>
+                        <a href="contac">
+                          <div>
+                            <p className="text-[7px] uppercase tracking-wider text-white/40">
+                              Status
+                            </p>
+                            <p className="text-[9px] font-semibold text-white">
+                              Open to Work
+                            </p>
+                          </div>
+                        </a>
                       </motion.div>
                     </div>
 
