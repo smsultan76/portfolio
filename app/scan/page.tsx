@@ -75,7 +75,7 @@ export default function NFCPage() {
                     transition={{ duration: 1, delay: 0.3 }}
                     className="h-1 bg-gradient-to-r from-purple-500 to-pink-500 mb-4 mx-auto lg:mx-0"
                   />
-                  <a href="/">
+                  <a href={USER_CONFIG.portfolioUrl}>
                     <h1 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent mb-2">
                       {USER_CONFIG.name}
                     </h1>

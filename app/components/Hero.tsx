@@ -543,7 +543,6 @@ export default function Hero() {
                       <div className="relative h-[225px] w-[225px] overflow-hidden rounded-[2rem] border border-white/20 bg-gradient-to-br from-cyan-400 via-blue-500 to-violet-600 p-[2px] shadow-[0_0_60px_rgba(59,130,246,0.25)] sm:h-[255px] sm:w-[255px]">
 
                         <div className="relative h-full w-full overflow-hidden rounded-[1.85rem] bg-slate-900">
-
                           <img
                             src="/profile2.png"
                             alt="Sultanum Mobin"
@@ -562,7 +561,6 @@ export default function Hero() {
                               ease: "linear",
                             }}
                           />
-
                           <div className="absolute inset-0 bg-gradient-to-t from-blue-950/30 via-transparent to-cyan-400/10" />
                         </div>
                       </div>
