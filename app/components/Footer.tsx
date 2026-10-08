@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { SOCIAL_LINKS } from '../config/social-links';
 import Icon from '@/app/config/icons';
+import { USER_CONFIG } from '../config/user-config';
 
 const quickLinks = [
   { name: 'Home', href: '/' },
@@ -16,7 +17,7 @@ const contactInfo = [
   {
     icon: '🏠',
     title: 'Location',
-    content: 'Faridpur, Dhaka, Bangladesh',
+    content: USER_CONFIG.location,
   },
   {
     icon: '📧',
