@@ -9,7 +9,8 @@ export const USER_CONFIG = {
   resumeUrl: "/documents/Sultan-CV.pdf",
   photoUrl: "/profile.png",
   portfolioUrl: "/",
-  location: "Pallabi, Dhaka, Bangladesh"
+  location: "Pallabi, Dhaka, Bangladesh",
+  contactPageUrl: "/contact"
 } as const;
 
 export type UserConfig = typeof USER_CONFIG;
