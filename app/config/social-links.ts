@@ -10,85 +10,85 @@ export interface SocialLink {
 }
 
 export const SOCIAL_LINKS: SocialLink[] = [
-  { 
+  {
     id: 'facebook',
     icon: 'facebook',
-    label: 'Facebook', 
-    url: 'https://facebook.com/smsultan76', 
+    label: 'Facebook',
+    url: 'https://facebook.com/smsultan76',
     color: 'hover:text-blue-400'
   },
-  { 
+  {
     id: 'github',
     icon: 'github',
-    label: 'GitHub', 
-    url: 'https://github.com/smsultan76', 
+    label: 'GitHub',
+    url: 'https://github.com/smsultan76',
     color: 'hover:text-gray-200'
   },
-  { 
+  {
     id: 'linkedin',
     icon: 'linkedin',
-    label: 'LinkedIn', 
-    url: 'https://linkedin.com/in/smsultan76', 
+    label: 'LinkedIn',
+    url: 'https://linkedin.com/in/smsultan76',
     color: 'hover:text-blue-400'
   },
-  { 
-    id: 'twitter',
-    icon: 'twitter',
-    label: 'Twitter', 
-    url: 'https://twitter.com/yourusername', 
+  {
+    id: 'whatsapp',
+    icon: 'whatsapp',
+    label: 'WhatsApp',
+    url: 'https://wa.me/smsultan76',
     color: 'hover:text-blue-400'
   },
-  { 
+  {
     id: 'email',
     icon: 'email',
-    label: 'Email', 
-    url: 'mailto:sultanum.mobin@gmail.com', 
+    label: 'Email',
+    url: 'mailto:' + USER_CONFIG.email,
     color: 'hover:text-blue-400'
   },
 ];
 
 export const CONTACT_LINKS: SocialLink[] = [
-    { 
+  {
     id: 'phone',
     icon: 'phone',
-    label: USER_CONFIG.phone, 
-    url: `tel:${USER_CONFIG.phone.replace(/\s+/g, '')}`, 
-    color: 'hover:text-green-400' 
+    label: USER_CONFIG.phone,
+    url: `tel:${USER_CONFIG.phone.replace(/\s+/g, '')}`,
+    color: 'hover:text-green-400'
   },
-  { 
+  {
     id: 'phone',
     icon: 'phone',
-    label: USER_CONFIG.phone2, 
-    url: `tel:${USER_CONFIG.phone2.replace(/\s+/g, '')}`, 
-    color: 'hover:text-green-400' 
+    label: USER_CONFIG.phone2,
+    url: `tel:${USER_CONFIG.phone2.replace(/\s+/g, '')}`,
+    color: 'hover:text-green-400'
   },
-  { 
+  {
     id: 'email-primary',
     icon: 'mail',
-    label: USER_CONFIG.email, 
-    url: `mailto:${USER_CONFIG.email}`, 
-    color: 'hover:text-yellow-400' 
+    label: USER_CONFIG.email,
+    url: `mailto:${USER_CONFIG.email}`,
+    color: 'hover:text-yellow-400'
   },
-  { 
+  {
     id: 'email-secondary',
     icon: 'mail',
-    label: USER_CONFIG.email2, 
-    url: `mailto:${USER_CONFIG.email2}`, 
-    color: 'hover:text-yellow-400' 
+    label: USER_CONFIG.email2,
+    url: `mailto:${USER_CONFIG.email2}`,
+    color: 'hover:text-yellow-400'
   },
-  { 
+  {
     id: 'website',
     icon: 'globe',
-    label: 'Portfolio', 
-    url: USER_CONFIG.website, 
-    color: 'hover:text-indigo-400' 
+    label: 'Portfolio',
+    url: USER_CONFIG.website,
+    color: 'hover:text-indigo-400'
   },
-  { 
+  {
     id: 'resume',
     icon: 'download',
-    label: 'Download Resume', 
-    url: USER_CONFIG.resumeUrl, 
-    color: 'hover:text-red-400' 
+    label: 'Download Resume',
+    url: USER_CONFIG.resumeUrl,
+    color: 'hover:text-red-400'
   },
 ];
 
