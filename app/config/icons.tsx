@@ -1,13 +1,16 @@
 // app/config/icons.tsx
+import { BiSolidContact } from 'react-icons/bi';
 import { FaCheckCircle, FaFacebook, FaFacebookMessenger, FaGithub, FaLinkedin } from 'react-icons/fa';
-import { FiGlobe, FiDownload, FiPhone, FiHome, FiUser, FiBriefcase, FiCode, FiMessageCircle } from 'react-icons/fi';
+import { FiGlobe, FiDownload, FiPhone, FiHome, FiUser, FiBriefcase, FiCode } from 'react-icons/fi';
 import { IoLogoWhatsapp } from 'react-icons/io';
 import { MdEmail, MdError } from 'react-icons/md';
+import { TbMessageFilled } from 'react-icons/tb';
 import { TiWarning } from 'react-icons/ti';
 
 export const Icons = {
   github: FaGithub,
   linkedin: FaLinkedin,
+  contact: BiSolidContact,
   globe: FiGlobe,
   download: FiDownload,
   phone: FiPhone,
@@ -15,7 +18,7 @@ export const Icons = {
   user: FiUser,
   briefcase: FiBriefcase,
   code: FiCode,
-  messageCircle: FiMessageCircle,
+  messageCircle: TbMessageFilled,
   facebook: FaFacebook,
   messenger: FaFacebookMessenger,
   email: MdEmail,

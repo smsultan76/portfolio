@@ -99,17 +99,18 @@ export const CONTACT_LINKS: SocialLink[] = [
   },
 ];
 
-// export interface NavigationLink {
-//   id: string;
-//   name: string;
-//   href: string;
-//   icon: IconName;
-// }
+export interface NavigationLink {
+  id: string;
+  name: string;
+  href: string;
+  icon: IconName;
+}
 
-// export const NAVIGATION_LINKS: NavigationLink[] = [
-//   { id: 'home', name: 'Home', href: '/', icon: 'home' },
-//   { id: 'about', name: 'About', href: '#about', icon: 'user' },
-//   { id: 'skills', name: 'Skills', href: '/#skills', icon: 'code' },
-//   { id: 'projects', name: 'Projects', href: '/#projects', icon: 'briefcase' },
-//   { id: 'contact', name: 'Contact', href: 'contact', icon: 'messageCircle' },
-// ];
+export const NAVIGATION_LINKS: NavigationLink[] = [
+  { id: 'home', name: 'Home', href: '/', icon: 'home' },
+  { id: 'messege',name: 'Message', href: USER_CONFIG.messagePageUrl, icon: 'messageCircle'},
+  // { id: 'about', name: 'About', href: '#about', icon: 'user' },
+  { id: 'skills', name: 'Skills', href: '/#skills', icon: 'code' },
+  { id: 'projects', name: 'Projects', href: '/#projects', icon: 'briefcase' },
+  { id: 'contact', name: 'Contact', href: USER_CONFIG.contactPageUrl, icon: 'contact'},
+];
