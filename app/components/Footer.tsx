@@ -22,8 +22,8 @@ const contactInfo = [
   {
     icon: '📧',
     title: 'Email',
-    content: 'sultan.1021@fec.edu.bd',
-    link: 'mailto:sultan.1021@fec.edu.bd'
+    content: USER_CONFIG.email,
+    link: 'mailto:'+USER_CONFIG.email
   },
   {
     icon: '📞',
