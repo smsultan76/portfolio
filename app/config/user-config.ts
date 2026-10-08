@@ -10,7 +10,8 @@ export const USER_CONFIG = {
   photoUrl: "/profile.png",
   portfolioUrl: "/",
   location: "Pallabi, Dhaka, Bangladesh",
-  contactPageUrl: "/contact"
+  contactPageUrl: "/scan",
+  messagePageUrl: "/contact"
 } as const;
 
 export type UserConfig = typeof USER_CONFIG;
