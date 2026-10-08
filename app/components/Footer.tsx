@@ -218,7 +218,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <motion.div
-          className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
+          className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
@@ -227,7 +227,7 @@ export default function Footer() {
           {/* Copyright */}
           <div className="text-gray-400 text-center md:text-left">
             <p>
-              © {currentYear} Sultanum Mobin. All rights reserved.
+              © 2024 - {currentYear + ' ' + USER_CONFIG.name}. All rights reserved.
             </p>
           </div>
 
