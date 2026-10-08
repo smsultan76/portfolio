@@ -18,6 +18,13 @@ export const SOCIAL_LINKS: SocialLink[] = [
     color: 'hover:text-blue-400'
   },
   {
+    id: 'messenger',
+    icon: 'messenger',
+    label: 'Messenger',
+    url: 'https://m.me/smsultan76',
+    color: 'hover:text-blue-400'
+  },
+  {
     id: 'github',
     icon: 'github',
     label: 'GitHub',
