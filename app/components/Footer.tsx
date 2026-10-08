@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 import { SOCIAL_LINKS } from '../config/social-links';
 import Icon from '@/app/config/icons';
 import { USER_CONFIG } from '../config/user-config';
+import { FaMapLocationDot } from 'react-icons/fa6';
+import { TfiEmail } from 'react-icons/tfi';
+import { BsTelephone } from 'react-icons/bs';
 
 const quickLinks = [
   { name: 'Home', href: '/' },
@@ -16,18 +19,18 @@ const quickLinks = [
 
 const contactInfo = [
   {
-    icon: '🏠',
+    icon: <FaMapLocationDot />,
     title: 'Location',
     content: USER_CONFIG.location,
   },
   {
-    icon: '📧',
+    icon: <TfiEmail />,
     title: 'Email',
     content: USER_CONFIG.email,
     link: 'mailto:'+USER_CONFIG.email
   },
   {
-    icon: '📞',
+    icon: <BsTelephone />,
     title: 'Phone',
     content: USER_CONFIG.phone,
     link: 'tel:'+USER_CONFIG.phone
