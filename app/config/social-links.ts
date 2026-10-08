@@ -71,14 +71,14 @@ export const CONTACT_LINKS: SocialLink[] = [
   },
   {
     id: 'email-primary',
-    icon: 'mail',
+    icon: 'email',
     label: USER_CONFIG.email,
     url: `mailto:${USER_CONFIG.email}`,
     color: 'hover:text-yellow-400'
   },
   {
     id: 'email-secondary',
-    icon: 'mail',
+    icon: 'email',
     label: USER_CONFIG.email2,
     url: `mailto:${USER_CONFIG.email2}`,
     color: 'hover:text-yellow-400'
