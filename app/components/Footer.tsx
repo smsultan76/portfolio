@@ -7,10 +7,11 @@ import { USER_CONFIG } from '../config/user-config';
 import { FaMapLocationDot } from 'react-icons/fa6';
 import { TfiEmail } from 'react-icons/tfi';
 import { BsTelephone } from 'react-icons/bs';
+import { TbMessage2Filled } from 'react-icons/tb';
 
 const quickLinks = [
   { name: 'Home', href: '/' },
-  { name: 'Message', href: USER_CONFIG.messagePageUrl},
+  { name: 'Message', href: USER_CONFIG.messagePageUrl },
   // { name: 'About', href: '#about' },
   { name: 'Skills', href: '/#skills' },
   { name: 'Projects', href: '/#projects' },
@@ -27,13 +28,13 @@ const contactInfo = [
     icon: <TfiEmail />,
     title: 'Email',
     content: USER_CONFIG.email,
-    link: 'mailto:'+USER_CONFIG.email
+    link: 'mailto:' + USER_CONFIG.email
   },
   {
     icon: <BsTelephone />,
     title: 'Phone',
     content: USER_CONFIG.phone,
-    link: 'tel:'+USER_CONFIG.phone
+    link: 'tel:' + USER_CONFIG.phone
   },
 ];
 
@@ -205,7 +206,9 @@ export default function Footer() {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span>💬</span>
+                <span className="text-xl mt-1 group-hover:scale-110 transition-transform duration-300">
+                  <TbMessage2Filled />
+                </span>
                 <span>Let's Talk</span>
                 <span>→</span>
               </motion.a>
