@@ -8,7 +8,7 @@ import { USER_CONFIG } from '../config/user-config';
 const quickLinks = [
   { name: 'Home', href: '/' },
   { name: 'Message', href: USER_CONFIG.messagePageUrl},
-  { name: 'About', href: '#about' },
+  // { name: 'About', href: '#about' },
   { name: 'Skills', href: '/#skills' },
   { name: 'Projects', href: '/#projects' },
   { name: 'Contact', href: USER_CONFIG.contactPageUrl },

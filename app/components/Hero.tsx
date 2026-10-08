@@ -498,7 +498,7 @@ export default function Hero() {
                       </div>
 
                       {/* Status */}
-                      <a href={USER_CONFIG.contactPageUrl}>
+                      <a href={USER_CONFIG.messagePageUrl}>
                         <div className="flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/5 px-3 py-1.5">
                           <span className="relative flex h-2 w-2">
                             <span className="absolute h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
@@ -580,7 +580,7 @@ export default function Hero() {
                       >
                         <span className="text-xs">✦</span>
 
-                        <a href={USER_CONFIG.contactPageUrl}>
+                        <a href={USER_CONFIG.messagePageUrl}>
                           <div>
                             <p className="text-[7px] uppercase tracking-wider text-white/40">
                               Status
