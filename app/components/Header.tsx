@@ -3,16 +3,17 @@
 import { useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { Menu, X, Sun, Moon, LogIn } from 'lucide-react';
+import { USER_CONFIG } from '../config/user-config';
 
 export default function Header() {
   const { isDark, mounted, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Contact', href: '/scan' },
+    { name: 'Contact', href: USER_CONFIG.contactPageUrl },
     { name: 'Skills', href: '/#skills' },
     { name: 'Projects', href: '/#projects' },
-    { name: 'Message', href: '/contact' },
+    { name: 'Message', href: USER_CONFIG.messagePageUrl },
   ];
 
   return (
@@ -22,7 +23,7 @@ export default function Header() {
           {/* Logo */}
           <div className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white transition-colors">
             <a href="/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-              Sultanum Mobin
+              {USER_CONFIG.name}
             </a>
           </div>
 
