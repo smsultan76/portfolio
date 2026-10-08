@@ -579,7 +579,7 @@ export default function Hero() {
                       >
                         <span className="text-xs">✦</span>
 
-                        <a href="contac">
+                        <a href="/contact">
                           <div>
                             <p className="text-[7px] uppercase tracking-wider text-white/40">
                               Status
