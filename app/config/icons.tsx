@@ -1,5 +1,5 @@
 // app/config/icons.tsx
-import { FaCheckCircle, FaWhatsapp } from 'react-icons/fa';
+import { FaCheckCircle, FaFacebookMessenger, FaWhatsapp } from 'react-icons/fa';
 import { FiGithub, FiLinkedin, FiMail, FiGlobe, FiDownload, FiPhone, FiHome, FiUser, FiBriefcase, FiCode, FiMessageCircle, FiFacebook } from 'react-icons/fi';
 import { MdError } from 'react-icons/md';
 import { TfiEmail } from 'react-icons/tfi';
@@ -18,6 +18,7 @@ export const Icons = {
   code: FiCode,
   messageCircle: FiMessageCircle,
   facebook: FiFacebook,
+  messenger: FaFacebookMessenger,
   email: TfiEmail,
   success: FaCheckCircle,
   error: MdError,
