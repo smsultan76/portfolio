@@ -4,23 +4,26 @@ import { useState } from 'react';
 
 const skillsData = {
   languages: [
+    { name: 'C', level: 72 },
+    { name: 'C++', level: 75 },
+    { name: 'Java', level: 65 },
     { name: 'PHP', level: 90 },
     { name: 'Python', level: 85 },
     { name: 'JavaScript', level: 88 },
-    { name: 'C++', level: 75 },
-    { name: 'Java', level: 70 },
-    { name: 'C', level: 65 },
+    { name: 'TypeScript', level: 88 },
   ],
   frontend: [
-    { name: 'HTML', level: 95 },
-    { name: 'CSS', level: 90 },
-    { name: 'TailwindCSS', level: 85 },
-    { name: 'Bootstrap', level: 80 },
+    { name: 'HTML', level: 99 },
+    { name: 'CSS', level: 97 },
+    { name: 'JavaScript', level: 80 },
+    { name: 'React', level: 72 },
     { name: 'Next.js', level: 75 },
+    { name: 'TailwindCSS', level: 98 },
+    { name: 'Bootstrap', level: 95 },
   ],
   backend: [
-    { name: 'Laravel', level: 88 },
-    { name: 'NestJS', level: 70 },
+    { name: 'Laravel', level: 92 },
+    { name: 'NestJS', level: 72 },
   ],
 };
 
