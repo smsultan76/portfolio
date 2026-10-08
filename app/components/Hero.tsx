@@ -13,6 +13,7 @@ import {
   FiX,
 } from 'react-icons/fi';
 import { HiOutlineSparkles } from 'react-icons/hi2';
+import { USER_CONFIG } from '../config/user-config';
 
 // Define proper TypeScript types for animations
 type AnimationVariants = {
@@ -497,7 +498,7 @@ export default function Hero() {
                       </div>
 
                       {/* Status */}
-                      <a href="/contact">
+                      <a href={USER_CONFIG.contactPageUrl}>
                         <div className="flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/5 px-3 py-1.5">
                           <span className="relative flex h-2 w-2">
                             <span className="absolute h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
@@ -579,7 +580,7 @@ export default function Hero() {
                       >
                         <span className="text-xs">✦</span>
 
-                        <a href="/contact">
+                        <a href={USER_CONFIG.contactPageUrl}>
                           <div>
                             <p className="text-[7px] uppercase tracking-wider text-white/40">
                               Status
