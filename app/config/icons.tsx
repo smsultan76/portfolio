@@ -1,14 +1,13 @@
 // app/config/icons.tsx
-import { FaCheckCircle, FaFacebookMessenger, FaWhatsapp } from 'react-icons/fa';
-import { FiGithub, FiLinkedin, FiMail, FiGlobe, FiDownload, FiPhone, FiHome, FiUser, FiBriefcase, FiCode, FiMessageCircle, FiFacebook } from 'react-icons/fi';
-import { MdError } from 'react-icons/md';
-import { TfiEmail } from 'react-icons/tfi';
+import { FaCheckCircle, FaFacebook, FaFacebookMessenger, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FiGlobe, FiDownload, FiPhone, FiHome, FiUser, FiBriefcase, FiCode, FiMessageCircle } from 'react-icons/fi';
+import { IoLogoWhatsapp } from 'react-icons/io';
+import { MdEmail, MdError } from 'react-icons/md';
 import { TiWarning } from 'react-icons/ti';
 
 export const Icons = {
-  github: FiGithub,
-  linkedin: FiLinkedin,
-  mail: FiMail,
+  github: FaGithub,
+  linkedin: FaLinkedin,
   globe: FiGlobe,
   download: FiDownload,
   phone: FiPhone,
@@ -17,13 +16,13 @@ export const Icons = {
   briefcase: FiBriefcase,
   code: FiCode,
   messageCircle: FiMessageCircle,
-  facebook: FiFacebook,
+  facebook: FaFacebook,
   messenger: FaFacebookMessenger,
-  email: TfiEmail,
+  email: MdEmail,
   success: FaCheckCircle,
   error: MdError,
   warning: TiWarning,
-  whatsapp: FaWhatsapp
+  whatsapp: IoLogoWhatsapp
 } as const;
 
 export type IconName = keyof typeof Icons;
