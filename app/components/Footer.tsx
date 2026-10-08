@@ -1,22 +1,13 @@
 // app/components/Footer.tsx
 'use client';
 import { motion } from 'framer-motion';
-import { SOCIAL_LINKS } from '../config/social-links';
+import { NAVIGATION_LINKS, SOCIAL_LINKS } from '../config/social-links';
 import Icon from '@/app/config/icons';
 import { USER_CONFIG } from '../config/user-config';
 import { FaMapLocationDot } from 'react-icons/fa6';
 import { TfiEmail } from 'react-icons/tfi';
 import { BsTelephone } from 'react-icons/bs';
 import { TbMessage2Filled } from 'react-icons/tb';
-
-const quickLinks = [
-  { name: 'Home', href: '/' },
-  { name: 'Message', href: USER_CONFIG.messagePageUrl },
-  // { name: 'About', href: '#about' },
-  { name: 'Skills', href: '/#skills' },
-  { name: 'Projects', href: '/#projects' },
-  { name: 'Contact', href: USER_CONFIG.contactPageUrl },
-];
 
 const contactInfo = [
   {
@@ -103,7 +94,7 @@ export default function Footer() {
           >
             <h4 className="text-lg font-semibold text-white">Quick Links</h4>
             <div className="grid grid-cols-2 gap-x-10 gap-y-2">
-              {quickLinks.map((link, index) => (
+              {NAVIGATION_LINKS.map((link, index) => (
                 <motion.a
                   key={link.name}
                   href={link.href}
