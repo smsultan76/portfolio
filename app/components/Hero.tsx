@@ -148,9 +148,7 @@ export default function Hero() {
         ======================================================== */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="absolute -left-40 -top-40 h-[350px] w-[350px] rounded-full bg-blue-400/20 blur-3xl sm:h-[450px] sm:w-[450px] dark:bg-blue-600/10" />
-
           <div className="absolute -right-40 top-1/3 h-[400px] w-[400px] rounded-full bg-purple-400/20 blur-3xl sm:h-[500px] sm:w-[500px] dark:bg-purple-600/10" />
-
           <div className="absolute -bottom-40 left-1/3 h-[350px] w-[350px] rounded-full bg-cyan-300/20 blur-3xl sm:h-[400px] sm:w-[400px] dark:bg-cyan-600/10" />
 
           <div
@@ -166,37 +164,10 @@ export default function Hero() {
         {/* =======================================================
             MAIN CONTAINER
         ======================================================== */}
-        <div
-          className="
-            relative
-            z-10
-            mx-auto
-            w-full
-            max-w-[1500px]
-            px-5
-            py-16
-            sm:px-8
-            sm:py-20
-            md:px-10
-            lg:px-12
-            lg:py-24
-            xl:px-16
-            2xl:px-20
-          "
+        <div className="relative z-10 mx-auto w-full max-w-[1500px] px-5 py-16 sm:px-8 sm:py-20 md:px-10 lg:px-12 lg:py-24 xl:px-16 2xl:px-20"
         >
           <motion.div
-            className="
-              grid
-              w-full
-              grid-cols-1
-              items-center
-              gap-14
-              lg:grid-cols-[minmax(0,1.05fr)_minmax(380px,0.95fr)]
-              lg:gap-12
-              xl:grid-cols-[minmax(0,1fr)_minmax(460px,0.9fr)]
-              xl:gap-20
-              2xl:gap-28
-            "
+            className="grid w-full grid-cols-1 items-center gap-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(380px,0.95fr)] lg:gap-12 xl:grid-cols-[minmax(0,1fr)_minmax(460px,0.9fr)] xl:gap-20 2xl:gap-28"
             initial="hidden"
             animate="visible"
             variants={containerVariants as any}
@@ -221,16 +192,7 @@ export default function Hero() {
 
               {/* Name */}
               <motion.h1
-                className="
-                  mb-5
-                  text-[clamp(3rem,9vw,6.5rem)]
-                  font-black
-                  leading-[0.9]
-                  tracking-[-0.04em]
-                  text-slate-900
-                  sm:mb-6
-                  dark:text-white
-                "
+                className="mb-5 text-[clamp(3rem,9vw,6.5rem)] font-black leading-[0.9] tracking-[-0.04em] text-slate-900 sm:mb-6 dark:text-white"
                 variants={itemVariants as any}
               >
                 {USER_CONFIG.name.split(" ")[0]}
@@ -270,12 +232,10 @@ export default function Hero() {
                   <FiCode className="shrink-0 text-blue-500" />
                   Web Apps
                 </div>
-
                 <div className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/70 px-3 py-1.5 text-xs font-medium text-slate-600 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-purple-300 hover:text-purple-600 sm:gap-2 sm:px-3.5 sm:py-2 sm:text-sm dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-300 dark:hover:border-purple-600 dark:hover:text-purple-400">
                   <FiSmartphone className="shrink-0 text-purple-500" />
                   Mobile Apps
                 </div>
-
                 <div className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/70 px-3 py-1.5 text-xs font-medium text-slate-600 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-300 hover:text-emerald-600 sm:gap-2 sm:px-3.5 sm:py-2 sm:text-sm dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-300 dark:hover:border-emerald-600 dark:hover:text-emerald-400">
                   <FiLayers className="shrink-0 text-emerald-500" />
                   Custom Solutions
@@ -283,14 +243,7 @@ export default function Hero() {
               </motion.div>
 
               {/* CTA */}
-              <motion.div
-                className="
-                  mb-8
-                  flex
-                  w-full
-                  flex-row
-                  gap-3
-                "
+              <motion.div className="mb-8 flex w-full flex-row gap-3"
                 variants={itemVariants as any}
               >
                 {/* Projects Button */}

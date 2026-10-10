@@ -105,7 +105,9 @@ export default function Footer() {
                   transition={{ delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <span>→</span>
+                  <span className='mr-2'>
+                    <Icon name={link.icon}className='text-md'/>
+                  </span>
                   <span>{link.name}</span>
                 </motion.a>
               ))}
