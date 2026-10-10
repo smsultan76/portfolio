@@ -192,16 +192,7 @@ export default function Hero() {
 
               {/* Name */}
               <motion.h1
-                className="
-                  mb-5
-                  text-[clamp(3rem,9vw,6.5rem)]
-                  font-black
-                  leading-[0.9]
-                  tracking-[-0.04em]
-                  text-slate-900
-                  sm:mb-6
-                  dark:text-white
-                "
+                className="mb-5 text-[clamp(3rem,9vw,6.5rem)] font-black leading-[0.9] tracking-[-0.04em] text-slate-900 sm:mb-6 dark:text-white"
                 variants={itemVariants as any}
               >
                 {USER_CONFIG.name.split(" ")[0]}
@@ -241,12 +232,10 @@ export default function Hero() {
                   <FiCode className="shrink-0 text-blue-500" />
                   Web Apps
                 </div>
-
                 <div className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/70 px-3 py-1.5 text-xs font-medium text-slate-600 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-purple-300 hover:text-purple-600 sm:gap-2 sm:px-3.5 sm:py-2 sm:text-sm dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-300 dark:hover:border-purple-600 dark:hover:text-purple-400">
                   <FiSmartphone className="shrink-0 text-purple-500" />
                   Mobile Apps
                 </div>
-
                 <div className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/70 px-3 py-1.5 text-xs font-medium text-slate-600 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-300 hover:text-emerald-600 sm:gap-2 sm:px-3.5 sm:py-2 sm:text-sm dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-300 dark:hover:border-emerald-600 dark:hover:text-emerald-400">
                   <FiLayers className="shrink-0 text-emerald-500" />
                   Custom Solutions
@@ -254,14 +243,7 @@ export default function Hero() {
               </motion.div>
 
               {/* CTA */}
-              <motion.div
-                className="
-                  mb-8
-                  flex
-                  w-full
-                  flex-row
-                  gap-3
-                "
+              <motion.div className="mb-8 flex w-full flex-row gap-3"
                 variants={itemVariants as any}
               >
                 {/* Projects Button */}
