@@ -148,9 +148,7 @@ export default function Hero() {
         ======================================================== */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="absolute -left-40 -top-40 h-[350px] w-[350px] rounded-full bg-blue-400/20 blur-3xl sm:h-[450px] sm:w-[450px] dark:bg-blue-600/10" />
-
           <div className="absolute -right-40 top-1/3 h-[400px] w-[400px] rounded-full bg-purple-400/20 blur-3xl sm:h-[500px] sm:w-[500px] dark:bg-purple-600/10" />
-
           <div className="absolute -bottom-40 left-1/3 h-[350px] w-[350px] rounded-full bg-cyan-300/20 blur-3xl sm:h-[400px] sm:w-[400px] dark:bg-cyan-600/10" />
 
           <div
@@ -166,37 +164,10 @@ export default function Hero() {
         {/* =======================================================
             MAIN CONTAINER
         ======================================================== */}
-        <div
-          className="
-            relative
-            z-10
-            mx-auto
-            w-full
-            max-w-[1500px]
-            px-5
-            py-16
-            sm:px-8
-            sm:py-20
-            md:px-10
-            lg:px-12
-            lg:py-24
-            xl:px-16
-            2xl:px-20
-          "
+        <div className="relative z-10 mx-auto w-full max-w-[1500px] px-5 py-16 sm:px-8 sm:py-20 md:px-10 lg:px-12 lg:py-24 xl:px-16 2xl:px-20"
         >
           <motion.div
-            className="
-              grid
-              w-full
-              grid-cols-1
-              items-center
-              gap-14
-              lg:grid-cols-[minmax(0,1.05fr)_minmax(380px,0.95fr)]
-              lg:gap-12
-              xl:grid-cols-[minmax(0,1fr)_minmax(460px,0.9fr)]
-              xl:gap-20
-              2xl:gap-28
-            "
+            className="grid w-full grid-cols-1 items-center gap-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(380px,0.95fr)] lg:gap-12 xl:grid-cols-[minmax(0,1fr)_minmax(460px,0.9fr)] xl:gap-20 2xl:gap-28"
             initial="hidden"
             animate="visible"
             variants={containerVariants as any}
