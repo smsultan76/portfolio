@@ -1,34 +1,31 @@
 // app/components/Footer.tsx
 'use client';
 import { motion } from 'framer-motion';
-import { SOCIAL_LINKS } from '../config/social-links';
+import { NAVIGATION_LINKS, SOCIAL_LINKS } from '../config/social-links';
 import Icon from '@/app/config/icons';
-
-const quickLinks = [
-  { name: 'Home', href: '/' },
-  { name: 'About', href: '#about' },
-  { name: 'Skills', href: '/#skills' },
-  { name: 'Projects', href: '/#projects' },
-  { name: 'Contact', href: 'contact' },
-];
+import { USER_CONFIG } from '../config/user-config';
+import { FaMapLocationDot } from 'react-icons/fa6';
+import { TfiEmail } from 'react-icons/tfi';
+import { BsTelephone } from 'react-icons/bs';
+import { TbMessage2Filled } from 'react-icons/tb';
 
 const contactInfo = [
   {
-    icon: '🏠',
+    icon: <FaMapLocationDot />,
     title: 'Location',
-    content: 'Faridpur, Dhaka, Bangladesh',
+    content: USER_CONFIG.location,
   },
   {
-    icon: '📧',
+    icon: <TfiEmail />,
     title: 'Email',
-    content: 'sultan.1021@fec.edu.bd',
-    link: 'mailto:sultan.1021@fec.edu.bd'
+    content: USER_CONFIG.email,
+    link: 'mailto:' + USER_CONFIG.email
   },
   {
-    icon: '📞',
+    icon: <BsTelephone />,
     title: 'Phone',
-    content: '+880 1723-332972',
-    link: 'tel:+8801723332972'
+    content: USER_CONFIG.phone,
+    link: 'tel:' + USER_CONFIG.phone
   },
 ];
 
@@ -52,7 +49,7 @@ export default function Footer() {
             {/* Brand */}
             <div className="space-y-4">
               <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Sultanum Mobin
+                {USER_CONFIG.name}
               </h3>
               <p className="text-gray-300 leading-relaxed max-w-md">
                 Full Stack Developer passionate about creating efficient, scalable web applications.
@@ -97,7 +94,7 @@ export default function Footer() {
           >
             <h4 className="text-lg font-semibold text-white">Quick Links</h4>
             <div className="grid grid-cols-2 gap-x-10 gap-y-2">
-              {quickLinks.map((link, index) => (
+              {NAVIGATION_LINKS.map((link, index) => (
                 <motion.a
                   key={link.name}
                   href={link.href}
@@ -195,12 +192,14 @@ export default function Footer() {
               viewport={{ once: true }}
             >
               <motion.a
-                href="scan"
+                href={USER_CONFIG.messagePageUrl}
                 className="inline-flex items-center space-x-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span>💬</span>
+                <span className="text-xl mt-1 group-hover:scale-110 transition-transform duration-300">
+                  <TbMessage2Filled />
+                </span>
                 <span>Let's Talk</span>
                 <span>→</span>
               </motion.a>
@@ -210,7 +209,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <motion.div
-          className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
+          className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
@@ -219,7 +218,7 @@ export default function Footer() {
           {/* Copyright */}
           <div className="text-gray-400 text-center md:text-left">
             <p>
-              © {currentYear} Sultanum Mobin. All rights reserved.
+              © 2024 - {currentYear + ' ' + USER_CONFIG.name}. All rights reserved.
             </p>
           </div>
 

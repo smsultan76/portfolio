@@ -13,6 +13,7 @@ import {
   FiX,
 } from 'react-icons/fi';
 import { HiOutlineSparkles } from 'react-icons/hi2';
+import { USER_CONFIG } from '../config/user-config';
 
 // Define proper TypeScript types for animations
 type AnimationVariants = {
@@ -232,10 +233,9 @@ export default function Hero() {
                 "
                 variants={itemVariants as any}
               >
-                Sultanum
-
+                {USER_CONFIG.name.split(" ")[0]}
                 <span className="ml-3 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400">
-                  Mobin
+                {USER_CONFIG.name.split(" ")[1]}
                 </span>
               </motion.h1>
 
@@ -497,7 +497,7 @@ export default function Hero() {
                       </div>
 
                       {/* Status */}
-                      <a href="/contact">
+                      <a href={USER_CONFIG.messagePageUrl}>
                         <div className="flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/5 px-3 py-1.5">
                           <span className="relative flex h-2 w-2">
                             <span className="absolute h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
@@ -579,7 +579,7 @@ export default function Hero() {
                       >
                         <span className="text-xs">✦</span>
 
-                        <a href="contac">
+                        <a href={USER_CONFIG.messagePageUrl}>
                           <div>
                             <p className="text-[7px] uppercase tracking-wider text-white/40">
                               Status
@@ -604,7 +604,7 @@ export default function Hero() {
                       </div>
 
                       <h2 className="text-3xl font-bold tracking-[-0.04em] text-white sm:text-4xl">
-                        Sultanum Mobin
+                        {USER_CONFIG.name}
                       </h2>
 
                       <p className="mx-auto mt-2 max-w-[300px] text-xs leading-5 text-white/40">

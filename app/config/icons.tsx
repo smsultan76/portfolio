@@ -1,29 +1,16 @@
 // app/config/icons.tsx
-import { FaCheckCircle } from 'react-icons/fa';
-import { 
-  FiGithub, 
-  FiLinkedin, 
-  FiTwitter, 
-  FiMail, 
-  FiGlobe,
-  FiDownload,
-  FiPhone,
-  FiHome,
-  FiUser,
-  FiBriefcase,
-  FiCode,
-  FiMessageCircle,
-  FiFacebook,
-} from 'react-icons/fi';
-import { MdError } from 'react-icons/md';
-import { TfiEmail } from 'react-icons/tfi';
+import { BiSolidContact } from 'react-icons/bi';
+import { FaCheckCircle, FaFacebook, FaFacebookMessenger, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FiGlobe, FiDownload, FiPhone, FiHome, FiUser, FiBriefcase, FiCode } from 'react-icons/fi';
+import { IoLogoWhatsapp } from 'react-icons/io';
+import { MdEmail, MdError } from 'react-icons/md';
+import { TbMessageFilled } from 'react-icons/tb';
 import { TiWarning } from 'react-icons/ti';
 
 export const Icons = {
-  github: FiGithub,
-  linkedin: FiLinkedin,
-  twitter: FiTwitter,
-  mail: FiMail,
+  github: FaGithub,
+  linkedin: FaLinkedin,
+  contact: BiSolidContact,
   globe: FiGlobe,
   download: FiDownload,
   phone: FiPhone,
@@ -31,12 +18,14 @@ export const Icons = {
   user: FiUser,
   briefcase: FiBriefcase,
   code: FiCode,
-  messageCircle: FiMessageCircle,
-  facebook: FiFacebook,
-  email: TfiEmail,
+  messageCircle: TbMessageFilled,
+  facebook: FaFacebook,
+  messenger: FaFacebookMessenger,
+  email: MdEmail,
   success: FaCheckCircle,
   error: MdError,
-  warning: TiWarning
+  warning: TiWarning,
+  whatsapp: IoLogoWhatsapp
 } as const;
 
 export type IconName = keyof typeof Icons;
@@ -49,7 +38,7 @@ interface IconProps {
 
 const Icon = ({ name, className = '', size = 24 }: IconProps) => {
   const IconComponent = Icons[name];
-  
+
   if (!IconComponent) {
     console.warn(`Icon "${name}" not found`);
     return null;
